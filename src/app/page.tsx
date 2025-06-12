@@ -1,4 +1,5 @@
 'use client';
+
 import { useState, useCallback, ChangeEvent } from 'react';
 import Head from 'next/head';
 import { createWorker } from 'tesseract.js';
