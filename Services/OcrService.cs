@@ -1,6 +1,6 @@
 using OpenCvSharp;
 using Tesseract;
-using ImageMagick;
+using ImageMagick; // Added for PDF processing
 using System.Text; // Added for StringBuilder
 
 namespace ImageOcrMicroservice.Services
@@ -46,11 +46,7 @@ namespace ImageOcrMicroservice.Services
             _logger.LogDebug("Contrast adjusted.");
 
             using Mat sharpened = new Mat();
-            Mat kernel = Mat.FromArray(new float[,] {
-                { 0, -1, 0 },
-                { -1, 5, -1 },
-                { 0, -1, 0 }
-            });
+            Mat kernel = new Mat(3, 3, MatType.CV_32F, new float[] { 0, -1, 0, -1, 5, -1, 0, -1, 0 });
             Cv2.Filter2D(contrast, sharpened, MatType.CV_8U, kernel, anchor: new Point(-1, -1), delta: 0, borderType: BorderTypes.Default);
             kernel.Dispose(); // Dispose the kernel Mat
             _logger.LogDebug("Image sharpened.");
