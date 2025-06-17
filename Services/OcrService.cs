@@ -1,7 +1,7 @@
 using OpenCvSharp;
 using Tesseract;
-using ImageMagick; // Added for PDF processing
-using System.Text; // Added for StringBuilder
+using ImageMagick;
+using System.Text;
 
 namespace ImageOcrMicroservice.Services
 {
@@ -16,8 +16,12 @@ namespace ImageOcrMicroservice.Services
             try
             {
                 string tessDataPath = Path.Combine(AppContext.BaseDirectory, "tessdata");
-                _logger.LogInformation("Initializing Tesseract engine with tessdata path: {TessDataPath}", tessDataPath);
-                _tesseractEngine = new TesseractEngine(tessDataPath, "eng", EngineMode.Default);
+                string languageModel = "eng";
+                
+                _logger.LogInformation("Initializing Tesseract engine with tessdata path: {TessDataPath} and model: {Model}", tessDataPath, languageModel);
+                
+                _tesseractEngine = new TesseractEngine(tessDataPath, languageModel, EngineMode.LstmOnly);
+                
                 _logger.LogInformation("Tesseract engine initialized successfully.");
             }
             catch (Exception ex)
@@ -26,10 +30,9 @@ namespace ImageOcrMicroservice.Services
                 throw;
             }
         }
-
-        public string ProcessImageAndExtractText(byte[] imageBytes)
+        
+        private string PerformOcrOnImage(byte[] imageBytes)
         {
-            _logger.LogInformation("Starting image preprocessing and OCR for a single image/page.");
             using Mat src = Mat.FromImageData(imageBytes, ImreadModes.Color);
             if (src.Empty())
             {
@@ -39,35 +42,19 @@ namespace ImageOcrMicroservice.Services
 
             using Mat gray = new Mat();
             Cv2.CvtColor(src, gray, ColorConversionCodes.BGR2GRAY);
-            _logger.LogDebug("Image converted to grayscale.");
 
-            using Mat contrast = new Mat();
-            gray.ConvertTo(contrast, -1, alpha: 1.5, beta: 0);
-            _logger.LogDebug("Contrast adjusted.");
+            using Mat denoised = new Mat();
+            Cv2.MedianBlur(gray, denoised, 3);
 
-            using Mat sharpened = new Mat();
-            Mat kernel = new Mat(3, 3, MatType.CV_32F, new float[] { 0, -1, 0, -1, 5, -1, 0, -1, 0 });
-            Cv2.Filter2D(contrast, sharpened, MatType.CV_8U, kernel, anchor: new Point(-1, -1), delta: 0, borderType: BorderTypes.Default);
-            kernel.Dispose(); // Dispose the kernel Mat
-            _logger.LogDebug("Image sharpened.");
-            
-            Mat deskewed = sharpened.Clone(); 
-            // Actual deskewing logic would go here if implemented
-            _logger.LogDebug("Deskew step (currently a clone).");
+            using Mat deskewed = DeskewImage(denoised);
 
             using Mat binary = new Mat();
-            Cv2.Threshold(deskewed, binary, 0, 255, ThresholdTypes.Binary | ThresholdTypes.Otsu);
-            _logger.LogDebug("Image binarized using Otsu's threshold.");
-            
-            if (deskewed != sharpened) // only if 'deskewed' was a new Mat from a real deskew operation
-            {
-                deskewed.Dispose();
-            }
+            Cv2.AdaptiveThreshold(deskewed, binary, 255, AdaptiveThresholdTypes.GaussianC, ThresholdTypes.Binary, 11, 2);
 
             try
             {
                 byte[] imageAsBytesForTesseract;
-                Cv2.ImEncode(".png", binary, out imageAsBytesForTesseract); 
+                Cv2.ImEncode(".png", binary, out imageAsBytesForTesseract);
 
                 using (var img = Pix.LoadFromMemory(imageAsBytesForTesseract))
                 {
@@ -85,56 +72,94 @@ namespace ImageOcrMicroservice.Services
                 return $"Error during OCR: {ex.Message}";
             }
         }
+        
+        private Mat DeskewImage(Mat src)
+        {
+            Mat gray = src.Clone();
+            Cv2.BitwiseNot(gray, gray);
+
+            // Fixed: Use the correct HoughLinesP signature
+            LineSegmentPoint[] lines = Cv2.HoughLinesP(gray, 1, Math.PI / 180, 100, 50, 10);
+            
+            if (lines == null || lines.Length == 0)
+            {
+                _logger.LogWarning("Deskewing failed: No lines detected. Returning original image.");
+                gray.Dispose();
+                return src.Clone(); 
+            }
+
+            double angleSum = 0;
+            int count = 0;
+            foreach (var line in lines)
+            {
+                if (line.P2.Y == line.P1.Y) continue; // Changed from Item2/Item0 to P2.Y/P1.Y
+
+                double angle = Math.Atan2(line.P2.Y - line.P1.Y, line.P2.X - line.P1.X) * 180.0 / Math.PI;
+                
+                if (Math.Abs(angle) < 20)
+                {
+                    angleSum += angle;
+                    count++;
+                }
+            }
+
+            if(count == 0)
+            {
+                _logger.LogWarning("Deskewing failed: No suitable lines found for angle calculation.");
+                gray.Dispose();
+                return src.Clone();
+            }
+
+            double avgAngle = angleSum / count;
+            _logger.LogDebug("Calculated skew angle: {Angle}", avgAngle);
+
+            Mat rotated = new Mat();
+            Point2f center = new Point2f(src.Cols / 2f, src.Rows / 2f);
+            Mat rotationMatrix = Cv2.GetRotationMatrix2D(center, avgAngle, 1.0);
+            
+            Cv2.WarpAffine(src, rotated, rotationMatrix, src.Size(), InterpolationFlags.Cubic, BorderTypes.Constant, Scalar.All(255));
+            
+            gray.Dispose();
+            rotationMatrix.Dispose();
+            
+            return rotated;
+        }
 
         public string ProcessPdfAndExtractText(byte[] pdfBytes)
         {
             var allPagesText = new StringBuilder();
             var settings = new MagickReadSettings
             {
-                Density = new Density(300, 300), // Set DPI for rasterization
-                Format = MagickFormat.Pdf // Explicitly state we are reading a PDF
+                Density = new Density(300, 300),
+                Format = MagickFormat.Pdf
             };
 
             _logger.LogInformation("Starting PDF processing. Will convert pages to images at 300 DPI.");
 
             using (var magickImages = new MagickImageCollection())
             {
-                try
-                {
-                    magickImages.Read(pdfBytes, settings);
-                }
+                try { magickImages.Read(pdfBytes, settings); }
                 catch (MagickException ex)
                 {
                     _logger.LogError(ex, "Magick.NET failed to read or process the PDF.");
-                    // Check if Ghostscript might be missing or if the PDF is corrupted.
                     if (ex.Message.ToLower().Contains("ghostscript"))
                     {
-                         _logger.LogError("This error might indicate that Ghostscript is not installed or not found in the system's PATH, especially in a Docker environment.");
+                         _logger.LogError("This error might indicate that Ghostscript is not installed or not found in the system's PATH.");
                     }
                     return $"Error reading PDF: {ex.Message}";
                 }
 
                 _logger.LogInformation("PDF read successfully. Number of pages: {PageCount}", magickImages.Count);
-
-                if (magickImages.Count == 0)
-                {
-                    _logger.LogWarning("PDF contained no pages or could not be parsed correctly.");
-                    return "PDF contained no pages or could not be processed.";
-                }
+                if (magickImages.Count == 0) return "PDF contained no pages or could not be processed.";
 
                 int pageNum = 1;
                 foreach (var imagePage in magickImages)
                 {
                     _logger.LogInformation("Processing PDF Page {PageNum}/{TotalPages}", pageNum, magickImages.Count);
-                    // It's good practice to set format before ToByteArray if a specific one is desired
-                    imagePage.Format = MagickFormat.Png; 
-                    
-                    // Optional: Add a border or change background if Tesseract struggles with edges
-                    // imagePage.BorderColor = MagickColors.White;
-                    // imagePage.Border(10); // Add 10px white border
-
+                    imagePage.Format = MagickFormat.Png;
                     byte[] pageImageBytes = imagePage.ToByteArray();
-                    string textFromPage = ProcessImageAndExtractText(pageImageBytes); 
+                    
+                    string textFromPage = PerformOcrOnImage(pageImageBytes); 
 
                     if (!string.IsNullOrWhiteSpace(textFromPage))
                     {
@@ -152,6 +177,11 @@ namespace ImageOcrMicroservice.Services
             }
             _logger.LogInformation("Finished processing all PDF pages.");
             return allPagesText.ToString();
+        }
+        
+        public string ProcessImageAndExtractText(byte[] imageBytes)
+        {
+             return PerformOcrOnImage(imageBytes);
         }
 
         public void Dispose()
