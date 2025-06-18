@@ -33,7 +33,7 @@ namespace ImageOcrMicroservice.Controllers
 
             if (!isImage && !isPdf)
             {
-                return BadRequest("Invalid file type. Allowed types: PNG, JPG, JPEG, BMP, TIFF, PDF.");
+                return BadRequest("Invalid file type. Allowed types: PNG, JPG, JPEG, BMP, TIFF or PDF.");
             }
 
             try
