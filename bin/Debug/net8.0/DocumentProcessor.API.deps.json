@@ -8,7 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "DocumentProcessor.API/1.0.0": {
         "dependencies": {
-          "Magick.NET-Q16-AnyCPU": "13.9.0",
+          "Magick.NET-Q16-AnyCPU": "14.6.0",
           "Microsoft.AspNetCore.OpenApi": "8.0.6",
           "OpenCvSharp4": "4.9.0.20240103",
           "OpenCvSharp4.runtime.win": "4.9.0.20240103",
@@ -23,14 +23,14 @@
           "DocumentProcessor.API.dll": {}
         }
       },
-      "Magick.NET-Q16-AnyCPU/13.9.0": {
+      "Magick.NET-Q16-AnyCPU/14.6.0": {
         "dependencies": {
-          "Magick.NET.Core": "13.9.0"
+          "Magick.NET.Core": "14.6.0"
         },
         "runtime": {
-          "lib/netstandard21/Magick.NET-Q16-AnyCPU.dll": {
-            "assemblyVersion": "13.9.0.0",
-            "fileVersion": "13.9.0.0"
+          "lib/net8.0/Magick.NET-Q16-AnyCPU.dll": {
+            "assemblyVersion": "14.6.0.0",
+            "fileVersion": "14.6.0.0"
           }
         },
         "runtimeTargets": {
@@ -62,25 +62,25 @@
           "runtimes/win-arm64/native/Magick.Native-Q16-arm64.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "7.1.1.33"
+            "fileVersion": "7.1.1.46"
           },
           "runtimes/win-x64/native/Magick.Native-Q16-x64.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "7.1.1.33"
+            "fileVersion": "7.1.1.46"
           },
           "runtimes/win-x86/native/Magick.Native-Q16-x86.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "7.1.1.33"
+            "fileVersion": "7.1.1.46"
           }
         }
       },
-      "Magick.NET.Core/13.9.0": {
+      "Magick.NET.Core/14.6.0": {
         "runtime": {
-          "lib/netstandard21/Magick.NET.Core.dll": {
-            "assemblyVersion": "13.9.0.0",
-            "fileVersion": "13.9.0.0"
+          "lib/net8.0/Magick.NET.Core.dll": {
+            "assemblyVersion": "14.6.0.0",
+            "fileVersion": "14.6.0.0"
           }
         }
       },
@@ -490,19 +490,19 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Magick.NET-Q16-AnyCPU/13.9.0": {
+    "Magick.NET-Q16-AnyCPU/14.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-VyQ/xrybewPngITmC+dO2jlXxiurU0nEdokgpFsAJ2AT4ijZGnfMi1C9JsFj/VcyMV52OzkdFNCE58sUWf9wlg==",
-      "path": "magick.net-q16-anycpu/13.9.0",
-      "hashPath": "magick.net-q16-anycpu.13.9.0.nupkg.sha512"
+      "sha512": "sha512-9WtyCbErWij7MEOYDEPHRUaCdJs0rZ2COeVc7SOlG239UdNoep1QPsRE1UNd2PmncFWJ/G2N7g7c3V2rn3Yy3w==",
+      "path": "magick.net-q16-anycpu/14.6.0",
+      "hashPath": "magick.net-q16-anycpu.14.6.0.nupkg.sha512"
     },
-    "Magick.NET.Core/13.9.0": {
+    "Magick.NET.Core/14.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-7NF8Ntd/68WQucvU46vCrbBdZDOkEWjCtCiqKj3bijrj/oaKeKxILgD7iTsaUVQm8E3EgotyQw9b12xuvA6fWA==",
-      "path": "magick.net.core/13.9.0",
-      "hashPath": "magick.net.core.13.9.0.nupkg.sha512"
+      "sha512": "sha512-hyXMoLiq6iHooL54iTYzKtiWOAQOiwrwVMeoglGifwYAduAzVfeG+/BxgIz1SaxfczBfQFlcWKTrRU0RNBucUw==",
+      "path": "magick.net.core/14.6.0",
+      "hashPath": "magick.net.core.14.6.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.OpenApi/8.0.6": {
       "type": "package",

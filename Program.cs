@@ -5,10 +5,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Configure Serilog
 Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Debug()
     .WriteTo.Console()
-    .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day)
+    .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day,
+    retainedFileCountLimit: 30,
+    outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss} [{Level:u3}] {Message}{NewLine}{Exception}")
     .CreateLogger();
-
+builder.Host.UseSerilog();
 try
 {
     Log.Information("Application starting up");
