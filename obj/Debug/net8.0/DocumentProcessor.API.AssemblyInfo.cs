@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DocumentProcessor.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ce7abe1081cbb5800e9475801562d479e7b704ec")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e85ecfda231a050bc81e4cfa08568c7b1b9eb25")]
 [assembly: System.Reflection.AssemblyProductAttribute("DocumentProcessor.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DocumentProcessor.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -10,15 +10,21 @@ namespace ImageOcrMicroservice.Controllers
     {
         private readonly OcrService _ocrService;
         private readonly MetadataService _metadataService;
+        private readonly DocumentSpecificMetadataService _documentSpecificMetadataService;
+        private readonly DocumentTypeDetectionService _documentTypeDetectionService;
         private readonly ILogger<MetadataController> _logger;
 
         public MetadataController(
-            OcrService ocrService, 
-            MetadataService metadataService, 
+            OcrService ocrService,
+            MetadataService metadataService,
+            DocumentSpecificMetadataService documentSpecificMetadataService,
+            DocumentTypeDetectionService documentTypeDetectionService,
             ILogger<MetadataController> logger)
         {
             _ocrService = ocrService;
             _metadataService = metadataService;
+            _documentSpecificMetadataService = documentSpecificMetadataService;
+            _documentTypeDetectionService = documentTypeDetectionService;
             _logger = logger;
         }
 
@@ -26,12 +32,12 @@ namespace ImageOcrMicroservice.Controllers
         [ProducesResponseType(typeof(DocumentMetadata), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> ExtractMetadataFromFile(IFormFile file)
+        public async Task<IActionResult> ExtractMetadataFromFile(IFormFile file, [FromQuery] string? documentType = null)
         {
-            if (file == null || file.Length == 0) 
+            if (file == null || file.Length == 0)
                 return BadRequest("File is required.");
-            
-            if (file.Length > 20 * 1024 * 1024) 
+
+            if (file.Length > 20 * 1024 * 1024)
                 return BadRequest("File size exceeds the limit (20MB).");
 
             var extension = Path.GetExtension(file.FileName).ToLowerInvariant();
@@ -50,44 +56,67 @@ namespace ImageOcrMicroservice.Controllers
                 var fileBytes = memoryStream.ToArray();
                 string extractedText;
 
-                // Step 1: Perform OCR to get the raw text (offloaded to a background thread)
+                // Perform OCR to get the raw text (offloaded to a background thread)
                 extractedText = await Task.Run(() =>
                 {
                     _logger.LogInformation("Step 1: Starting OCR process for file '{FileName}'.", file.FileName);
-                    return isPdf 
-                        ? _ocrService.ProcessPdfAndExtractText(fileBytes) 
+                    return isPdf
+                        ? _ocrService.ProcessPdfAndExtractText(fileBytes)
                         : _ocrService.ProcessImageAndExtractText(fileBytes);
                 });
 
                 if (string.IsNullOrWhiteSpace(extractedText))
                 {
                     _logger.LogWarning("OCR process yielded no text for file '{FileName}'.", file.FileName);
-                    return Ok(new DocumentMetadata 
-                    { 
+                    return Ok(new DocumentMetadata
+                    {
                         DocumentName = Path.GetFileNameWithoutExtension(file.FileName),
                         DocumentType = "Unknown",
-                        RawText = "OCR process yielded no text." 
+                        RawText = "OCR process yielded no text."
                     });
                 }
 
-                // Step 2: Extract structured metadata from the raw text (including file name and new tax information)
                 _logger.LogInformation("Step 2: Starting metadata extraction from OCR text for file '{FileName}'.", file.FileName);
-                var metadata = _metadataService.ExtractMetadata(extractedText, file.FileName);
+                DocumentMetadata metadata;
 
-                // Log tax-related and additional extractions for debugging
-                if (metadata.TaxAttestationNumbers.Any() || metadata.TaxCenters.Any() || metadata.TaxSystems.Any() ||
-                    metadata.AcfeReferences.Any() || metadata.DocumentLocationsAndDates.Any() || metadata.Quarters.Any() ||
-                    metadata.PhoneNumbers.Any() || metadata.EmailAddresses.Any() || metadata.Regimes.Any())
+                if (!string.IsNullOrWhiteSpace(documentType) && Enum.TryParse<DocumentType>(documentType, true, out var specifiedDocType))
                 {
-                    _logger.LogInformation("Extended information extracted: {TaxAttestationCount} attestation number(s), {TaxCenterCount} tax center(s), {TaxSystemCount} tax system(s), {AcfeCount} ACFE reference(s), {LocationDateCount} location/date(s), {QuarterCount} quarter(s), {PhoneCount} phone number(s), {EmailCount} email(s), {RegimeCount} regime(s) for file '{FileName}'.",
-                        metadata.TaxAttestationNumbers.Count, metadata.TaxCenters.Count, metadata.TaxSystems.Count,
-                        metadata.AcfeReferences.Count, metadata.DocumentLocationsAndDates.Count, metadata.Quarters.Count,
-                        metadata.PhoneNumbers.Count, metadata.EmailAddresses.Count, metadata.Regimes.Count, file.FileName);
+                    // Use specified document type for targeted extraction
+                    metadata = _metadataService.ExtractMetadataForDocumentType(extractedText, specifiedDocType, file.FileName);
+                    _logger.LogInformation("Used specified document type '{DocumentType}' for extraction.", specifiedDocType);
+                }
+                else
+                {
+                    // Use automatic detection and extraction
+                    metadata = _metadataService.ExtractMetadata(extractedText, file.FileName);
                 }
 
-                // Step 3: Return the structured metadata as a JSON object
-                _logger.LogInformation("Step 3: Returning structured metadata for file '{FileName}'.", file.FileName);
-                return Ok(metadata);
+                // Get extraction statistics and validation results
+                var extractionStats = _metadataService.GetExtractionStatistics(metadata);
+
+                // Fix the document type parsing
+                var detectedTypeEnum = ParseDocumentTypeFromDisplayName(metadata.DocumentType);
+
+                var validationResult = _documentSpecificMetadataService.ValidateDocumentMetadata(metadata, detectedTypeEnum);
+
+                LogExtractionResults(metadata, extractionStats, validationResult, file.FileName);
+
+                // Create filtered metadata object - this is the key fix
+                var filteredMetadata = CreateFilteredMetadataObject(metadata, detectedTypeEnum);
+
+                // Return the structured metadata as a JSON object
+                _logger.LogInformation("Step 4: Returning structured metadata for file '{FileName}'.", file.FileName);
+
+                return Ok(new
+                {
+                    Metadata = filteredMetadata, 
+                    ExtractionStatistics = extractionStats,
+                    ValidationResult = new
+                    {
+                        validationResult.IsValid,
+                        validationResult.Messages
+                    }
+                });
             }
             catch (Exception ex)
             {
@@ -97,10 +126,10 @@ namespace ImageOcrMicroservice.Controllers
         }
 
         [HttpPost("extract-batch")]
-        [ProducesResponseType(typeof(List<DocumentMetadata>), StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(List<object>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-        public async Task<IActionResult> ExtractMetadataFromMultipleFiles(List<IFormFile> files)
+        public async Task<IActionResult> ExtractMetadataFromMultipleFiles(List<IFormFile> files, [FromQuery] string? documentType = null)
         {
             if (files == null || !files.Any())
                 return BadRequest("At least one file is required.");
@@ -108,8 +137,15 @@ namespace ImageOcrMicroservice.Controllers
             if (files.Count > 10)
                 return BadRequest("Maximum 10 files allowed per batch.");
 
-            var results = new List<DocumentMetadata>();
-            var tasks = new List<Task<DocumentMetadata>>();
+            var results = new List<object>();
+            var tasks = new List<Task<object>>();
+
+            DocumentType? specifiedDocType = null;
+            if (!string.IsNullOrWhiteSpace(documentType) && Enum.TryParse<DocumentType>(documentType, true, out var parsedDocType))
+            {
+                specifiedDocType = parsedDocType;
+                _logger.LogInformation("Using specified document type '{DocumentType}' for batch processing.", specifiedDocType);
+            }
 
             foreach (var file in files)
             {
@@ -119,7 +155,7 @@ namespace ImageOcrMicroservice.Controllers
                     continue;
                 }
 
-                tasks.Add(ProcessSingleFileAsync(file));
+                tasks.Add(ProcessSingleFileAsync(file, specifiedDocType));
             }
 
             try
@@ -127,22 +163,20 @@ namespace ImageOcrMicroservice.Controllers
                 var processedResults = await Task.WhenAll(tasks);
                 results.AddRange(processedResults.Where(r => r != null));
 
-                // Log summary of all extracted information across all files
-                var totalTaxAttestations = results.Sum(r => r.TaxAttestationNumbers.Count);
-                var totalTaxCenters = results.Sum(r => r.TaxCenters.Count);
-                var totalTaxSystems = results.Sum(r => r.TaxSystems.Count);
-                var totalAcfeReferences = results.Sum(r => r.AcfeReferences.Count);
-                var totalLocationDates = results.Sum(r => r.DocumentLocationsAndDates.Count);
-                var totalQuarters = results.Sum(r => r.Quarters.Count);
-                var totalPhones = results.Sum(r => r.PhoneNumbers.Count);
-                var totalEmails = results.Sum(r => r.EmailAddresses.Count);
-                var totalRegimes = results.Sum(r => r.Regimes.Count);
+                // Log comprehensive batch summary
+                LogBatchSummary(results, files.Count);
 
-                _logger.LogInformation("Batch processing completed. Processed {ProcessedCount} out of {TotalCount} files. Extended info extracted: {TaxAttestationCount} attestations, {TaxCenterCount} tax centers, {TaxSystemCount} tax systems, {AcfeCount} ACFE references, {LocationDateCount} location/dates, {QuarterCount} quarters, {PhoneCount} phones, {EmailCount} emails, {RegimeCount} regimes.", 
-                    results.Count, files.Count, totalTaxAttestations, totalTaxCenters, totalTaxSystems,
-                    totalAcfeReferences, totalLocationDates, totalQuarters, totalPhones, totalEmails, totalRegimes);
-
-                return Ok(results);
+                return Ok(new
+                {
+                    Results = results,
+                    Summary = new
+                    {
+                        TotalFilesSubmitted = files.Count,
+                        FilesProcessed = results.Count,
+                        FilesSkipped = files.Count - results.Count,
+                        ProcessingDate = DateTime.UtcNow
+                    }
+                });
             }
             catch (Exception ex)
             {
@@ -151,7 +185,68 @@ namespace ImageOcrMicroservice.Controllers
             }
         }
 
-        private async Task<DocumentMetadata> ProcessSingleFileAsync(IFormFile file)
+        [HttpGet("document-types")]
+        [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
+        public IActionResult GetSupportedDocumentTypes()
+        {
+            try
+            {
+                var supportedTypes = DocumentTypeDetectionService.GetSupportedDocumentTypes()
+                    .Select(type => new
+                    {
+                        Type = type.ToString(),
+                        DisplayName = _documentTypeDetectionService.GetDocumentTypeDisplayName(type),
+                        Patterns = DocumentTypeDetectionService.GetPatternsForDocumentType(type)
+                    })
+                    .ToList();
+
+                return Ok(new
+                {
+                    SupportedDocumentTypes = supportedTypes,
+                    TotalTypes = supportedTypes.Count
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error retrieving supported document types.");
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving document types.");
+            }
+        }
+
+        [HttpPost("validate/{documentType}")]
+        [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult ValidateMetadata([FromRoute] string documentType, [FromBody] DocumentMetadata metadata)
+        {
+            if (!Enum.TryParse<DocumentType>(documentType, true, out var docType))
+            {
+                return BadRequest($"Invalid document type: {documentType}");
+            }
+
+            try
+            {
+                var validationResult = _documentSpecificMetadataService.ValidateDocumentMetadata(metadata, docType);
+                var metadataSummary = _documentSpecificMetadataService.GetMetadataSummary(metadata, docType);
+
+                return Ok(new
+                {
+                    DocumentType = docType.ToString(),
+                    ValidationResult = new
+                    {
+                        validationResult.IsValid,
+                        validationResult.Messages
+                    },
+                    MetadataSummary = metadataSummary
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error validating metadata for document type {DocumentType}.", documentType);
+                return StatusCode(StatusCodes.Status500InternalServerError, "Error validating metadata.");
+            }
+        }
+
+        private async Task<object> ProcessSingleFileAsync(IFormFile file, DocumentType? specifiedDocumentType = null)
         {
             try
             {
@@ -162,12 +257,7 @@ namespace ImageOcrMicroservice.Controllers
                 if (!isImage && !isPdf)
                 {
                     _logger.LogWarning("Invalid file type for '{FileName}'. Skipping.", file.FileName);
-                    return new DocumentMetadata 
-                    { 
-                        DocumentName = Path.GetFileNameWithoutExtension(file.FileName),
-                        DocumentType = "Invalid",
-                        RawText = "Invalid file type" 
-                    };
+                    return CreateErrorResult(file.FileName, "Invalid file type", "Invalid");
                 }
 
                 using var memoryStream = new MemoryStream();
@@ -176,33 +266,165 @@ namespace ImageOcrMicroservice.Controllers
 
                 var extractedText = await Task.Run(() =>
                 {
-                    return isPdf 
-                        ? _ocrService.ProcessPdfAndExtractText(fileBytes) 
+                    return isPdf
+                        ? _ocrService.ProcessPdfAndExtractText(fileBytes)
                         : _ocrService.ProcessImageAndExtractText(fileBytes);
                 });
 
                 if (string.IsNullOrWhiteSpace(extractedText))
                 {
-                    return new DocumentMetadata 
-                    { 
-                        DocumentName = Path.GetFileNameWithoutExtension(file.FileName),
-                        DocumentType = "Empty",
-                        RawText = "OCR process yielded no text." 
-                    };
+                    return CreateErrorResult(file.FileName, "OCR process yielded no text.", "Empty");
                 }
 
-                return _metadataService.ExtractMetadata(extractedText, file.FileName);
+                DocumentMetadata metadata;
+                if (specifiedDocumentType.HasValue)
+                {
+                    metadata = _metadataService.ExtractMetadataForDocumentType(extractedText, specifiedDocumentType.Value, file.FileName);
+                }
+                else
+                {
+                    metadata = _metadataService.ExtractMetadata(extractedText, file.FileName);
+                }
+
+                var extractionStats = _metadataService.GetExtractionStatistics(metadata);
+                var detectedTypeEnum = ParseDocumentTypeFromDisplayName(metadata.DocumentType);
+                var filteredMetadata = CreateFilteredMetadataObject(metadata, detectedTypeEnum);
+
+                var validationResult = _documentSpecificMetadataService.ValidateDocumentMetadata(metadata, detectedTypeEnum);
+
+                return new
+                {
+                    FileName = file.FileName,
+                    Metadata = filteredMetadata,
+                    ExtractionStatistics = extractionStats,
+                    ValidationResult = new
+                    {
+                        validationResult.IsValid,
+                        validationResult.Messages
+                    },
+                    ProcessedAt = DateTime.UtcNow
+                };
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Error processing file '{FileName}'.", file.FileName);
-                return new DocumentMetadata 
-                { 
-                    DocumentName = Path.GetFileNameWithoutExtension(file.FileName),
-                    DocumentType = "Error",
-                    RawText = $"Processing error: {ex.Message}" 
-                };
+                return CreateErrorResult(file.FileName, $"Processing error: {ex.Message}", "Error");
             }
         }
+
+        private object CreateErrorResult(string fileName, string errorMessage, string documentType)
+        {
+            return new
+            {
+                FileName = fileName,
+                Metadata = new DocumentMetadata
+                {
+                    DocumentName = Path.GetFileNameWithoutExtension(fileName),
+                    DocumentType = documentType,
+                    RawText = errorMessage
+                },
+                ExtractionStatistics = new Dictionary<string, object>
+                {
+                    ["TotalFieldsExtracted"] = 0,
+                    ["HasRawText"] = true
+                },
+                ValidationResult = new
+                {
+                    IsValid = false,
+                    Messages = new List<string> { errorMessage }
+                },
+                ProcessedAt = DateTime.UtcNow
+            };
+        }
+
+        private void LogExtractionResults(DocumentMetadata metadata, Dictionary<string, object> stats, ValidationResult validation, string fileName)
+        {
+            _logger.LogInformation(
+                "Metadata extraction completed for '{FileName}'. " +
+                "Document Type: {DocumentType}, " +
+                "Total Fields Extracted: {TotalFields}, " +
+                "NIU Numbers: {NiuCount}, " +
+                "RCCM Numbers: {RccmCount}, " +
+                "Business Names: {BusinessCount}, " +
+                "Tax Attestations: {TaxCount}, " +
+                "Phone Numbers: {PhoneCount}, " +
+                "Email Addresses: {EmailCount}, " +
+                "Validation Valid: {IsValid}",
+                fileName,
+                metadata.DocumentType,
+                stats["TotalFieldsExtracted"],
+                stats["NiuNumbersCount"],
+                stats["RccmNumbersCount"],
+                stats["BusinessNamesCount"],
+                stats["TaxAttestationNumbersCount"],
+                stats["PhoneNumbersCount"],
+                stats["EmailAddressesCount"],
+                validation.IsValid);
+
+            if (!validation.IsValid)
+            {
+                _logger.LogWarning("Validation issues for '{FileName}': {ValidationMessages}",
+                    fileName, string.Join(", ", validation.Messages));
+            }
+        }
+
+        private void LogBatchSummary(List<object> results, int totalFiles)
+        {
+            var successfulResults = results.Where(r =>
+            {
+                var resultDict = r.GetType().GetProperty("ValidationResult")?.GetValue(r) as dynamic;
+                return resultDict?.IsValid == true;
+            }).Count();
+
+            _logger.LogInformation(
+                "Batch processing completed. " +
+                "Total Files: {TotalFiles}, " +
+                "Processed: {ProcessedCount}, " +
+                "Successful: {SuccessfulCount}, " +
+                "Failed/Skipped: {FailedCount}",
+                totalFiles,
+                results.Count,
+                successfulResults,
+                totalFiles - successfulResults);
+        }
+
+        private Dictionary<string, object> CreateFilteredMetadataObject(DocumentMetadata metadata, DocumentType docType)
+        {
+            // Get the set of allowed field names for the given document type
+            var allowedFields = DocumentTypeFieldMapping.GetFieldsForDocumentType(docType);
+            var filteredMetadata = new Dictionary<string, object>();
+
+            var properties = typeof(DocumentMetadata).GetProperties();
+
+            foreach (var property in properties)
+            {
+                if (allowedFields.Contains(property.Name))
+                {
+                    filteredMetadata[property.Name] = property.GetValue(metadata);
+                }
+            }
+
+            return filteredMetadata;
+        }
+
+        private DocumentType ParseDocumentTypeFromDisplayName(string displayName)
+        {
+            if (string.IsNullOrWhiteSpace(displayName))
+                return DocumentType.Unknown;
+
+            var displayNameToEnum = new Dictionary<string, DocumentType>(StringComparer.OrdinalIgnoreCase)
+            {
+                { "Formulaire Agrégé OM", DocumentType.FormulaireAgregeOM },
+                { "CNI ou Récépissé", DocumentType.CniOrRecipice },
+                { "Registre du Commerce", DocumentType.RegistreCommerce },
+                { "Carte Contribuable Valide", DocumentType.CarteContribuabledValide },
+                { "Attestation Fiscale", DocumentType.AttestationFiscale }
+            };
+
+            return displayNameToEnum.TryGetValue(displayName, out var docType) 
+                ? docType 
+                : DocumentType.Unknown;
+        }
+
     }
 }

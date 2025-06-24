@@ -14,13 +14,13 @@ Log.Logger = new LoggerConfiguration()
 builder.Host.UseSerilog();
 try
 {
-    Log.Information("Application starting up");
-
-    builder.Services.AddControllers();
+    Log.Information("Application starting up");    builder.Services.AddControllers();
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
 
     builder.Services.AddScoped<OcrService>();
+    builder.Services.AddScoped<DocumentTypeDetectionService>();
+    builder.Services.AddScoped<DocumentSpecificMetadataService>();
     builder.Services.AddScoped<MetadataService>();
 
     var app = builder.Build();

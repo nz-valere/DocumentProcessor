@@ -31,6 +31,7 @@ This .NET 8 microservice takes an image or a PDF file, preprocesses it, extracts
 2.  **Restore .NET dependencies:** `dotnet restore`
 3.  **Download Tesseract Language Data** (see Prerequisites).
 4.  **Download Hunspell Dictionaries** (see Prerequisites).
+4.  **Download gs10051w64 for pdf upload support ** (see Prerequisites).
 5.  **Native Dependencies (if not using Docker):**
     -   Ghostscript for PDF processing (Magick.NET).
     -   NHunspell usually bundles its native components (`Hunspellx64.dll`/`Hunspellx86.dll`), but ensure your environment can run them.
@@ -57,6 +58,7 @@ This .NET 8 microservice takes an image or a PDF file, preprocesses it, extracts
 -   Tesseract
 -   Magick.NET
 -   NHunspell
+-   gs10051w64
 
 ## Further Enhancements (Language Modeling)
 

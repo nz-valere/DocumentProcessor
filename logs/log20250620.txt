@@ -1,0 +1,1208 @@
+2025-06-20 08:21:40 [INF] Application starting up
+2025-06-20 08:21:40 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-06-20 08:21:40 [DBG] Hosting starting
+2025-06-20 08:21:40 [INF] Now listening on: "http://localhost:5190"
+2025-06-20 08:21:40 [DBG] Loaded hosting startup assembly "DocumentProcessor.API"
+2025-06-20 08:21:40 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 08:21:40 [INF] Hosting environment: "Development"
+2025-06-20 08:21:40 [INF] Content root path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor"
+2025-06-20 08:21:40 [DBG] Hosting started
+2025-06-20 09:06:30 [DBG] Connection id ""0HNDFQ5EPD1P9"" accepted.
+2025-06-20 09:06:30 [DBG] Connection id ""0HNDFQ5EPD1P9"" started.
+2025-06-20 09:06:30 [DBG] Connection id ""0HNDFQ5EPD1PA"" accepted.
+2025-06-20 09:06:30 [DBG] Connection id ""0HNDFQ5EPD1PA"" started.
+2025-06-20 09:06:30 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/index.html""" - null null
+2025-06-20 09:06:31 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-06-20 09:06:31 [DBG] No candidates found for the request path '"/swagger/index.html"'
+2025-06-20 09:06:31 [DBG] Request did not match any endpoints
+2025-06-20 09:06:31 [DBG] Connection id ""0HNDFQ5EPD1P9"" completed keep alive response.
+2025-06-20 09:06:31 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 94.6504ms
+2025-06-20 09:06:31 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/v1/swagger.json""" - null null
+2025-06-20 09:06:31 [DBG] No candidates found for the request path '"/swagger/v1/swagger.json"'
+2025-06-20 09:06:31 [DBG] Request did not match any endpoints
+2025-06-20 09:06:31 [DBG] Connection id ""0HNDFQ5EPD1P9"" completed keep alive response.
+2025-06-20 09:06:31 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 77.0608ms
+2025-06-20 09:06:38 [DBG] Connection id ""0HNDFQ5EPD1PA"" received FIN.
+2025-06-20 09:06:38 [DBG] Connection id ""0HNDFQ5EPD1P9"" received FIN.
+2025-06-20 09:06:38 [DBG] Connection id ""0HNDFQ5EPD1PA"" disconnecting.
+2025-06-20 09:06:38 [DBG] Connection id ""0HNDFQ5EPD1P9"" disconnecting.
+2025-06-20 09:06:38 [DBG] Connection id ""0HNDFQ5EPD1PA"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 09:06:38 [DBG] Connection id ""0HNDFQ5EPD1P9"" stopped.
+2025-06-20 09:06:38 [DBG] Connection id ""0HNDFQ5EPD1P9"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 09:06:38 [DBG] Connection id ""0HNDFQ5EPD1PA"" stopped.
+2025-06-20 09:20:24 [INF] Application starting up
+2025-06-20 09:20:24 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-06-20 09:20:24 [DBG] Hosting starting
+2025-06-20 09:20:24 [INF] Now listening on: "http://localhost:5190"
+2025-06-20 09:20:24 [DBG] Loaded hosting startup assembly "DocumentProcessor.API"
+2025-06-20 09:20:24 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 09:20:24 [INF] Hosting environment: "Development"
+2025-06-20 09:20:24 [INF] Content root path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor"
+2025-06-20 09:20:24 [DBG] Hosting started
+2025-06-20 09:33:40 [INF] Application starting up
+2025-06-20 09:33:40 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-06-20 09:33:40 [DBG] Hosting starting
+2025-06-20 09:33:40 [INF] Now listening on: "http://localhost:5190"
+2025-06-20 09:33:40 [DBG] Loaded hosting startup assembly "DocumentProcessor.API"
+2025-06-20 09:33:40 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 09:33:40 [INF] Hosting environment: "Development"
+2025-06-20 09:33:40 [INF] Content root path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor"
+2025-06-20 09:33:40 [DBG] Hosting started
+2025-06-20 09:33:40 [DBG] Connection id ""0HNDFQKKBN1IU"" accepted.
+2025-06-20 09:33:40 [DBG] Connection id ""0HNDFQKKBN1IU"" started.
+2025-06-20 09:33:40 [DBG] Connection id ""0HNDFQKKBN1IV"" accepted.
+2025-06-20 09:33:40 [DBG] Connection id ""0HNDFQKKBN1IV"" started.
+2025-06-20 09:33:40 [DBG] Connection id ""0HNDFQKKBN1J0"" accepted.
+2025-06-20 09:33:40 [DBG] Connection id ""0HNDFQKKBN1J0"" started.
+2025-06-20 09:33:40 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/index.html""" - null null
+2025-06-20 09:33:40 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-06-20 09:33:40 [DBG] No candidates found for the request path '"/swagger/index.html"'
+2025-06-20 09:33:40 [DBG] Request did not match any endpoints
+2025-06-20 09:33:40 [DBG] Connection id ""0HNDFQKKBN1IU"" completed keep alive response.
+2025-06-20 09:33:40 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 91.202ms
+2025-06-20 09:33:40 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/v1/swagger.json""" - null null
+2025-06-20 09:33:40 [DBG] No candidates found for the request path '"/swagger/v1/swagger.json"'
+2025-06-20 09:33:40 [DBG] Request did not match any endpoints
+2025-06-20 09:33:40 [DBG] Connection id ""0HNDFQKKBN1IU"" completed keep alive response.
+2025-06-20 09:33:40 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 70.9536ms
+2025-06-20 09:35:03 [DBG] Connection id ""0HNDFQKKBN1J0"" received FIN.
+2025-06-20 09:35:03 [DBG] Connection id ""0HNDFQKKBN1IV"" received FIN.
+2025-06-20 09:35:03 [DBG] Connection id ""0HNDFQKKBN1J0"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 09:35:03 [DBG] Connection id ""0HNDFQKKBN1IV"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 09:35:03 [DBG] Connection id ""0HNDFQKKBN1J0"" disconnecting.
+2025-06-20 09:35:03 [DBG] Connection id ""0HNDFQKKBN1IV"" disconnecting.
+2025-06-20 09:35:03 [DBG] Connection id ""0HNDFQKKBN1J0"" stopped.
+2025-06-20 09:35:03 [DBG] Connection id ""0HNDFQKKBN1IV"" stopped.
+2025-06-20 09:35:51 [DBG] Connection id ""0HNDFQKKBN1IU"" disconnecting.
+2025-06-20 09:35:51 [DBG] Connection id ""0HNDFQKKBN1IU"" stopped.
+2025-06-20 09:35:51 [DBG] Connection id ""0HNDFQKKBN1IU"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 09:45:15 [INF] Application is shutting down...
+2025-06-20 09:45:15 [DBG] Hosting stopping
+2025-06-20 09:45:15 [DBG] Hosting stopped
+2025-06-20 09:45:21 [INF] Application starting up
+2025-06-20 09:45:21 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-06-20 09:45:21 [DBG] Hosting starting
+2025-06-20 09:45:21 [INF] Now listening on: "http://localhost:5190"
+2025-06-20 09:45:21 [DBG] Loaded hosting startup assembly "DocumentProcessor.API"
+2025-06-20 09:45:21 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 09:45:21 [INF] Hosting environment: "Development"
+2025-06-20 09:45:21 [INF] Content root path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor"
+2025-06-20 09:45:21 [DBG] Hosting started
+2025-06-20 09:45:27 [DBG] Connection id ""0HNDFQR791AHP"" accepted.
+2025-06-20 09:45:27 [DBG] Connection id ""0HNDFQR791AHP"" started.
+2025-06-20 09:45:27 [DBG] Connection id ""0HNDFQR791AHQ"" accepted.
+2025-06-20 09:45:27 [DBG] Connection id ""0HNDFQR791AHQ"" started.
+2025-06-20 09:45:28 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/index.html""" - null null
+2025-06-20 09:45:28 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-06-20 09:45:28 [DBG] No candidates found for the request path '"/swagger/index.html"'
+2025-06-20 09:45:28 [DBG] Request did not match any endpoints
+2025-06-20 09:45:28 [DBG] Connection id ""0HNDFQR791AHP"" completed keep alive response.
+2025-06-20 09:45:28 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 77.5077ms
+2025-06-20 09:45:28 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/v1/swagger.json""" - null null
+2025-06-20 09:45:28 [DBG] No candidates found for the request path '"/swagger/v1/swagger.json"'
+2025-06-20 09:45:28 [DBG] Request did not match any endpoints
+2025-06-20 09:45:28 [DBG] Connection id ""0HNDFQR791AHP"" completed keep alive response.
+2025-06-20 09:45:28 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 88.8857ms
+2025-06-20 09:47:04 [DBG] Connection id ""0HNDFQR791AHQ"" received FIN.
+2025-06-20 09:47:04 [DBG] Connection id ""0HNDFQR791AHQ"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 09:47:04 [DBG] Connection id ""0HNDFQR791AHQ"" disconnecting.
+2025-06-20 09:47:04 [DBG] Connection id ""0HNDFQR791AHQ"" stopped.
+2025-06-20 09:47:26 [INF] Application is shutting down...
+2025-06-20 09:47:26 [DBG] Hosting stopping
+2025-06-20 09:47:26 [DBG] Connection id ""0HNDFQR791AHP"" disconnecting.
+2025-06-20 09:47:26 [DBG] Connection id ""0HNDFQR791AHP"" stopped.
+2025-06-20 09:47:26 [DBG] Connection id ""0HNDFQR791AHP"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 09:47:26 [DBG] Hosting stopped
+2025-06-20 09:47:30 [INF] Application starting up
+2025-06-20 09:47:30 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-06-20 09:47:30 [DBG] Hosting starting
+2025-06-20 09:47:30 [INF] Now listening on: "http://localhost:5190"
+2025-06-20 09:47:30 [DBG] Loaded hosting startup assembly "DocumentProcessor.API"
+2025-06-20 09:47:30 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 09:47:30 [INF] Hosting environment: "Development"
+2025-06-20 09:47:30 [INF] Content root path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor"
+2025-06-20 09:47:30 [DBG] Hosting started
+2025-06-20 09:47:38 [DBG] Connection id ""0HNDFQSE7VGVQ"" accepted.
+2025-06-20 09:47:38 [DBG] Connection id ""0HNDFQSE7VGVQ"" started.
+2025-06-20 09:47:38 [DBG] Connection id ""0HNDFQSE7VGVR"" accepted.
+2025-06-20 09:47:38 [DBG] Connection id ""0HNDFQSE7VGVR"" started.
+2025-06-20 09:47:38 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/index.html""" - null null
+2025-06-20 09:47:38 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-06-20 09:47:38 [DBG] No candidates found for the request path '"/swagger/index.html"'
+2025-06-20 09:47:38 [DBG] Request did not match any endpoints
+2025-06-20 09:47:38 [DBG] Connection id ""0HNDFQSE7VGVQ"" completed keep alive response.
+2025-06-20 09:47:38 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 79.1333ms
+2025-06-20 09:47:39 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/v1/swagger.json""" - null null
+2025-06-20 09:47:39 [DBG] No candidates found for the request path '"/swagger/v1/swagger.json"'
+2025-06-20 09:47:39 [DBG] Request did not match any endpoints
+2025-06-20 09:47:39 [DBG] Connection id ""0HNDFQSE7VGVQ"" completed keep alive response.
+2025-06-20 09:47:39 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 76.9913ms
+2025-06-20 09:48:18 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract-batch""" - "multipart/form-data; boundary=----WebKitFormBoundaryRLBzAALS8dPj3BdT" 2169272
+2025-06-20 09:48:18 [DBG] Connection id ""0HNDFQSE7VGVQ"" paused.
+2025-06-20 09:48:18 [DBG] 1 candidate(s) found for the request path '"/api/Metadata/extract-batch"'
+2025-06-20 09:48:18 [DBG] Endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromMultipleFiles (DocumentProcessor.API)"' with route pattern '"api/Metadata/extract-batch"' is valid for the request path '"/api/Metadata/extract-batch"'
+2025-06-20 09:48:18 [DBG] Request matched endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromMultipleFiles (DocumentProcessor.API)"'
+2025-06-20 09:48:18 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-20 09:48:18 [WRN] Failed to determine the https port for redirect.
+2025-06-20 09:48:18 [INF] Executing endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromMultipleFiles (DocumentProcessor.API)"'
+2025-06-20 09:48:18 [INF] Route matched with "{action = \"ExtractMetadataFromMultipleFiles\", controller = \"Metadata\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ExtractMetadataFromMultipleFiles(System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile])" on controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API").
+2025-06-20 09:48:18 [DBG] Execution plan of "authorization" filters (in the following order): ["None"]
+2025-06-20 09:48:18 [DBG] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ConsumesAttribute"]
+2025-06-20 09:48:18 [DBG] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-20 09:48:18 [DBG] Execution plan of "exception" filters (in the following order): ["None"]
+2025-06-20 09:48:18 [DBG] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-20 09:48:18 [DBG] Executing controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 09:48:18 [INF] Initializing Tesseract engine with tessdata path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\tessdata" and model: "fra"
+2025-06-20 09:48:18 [INF] Tesseract engine initialized successfully
+2025-06-20 09:48:18 [DBG] Executed controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 09:48:18 [DBG] Connection id ""0HNDFQSE7VGVQ"", Request id ""0HNDFQSE7VGVQ:00000003"": started reading request body.
+2025-06-20 09:48:18 [DBG] Connection id ""0HNDFQSE7VGVQ"" resumed.
+2025-06-20 09:48:18 [DBG] Connection id ""0HNDFQSE7VGVQ"", Request id ""0HNDFQSE7VGVQ:00000003"": done reading request body.
+2025-06-20 09:48:18 [DBG] Attempting to bind parameter '"files"' of type '"System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]"' ...
+2025-06-20 09:48:18 [DBG] Attempting to bind parameter '"files"' of type '"System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]"' using the name '"files"' in request data ...
+2025-06-20 09:48:18 [DBG] Done attempting to bind parameter '"files"' of type '"System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]"'.
+2025-06-20 09:48:18 [DBG] Done attempting to bind parameter '"files"' of type '"System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]"'.
+2025-06-20 09:48:18 [DBG] Attempting to validate the bound parameter '"files"' of type '"System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]"' ...
+2025-06-20 09:48:18 [DBG] Done attempting to validate the bound parameter '"files"' of type '"System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]"'.
+2025-06-20 09:48:19 [INF] Starting PDF OCR processing for 490959 bytes
+2025-06-20 09:48:19 [INF] Starting PDF OCR processing for 479169 bytes
+2025-06-20 09:48:19 [INF] Starting PDF OCR processing for 1198568 bytes
+2025-06-20 09:48:20 [INF] PDF processed successfully. Processing 1 pages
+2025-06-20 09:48:20 [DBG] Processing page 1/1
+2025-06-20 09:48:21 [INF] PDF processed successfully. Processing 1 pages
+2025-06-20 09:48:21 [DBG] Processing page 1/1
+2025-06-20 09:48:21 [DBG] Starting OCR processing on image data of 2988763 bytes
+2025-06-20 09:48:22 [INF] PDF processed successfully. Processing 2 pages
+2025-06-20 09:48:22 [DBG] Processing page 1/2
+2025-06-20 09:48:22 [DBG] Starting OCR processing on image data of 3496461 bytes
+2025-06-20 09:48:22 [ERR] Error during Tesseract OCR processing
+System.InvalidOperationException: Only one image can be processed at once. Please make sure you dispose of the page once your finished with it.
+   at Tesseract.TesseractEngine.Process(Pix image, String inputName, Rect region, Nullable`1 pageSegMode)
+   at Tesseract.TesseractEngine.Process(Pix image, Nullable`1 pageSegMode)
+   at ImageOcrMicroservice.Services.OcrService.PerformOcrOnImage(Byte[] imageBytes) in C:\Users\czar\Documents\Stage\model\DocumentProcessor\Services\OcrService.cs:line 42
+2025-06-20 09:48:22 [WRN] No text extracted from page 1
+2025-06-20 09:48:22 [INF] PDF processing completed. Successfully processed 0/1 pages
+2025-06-20 09:48:22 [INF] Starting metadata extraction from raw text.
+2025-06-20 09:48:22 [INF] Finished metadata extraction. Found 0 NIU(s), 0 RCCM(s), 0 Date(s), 0 Name(s), 0 Registration(s), 0 Delivered Date(s), 0 Duration(s), 0 Tax Attestation(s), 0 Tax Center(s), 0 Tax System(s), 0 ACFE Reference(s), 0 Location/Date(s), 0 Quarter(s), 0 Phone(s), 0 Email(s), 0 Regime(s).
+2025-06-20 09:48:23 [DBG] Starting OCR processing on image data of 3920374 bytes
+2025-06-20 09:48:23 [ERR] Error during Tesseract OCR processing
+System.InvalidOperationException: Only one image can be processed at once. Please make sure you dispose of the page once your finished with it.
+   at Tesseract.TesseractEngine.Process(Pix image, String inputName, Rect region, Nullable`1 pageSegMode)
+   at Tesseract.TesseractEngine.Process(Pix image, Nullable`1 pageSegMode)
+   at ImageOcrMicroservice.Services.OcrService.PerformOcrOnImage(Byte[] imageBytes) in C:\Users\czar\Documents\Stage\model\DocumentProcessor\Services\OcrService.cs:line 42
+2025-06-20 09:48:23 [WRN] No text extracted from page 1
+2025-06-20 09:48:23 [DBG] Processing page 2/2
+2025-06-20 09:48:24 [INF] OCR completed successfully. Confidence: 0.87%, Text length: 1952 characters
+2025-06-20 09:48:24 [WRN] Low OCR confidence detected: 0.87%. Text quality may be poor
+2025-06-20 09:48:24 [INF] PDF processing completed. Successfully processed 1/1 pages
+2025-06-20 09:48:24 [INF] Starting metadata extraction from raw text.
+2025-06-20 09:48:24 [INF] Finished metadata extraction. Found 1 NIU(s), 1 RCCM(s), 1 Date(s), 1 Name(s), 0 Registration(s), 0 Delivered Date(s), 0 Duration(s), 1 Tax Attestation(s), 1 Tax Center(s), 1 Tax System(s), 0 ACFE Reference(s), 1 Location/Date(s), 0 Quarter(s), 0 Phone(s), 0 Email(s), 0 Regime(s).
+2025-06-20 09:48:24 [DBG] Starting OCR processing on image data of 4085823 bytes
+2025-06-20 09:48:27 [INF] OCR completed successfully. Confidence: 0.61%, Text length: 2093 characters
+2025-06-20 09:48:27 [WRN] Low OCR confidence detected: 0.61%. Text quality may be poor
+2025-06-20 09:48:27 [INF] PDF processing completed. Successfully processed 1/2 pages
+2025-06-20 09:48:27 [INF] Starting metadata extraction from raw text.
+2025-06-20 09:48:27 [INF] Finished metadata extraction. Found 0 NIU(s), 1 RCCM(s), 2 Date(s), 2 Name(s), 0 Registration(s), 0 Delivered Date(s), 0 Duration(s), 0 Tax Attestation(s), 0 Tax Center(s), 0 Tax System(s), 0 ACFE Reference(s), 1 Location/Date(s), 0 Quarter(s), 0 Phone(s), 0 Email(s), 0 Regime(s).
+2025-06-20 09:48:27 [INF] Batch processing completed. Processed 3 out of 3 files. Extended info extracted: 1 attestations, 1 tax centers, 1 tax systems, 0 ACFE references, 2 location/dates, 0 quarters, 0 phones, 0 emails, 0 regimes.
+2025-06-20 09:48:27 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-20 09:48:27 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2025-06-20 09:48:27 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2025-06-20 09:48:27 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-06-20 09:48:27 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-06-20 09:48:27 [DBG] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"' and content type '"application/json"' to write the response.
+2025-06-20 09:48:27 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[ImageOcrMicroservice.Models.DocumentMetadata, DocumentProcessor.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2025-06-20 09:48:27 [INF] Executed action "ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromMultipleFiles (DocumentProcessor.API)" in 9044.2957ms
+2025-06-20 09:48:27 [INF] Executed endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromMultipleFiles (DocumentProcessor.API)"'
+2025-06-20 09:48:27 [DBG] Connection id ""0HNDFQSE7VGVQ"" completed keep alive response.
+2025-06-20 09:48:27 [DBG] Disposing OcrService and Tesseract engine
+2025-06-20 09:48:27 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract-batch""" - 200 null "application/json; charset=utf-8" 9118.7838ms
+2025-06-20 09:48:40 [DBG] Connection id ""0HNDFQSE7VGVR"" received FIN.
+2025-06-20 09:48:40 [DBG] Connection id ""0HNDFQSE7VGVR"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 09:48:40 [DBG] Connection id ""0HNDFQSE7VGVR"" disconnecting.
+2025-06-20 09:48:40 [DBG] Connection id ""0HNDFQSE7VGVR"" stopped.
+2025-06-20 09:50:38 [DBG] Connection id ""0HNDFQSE7VGVQ"" disconnecting.
+2025-06-20 09:50:38 [DBG] Connection id ""0HNDFQSE7VGVQ"" stopped.
+2025-06-20 09:50:38 [DBG] Connection id ""0HNDFQSE7VGVQ"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 09:52:36 [DBG] Connection id ""0HNDFQSE7VGVS"" accepted.
+2025-06-20 09:52:36 [DBG] Connection id ""0HNDFQSE7VGVS"" started.
+2025-06-20 09:52:36 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/index.html""" - null null
+2025-06-20 09:52:36 [DBG] Connection id ""0HNDFQSE7VGVT"" accepted.
+2025-06-20 09:52:36 [DBG] No candidates found for the request path '"/swagger/index.html"'
+2025-06-20 09:52:36 [DBG] Connection id ""0HNDFQSE7VGVT"" started.
+2025-06-20 09:52:36 [DBG] Request did not match any endpoints
+2025-06-20 09:52:36 [DBG] Connection id ""0HNDFQSE7VGVS"" completed keep alive response.
+2025-06-20 09:52:36 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 6.9979ms
+2025-06-20 09:52:36 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/v1/swagger.json""" - null null
+2025-06-20 09:52:36 [DBG] No candidates found for the request path '"/swagger/v1/swagger.json"'
+2025-06-20 09:52:36 [DBG] Request did not match any endpoints
+2025-06-20 09:52:36 [DBG] Connection id ""0HNDFQSE7VGVS"" completed keep alive response.
+2025-06-20 09:52:36 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 14.3776ms
+2025-06-20 09:52:50 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract""" - "multipart/form-data; boundary=----WebKitFormBoundaryOa0TztK8mUYN0RVr" 479395
+2025-06-20 09:52:50 [DBG] 1 candidate(s) found for the request path '"/api/Metadata/extract"'
+2025-06-20 09:52:50 [DBG] Endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"' with route pattern '"api/Metadata/extract"' is valid for the request path '"/api/Metadata/extract"'
+2025-06-20 09:52:50 [DBG] Request matched endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 09:52:50 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-20 09:52:50 [INF] Executing endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 09:52:50 [INF] Route matched with "{action = \"ExtractMetadataFromFile\", controller = \"Metadata\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ExtractMetadataFromFile(Microsoft.AspNetCore.Http.IFormFile)" on controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API").
+2025-06-20 09:52:50 [DBG] Execution plan of "authorization" filters (in the following order): ["None"]
+2025-06-20 09:52:50 [DBG] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ConsumesAttribute"]
+2025-06-20 09:52:50 [DBG] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-20 09:52:50 [DBG] Execution plan of "exception" filters (in the following order): ["None"]
+2025-06-20 09:52:50 [DBG] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-20 09:52:50 [DBG] Executing controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 09:52:50 [INF] Initializing Tesseract engine with tessdata path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\tessdata" and model: "fra"
+2025-06-20 09:52:50 [INF] Tesseract engine initialized successfully
+2025-06-20 09:52:50 [DBG] Executed controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 09:52:50 [DBG] Connection id ""0HNDFQSE7VGVS"", Request id ""0HNDFQSE7VGVS:00000003"": started reading request body.
+2025-06-20 09:52:50 [DBG] Connection id ""0HNDFQSE7VGVS"", Request id ""0HNDFQSE7VGVS:00000003"": done reading request body.
+2025-06-20 09:52:50 [DBG] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2025-06-20 09:52:50 [DBG] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' using the name '"file"' in request data ...
+2025-06-20 09:52:50 [DBG] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 09:52:50 [DBG] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 09:52:50 [DBG] Attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2025-06-20 09:52:50 [DBG] Done attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 09:52:50 [INF] Step 1: Starting OCR process for file '"ATTESTATIONNONREDEVANCE3MOIS_20250529122057.pdf"'.
+2025-06-20 09:52:50 [INF] Starting PDF OCR processing for 479169 bytes
+2025-06-20 09:52:52 [INF] PDF processed successfully. Processing 1 pages
+2025-06-20 09:52:52 [DBG] Processing page 1/1
+2025-06-20 09:52:53 [DBG] Starting OCR processing on image data of 3496461 bytes
+2025-06-20 09:52:55 [INF] OCR completed successfully. Confidence: 0.87%, Text length: 1294 characters
+2025-06-20 09:52:55 [WRN] Low OCR confidence detected: 0.87%. Text quality may be poor
+2025-06-20 09:52:55 [INF] PDF processing completed. Successfully processed 1/1 pages
+2025-06-20 09:52:55 [INF] Step 2: Starting metadata extraction from OCR text for file '"ATTESTATIONNONREDEVANCE3MOIS_20250529122057.pdf"'.
+2025-06-20 09:52:55 [INF] Starting metadata extraction from raw text.
+2025-06-20 09:52:55 [INF] Finished metadata extraction. Found 1 NIU(s), 0 RCCM(s), 1 Date(s), 1 Name(s), 0 Registration(s), 0 Delivered Date(s), 0 Duration(s), 0 Tax Attestation(s), 0 Tax Center(s), 0 Tax System(s), 1 ACFE Reference(s), 0 Location/Date(s), 1 Quarter(s), 1 Phone(s), 1 Email(s), 1 Regime(s).
+2025-06-20 09:52:55 [INF] Extended information extracted: 0 attestation number(s), 0 tax center(s), 0 tax system(s), 1 ACFE reference(s), 0 location/date(s), 1 quarter(s), 1 phone number(s), 1 email(s), 1 regime(s) for file '"ATTESTATIONNONREDEVANCE3MOIS_20250529122057.pdf"'.
+2025-06-20 09:52:55 [INF] Step 3: Returning structured metadata for file '"ATTESTATIONNONREDEVANCE3MOIS_20250529122057.pdf"'.
+2025-06-20 09:52:55 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-20 09:52:55 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2025-06-20 09:52:55 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2025-06-20 09:52:55 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-06-20 09:52:55 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-06-20 09:52:55 [DBG] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"' and content type '"application/json"' to write the response.
+2025-06-20 09:52:55 [INF] Executing "OkObjectResult", writing value of type '"ImageOcrMicroservice.Models.DocumentMetadata"'.
+2025-06-20 09:52:55 [INF] Executed action "ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)" in 4553.2212ms
+2025-06-20 09:52:55 [INF] Executed endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 09:52:55 [DBG] Connection id ""0HNDFQSE7VGVS"" completed keep alive response.
+2025-06-20 09:52:55 [DBG] Disposing OcrService and Tesseract engine
+2025-06-20 09:52:55 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract""" - 200 null "application/json; charset=utf-8" 4586.2349ms
+2025-06-20 09:53:56 [DBG] Connection id ""0HNDFQSE7VGVT"" received FIN.
+2025-06-20 09:53:56 [DBG] Connection id ""0HNDFQSE7VGVT"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 09:53:56 [DBG] Connection id ""0HNDFQSE7VGVT"" disconnecting.
+2025-06-20 09:53:56 [DBG] Connection id ""0HNDFQSE7VGVT"" stopped.
+2025-06-20 09:55:05 [DBG] Connection id ""0HNDFQSE7VGVS"" disconnecting.
+2025-06-20 09:55:05 [DBG] Connection id ""0HNDFQSE7VGVS"" stopped.
+2025-06-20 09:55:05 [DBG] Connection id ""0HNDFQSE7VGVS"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 11:11:22 [INF] Application is shutting down...
+2025-06-20 11:11:22 [DBG] Hosting stopping
+2025-06-20 11:11:22 [DBG] Hosting stopped
+2025-06-20 11:11:30 [INF] Application starting up
+2025-06-20 11:11:30 [FTL] Application terminated unexpectedly
+System.AggregateException: Some services are not able to be constructed (Error while validating the service descriptor 'ServiceType: ImageOcrMicroservice.Services.MetadataService Lifetime: Scoped ImplementationType: ImageOcrMicroservice.Services.MetadataService': Unable to resolve service for type 'ImageOcrMicroservice.Services.DocumentClassifierService' while attempting to activate 'ImageOcrMicroservice.Services.MetadataService'.)
+ ---> System.InvalidOperationException: Error while validating the service descriptor 'ServiceType: ImageOcrMicroservice.Services.MetadataService Lifetime: Scoped ImplementationType: ImageOcrMicroservice.Services.MetadataService': Unable to resolve service for type 'ImageOcrMicroservice.Services.DocumentClassifierService' while attempting to activate 'ImageOcrMicroservice.Services.MetadataService'.
+ ---> System.InvalidOperationException: Unable to resolve service for type 'ImageOcrMicroservice.Services.DocumentClassifierService' while attempting to activate 'ImageOcrMicroservice.Services.MetadataService'.
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateArgumentCallSites(ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain, ParameterInfo[] parameters, Boolean throwIfCallSiteNotFound)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.CreateConstructorCallSite(ResultCache lifetime, ServiceIdentifier serviceIdentifier, Type implementationType, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.TryCreateExact(ServiceDescriptor descriptor, ServiceIdentifier serviceIdentifier, CallSiteChain callSiteChain, Int32 slot)
+   at Microsoft.Extensions.DependencyInjection.ServiceLookup.CallSiteFactory.GetCallSite(ServiceDescriptor serviceDescriptor, CallSiteChain callSiteChain)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.ValidateService(ServiceDescriptor descriptor)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   --- End of inner exception stack trace ---
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider..ctor(ICollection`1 serviceDescriptors, ServiceProviderOptions options)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionContainerBuilderExtensions.BuildServiceProvider(IServiceCollection services, ServiceProviderOptions options)
+   at Microsoft.Extensions.Hosting.HostApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Builder.WebApplicationBuilder.Build()
+   at Program.<Main>$(String[] args) in C:\Users\czar\Documents\Stage\model\DocumentProcessor\Program.cs:line 26
+2025-06-20 11:14:05 [INF] Application starting up
+2025-06-20 11:14:05 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-06-20 11:14:05 [DBG] Hosting starting
+2025-06-20 11:14:05 [INF] Now listening on: "http://localhost:5190"
+2025-06-20 11:14:05 [DBG] Loaded hosting startup assembly "DocumentProcessor.API"
+2025-06-20 11:14:05 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 11:14:05 [INF] Hosting environment: "Development"
+2025-06-20 11:14:05 [INF] Content root path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor"
+2025-06-20 11:14:05 [DBG] Hosting started
+2025-06-20 11:14:15 [DBG] Connection id ""0HNDFSCQRFMJ3"" accepted.
+2025-06-20 11:14:15 [DBG] Connection id ""0HNDFSCQRFMJ3"" started.
+2025-06-20 11:14:15 [DBG] Connection id ""0HNDFSCQRFMJ4"" accepted.
+2025-06-20 11:14:15 [DBG] Connection id ""0HNDFSCQRFMJ4"" started.
+2025-06-20 11:14:15 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/index.html""" - null null
+2025-06-20 11:14:15 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-06-20 11:14:15 [DBG] No candidates found for the request path '"/swagger/index.html"'
+2025-06-20 11:14:15 [DBG] Request did not match any endpoints
+2025-06-20 11:14:15 [DBG] Connection id ""0HNDFSCQRFMJ3"" completed keep alive response.
+2025-06-20 11:14:15 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 79.3636ms
+2025-06-20 11:14:15 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/v1/swagger.json""" - null null
+2025-06-20 11:14:15 [DBG] No candidates found for the request path '"/swagger/v1/swagger.json"'
+2025-06-20 11:14:15 [DBG] Request did not match any endpoints
+2025-06-20 11:14:15 [DBG] Connection id ""0HNDFSCQRFMJ3"" completed keep alive response.
+2025-06-20 11:14:15 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 82.1281ms
+2025-06-20 11:14:26 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract""" - "multipart/form-data; boundary=----WebKitFormBoundary1VbJ4GIT0f0oBSbR" 491180
+2025-06-20 11:14:26 [DBG] 1 candidate(s) found for the request path '"/api/Metadata/extract"'
+2025-06-20 11:14:26 [DBG] Endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"' with route pattern '"api/Metadata/extract"' is valid for the request path '"/api/Metadata/extract"'
+2025-06-20 11:14:26 [DBG] Request matched endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 11:14:26 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-20 11:14:26 [WRN] Failed to determine the https port for redirect.
+2025-06-20 11:14:26 [INF] Executing endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 11:14:26 [INF] Route matched with "{action = \"ExtractMetadataFromFile\", controller = \"Metadata\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ExtractMetadataFromFile(Microsoft.AspNetCore.Http.IFormFile)" on controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API").
+2025-06-20 11:14:26 [DBG] Execution plan of "authorization" filters (in the following order): ["None"]
+2025-06-20 11:14:26 [DBG] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ConsumesAttribute"]
+2025-06-20 11:14:26 [DBG] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-20 11:14:26 [DBG] Execution plan of "exception" filters (in the following order): ["None"]
+2025-06-20 11:14:26 [DBG] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-20 11:14:26 [DBG] Executing controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 11:14:26 [INF] Initializing Tesseract engine with tessdata path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\tessdata" and model: "fra"
+2025-06-20 11:14:26 [INF] Tesseract engine initialized successfully
+2025-06-20 11:14:26 [DBG] Executed controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 11:14:26 [DBG] Connection id ""0HNDFSCQRFMJ3"", Request id ""0HNDFSCQRFMJ3:00000003"": started reading request body.
+2025-06-20 11:14:26 [DBG] Connection id ""0HNDFSCQRFMJ3"", Request id ""0HNDFSCQRFMJ3:00000003"": done reading request body.
+2025-06-20 11:14:26 [DBG] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2025-06-20 11:14:26 [DBG] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' using the name '"file"' in request data ...
+2025-06-20 11:14:26 [DBG] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 11:14:26 [DBG] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 11:14:26 [DBG] Attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2025-06-20 11:14:26 [DBG] Done attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 11:14:26 [INF] Step 1: Starting OCR process for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'.
+2025-06-20 11:14:26 [INF] Starting PDF OCR processing for 490959 bytes
+2025-06-20 11:14:28 [INF] PDF processed successfully. Processing 1 pages
+2025-06-20 11:14:28 [DBG] Processing page 1/1
+2025-06-20 11:14:29 [DBG] Starting OCR processing on image data of 2988763 bytes
+2025-06-20 11:14:31 [INF] OCR completed successfully. Confidence: 0.87%, Text length: 1952 characters
+2025-06-20 11:14:31 [WRN] Low OCR confidence detected: 0.87%. Text quality may be poor
+2025-06-20 11:14:31 [INF] PDF processing completed. Successfully processed 1/1 pages
+2025-06-20 11:14:31 [INF] Step 2: Starting metadata extraction from OCR text for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'.
+2025-06-20 11:14:31 [INF] Orchestrating metadata workflow for file: "CARTECONTRIBUABLEVALIDE_20250529122029.pdf"
+2025-06-20 11:14:31 [DBG] Classifying document based on filename: "cartecontribuablevalide_20250529122029.pdf"
+2025-06-20 11:14:31 [INF] Classification result: CarteContribuabledValide
+2025-06-20 11:14:31 [INF] Performing full data extraction on raw text.
+2025-06-20 11:14:31 [INF] Filtering extracted fields for document type CarteContribuabledValide.
+2025-06-20 11:14:31 [INF] Extended information extracted: 0 attestation number(s), 1 tax center(s), 0 tax system(s), 0 ACFE reference(s), 0 location/date(s), 0 quarter(s), 0 phone number(s), 0 email(s), 0 regime(s) for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'.
+2025-06-20 11:14:31 [INF] Step 3: Returning structured metadata for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'.
+2025-06-20 11:14:31 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-20 11:14:31 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2025-06-20 11:14:31 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2025-06-20 11:14:31 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-06-20 11:14:31 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-06-20 11:14:31 [DBG] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"' and content type '"application/json"' to write the response.
+2025-06-20 11:14:31 [INF] Executing "OkObjectResult", writing value of type '"ImageOcrMicroservice.Models.DocumentMetadata"'.
+2025-06-20 11:14:31 [INF] Executed action "ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)" in 5007.7048ms
+2025-06-20 11:14:31 [INF] Executed endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 11:14:31 [DBG] Connection id ""0HNDFSCQRFMJ3"" completed keep alive response.
+2025-06-20 11:14:31 [DBG] Disposing OcrService and Tesseract engine
+2025-06-20 11:14:31 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract""" - 200 null "application/json; charset=utf-8" 5073.8618ms
+2025-06-20 11:15:16 [DBG] Connection id ""0HNDFSCQRFMJ4"" received FIN.
+2025-06-20 11:15:16 [DBG] Connection id ""0HNDFSCQRFMJ4"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 11:15:16 [DBG] Connection id ""0HNDFSCQRFMJ4"" disconnecting.
+2025-06-20 11:15:16 [DBG] Connection id ""0HNDFSCQRFMJ4"" stopped.
+2025-06-20 11:15:27 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract""" - "multipart/form-data; boundary=----WebKitFormBoundarygiUA8rwvhITOZZLs" 306654
+2025-06-20 11:15:27 [DBG] 1 candidate(s) found for the request path '"/api/Metadata/extract"'
+2025-06-20 11:15:27 [DBG] Endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"' with route pattern '"api/Metadata/extract"' is valid for the request path '"/api/Metadata/extract"'
+2025-06-20 11:15:27 [DBG] Request matched endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 11:15:27 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-20 11:15:27 [INF] Executing endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 11:15:27 [INF] Route matched with "{action = \"ExtractMetadataFromFile\", controller = \"Metadata\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ExtractMetadataFromFile(Microsoft.AspNetCore.Http.IFormFile)" on controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API").
+2025-06-20 11:15:27 [DBG] Execution plan of "authorization" filters (in the following order): ["None"]
+2025-06-20 11:15:27 [DBG] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ConsumesAttribute"]
+2025-06-20 11:15:27 [DBG] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-20 11:15:27 [DBG] Execution plan of "exception" filters (in the following order): ["None"]
+2025-06-20 11:15:27 [DBG] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-20 11:15:27 [DBG] Executing controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 11:15:27 [INF] Initializing Tesseract engine with tessdata path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\tessdata" and model: "fra"
+2025-06-20 11:15:27 [INF] Tesseract engine initialized successfully
+2025-06-20 11:15:27 [DBG] Executed controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 11:15:27 [DBG] Connection id ""0HNDFSCQRFMJ3"", Request id ""0HNDFSCQRFMJ3:00000004"": started reading request body.
+2025-06-20 11:15:27 [DBG] Connection id ""0HNDFSCQRFMJ3"", Request id ""0HNDFSCQRFMJ3:00000004"": done reading request body.
+2025-06-20 11:15:27 [DBG] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2025-06-20 11:15:27 [DBG] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' using the name '"file"' in request data ...
+2025-06-20 11:15:27 [DBG] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 11:15:27 [DBG] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 11:15:27 [DBG] Attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2025-06-20 11:15:27 [DBG] Done attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 11:15:27 [INF] Step 1: Starting OCR process for file '"PLANLOCALISATION_20250606124459.pdf"'.
+2025-06-20 11:15:27 [INF] Starting PDF OCR processing for 306440 bytes
+2025-06-20 11:15:28 [INF] PDF processed successfully. Processing 1 pages
+2025-06-20 11:15:28 [DBG] Processing page 1/1
+2025-06-20 11:15:29 [DBG] Starting OCR processing on image data of 1879905 bytes
+2025-06-20 11:15:29 [INF] OCR completed successfully. Confidence: 0.42%, Text length: 86 characters
+2025-06-20 11:15:29 [WRN] Low OCR confidence detected: 0.42%. Text quality may be poor
+2025-06-20 11:15:29 [INF] PDF processing completed. Successfully processed 1/1 pages
+2025-06-20 11:15:29 [INF] Step 2: Starting metadata extraction from OCR text for file '"PLANLOCALISATION_20250606124459.pdf"'.
+2025-06-20 11:15:29 [INF] Orchestrating metadata workflow for file: "PLANLOCALISATION_20250606124459.pdf"
+2025-06-20 11:15:29 [DBG] Classifying document based on filename: "planlocalisation_20250606124459.pdf"
+2025-06-20 11:15:29 [WRN] Could not classify document '"PLANLOCALISATION_20250606124459.pdf"'. Defaulting to Unknown.
+2025-06-20 11:15:29 [INF] Classification result: Unknown
+2025-06-20 11:15:29 [INF] Performing full data extraction on raw text.
+2025-06-20 11:15:29 [WRN] Unknown document type for "PLANLOCALISATION_20250606124459.pdf". Returning all extracted fields.
+2025-06-20 11:15:29 [INF] Step 3: Returning structured metadata for file '"PLANLOCALISATION_20250606124459.pdf"'.
+2025-06-20 11:15:29 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-20 11:15:29 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2025-06-20 11:15:29 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2025-06-20 11:15:29 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-06-20 11:15:29 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-06-20 11:15:29 [DBG] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"' and content type '"application/json"' to write the response.
+2025-06-20 11:15:29 [INF] Executing "OkObjectResult", writing value of type '"ImageOcrMicroservice.Models.DocumentMetadata"'.
+2025-06-20 11:15:29 [INF] Executed action "ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)" in 2555.895ms
+2025-06-20 11:15:29 [INF] Executed endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 11:15:29 [DBG] Connection id ""0HNDFSCQRFMJ3"" completed keep alive response.
+2025-06-20 11:15:29 [DBG] Disposing OcrService and Tesseract engine
+2025-06-20 11:15:29 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract""" - 200 null "application/json; charset=utf-8" 2587.7093ms
+2025-06-20 11:15:55 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract""" - "multipart/form-data; boundary=----WebKitFormBoundaryl3DIDeCRNhk9bAEh" 284721
+2025-06-20 11:15:55 [DBG] 1 candidate(s) found for the request path '"/api/Metadata/extract"'
+2025-06-20 11:15:55 [DBG] Endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"' with route pattern '"api/Metadata/extract"' is valid for the request path '"/api/Metadata/extract"'
+2025-06-20 11:15:55 [DBG] Request matched endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 11:15:55 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-20 11:15:55 [INF] Executing endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 11:15:55 [INF] Route matched with "{action = \"ExtractMetadataFromFile\", controller = \"Metadata\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ExtractMetadataFromFile(Microsoft.AspNetCore.Http.IFormFile)" on controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API").
+2025-06-20 11:15:55 [DBG] Execution plan of "authorization" filters (in the following order): ["None"]
+2025-06-20 11:15:55 [DBG] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ConsumesAttribute"]
+2025-06-20 11:15:55 [DBG] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-20 11:15:55 [DBG] Execution plan of "exception" filters (in the following order): ["None"]
+2025-06-20 11:15:55 [DBG] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-20 11:15:55 [DBG] Executing controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 11:15:55 [INF] Initializing Tesseract engine with tessdata path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\tessdata" and model: "fra"
+2025-06-20 11:15:55 [INF] Tesseract engine initialized successfully
+2025-06-20 11:15:55 [DBG] Executed controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 11:15:55 [DBG] Connection id ""0HNDFSCQRFMJ3"", Request id ""0HNDFSCQRFMJ3:00000005"": started reading request body.
+2025-06-20 11:15:55 [DBG] Connection id ""0HNDFSCQRFMJ3"", Request id ""0HNDFSCQRFMJ3:00000005"": done reading request body.
+2025-06-20 11:15:55 [DBG] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2025-06-20 11:15:55 [DBG] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' using the name '"file"' in request data ...
+2025-06-20 11:15:55 [DBG] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 11:15:55 [DBG] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 11:15:55 [DBG] Attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2025-06-20 11:15:55 [DBG] Done attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 11:15:55 [INF] Step 1: Starting OCR process for file '"CNIGERANTSTATUTAIRE_20250529122010.pdf"'.
+2025-06-20 11:15:55 [INF] Starting PDF OCR processing for 284504 bytes
+2025-06-20 11:15:56 [INF] PDF processed successfully. Processing 1 pages
+2025-06-20 11:15:56 [DBG] Processing page 1/1
+2025-06-20 11:15:57 [DBG] Starting OCR processing on image data of 1850802 bytes
+2025-06-20 11:15:58 [INF] OCR completed successfully. Confidence: 0.47%, Text length: 678 characters
+2025-06-20 11:15:58 [WRN] Low OCR confidence detected: 0.47%. Text quality may be poor
+2025-06-20 11:15:58 [INF] PDF processing completed. Successfully processed 1/1 pages
+2025-06-20 11:15:58 [INF] Step 2: Starting metadata extraction from OCR text for file '"CNIGERANTSTATUTAIRE_20250529122010.pdf"'.
+2025-06-20 11:15:58 [INF] Orchestrating metadata workflow for file: "CNIGERANTSTATUTAIRE_20250529122010.pdf"
+2025-06-20 11:15:58 [DBG] Classifying document based on filename: "cnigerantstatutaire_20250529122010.pdf"
+2025-06-20 11:15:58 [INF] Classification result: CniOrRecipice
+2025-06-20 11:15:58 [INF] Performing full data extraction on raw text.
+2025-06-20 11:15:58 [INF] Filtering extracted fields for document type CniOrRecipice.
+2025-06-20 11:15:58 [INF] Step 3: Returning structured metadata for file '"CNIGERANTSTATUTAIRE_20250529122010.pdf"'.
+2025-06-20 11:15:58 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-20 11:15:58 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2025-06-20 11:15:58 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2025-06-20 11:15:58 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-06-20 11:15:58 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-06-20 11:15:58 [DBG] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"' and content type '"application/json"' to write the response.
+2025-06-20 11:15:58 [INF] Executing "OkObjectResult", writing value of type '"ImageOcrMicroservice.Models.DocumentMetadata"'.
+2025-06-20 11:15:58 [INF] Executed action "ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)" in 2810.6642ms
+2025-06-20 11:15:58 [INF] Executed endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 11:15:58 [DBG] Connection id ""0HNDFSCQRFMJ3"" completed keep alive response.
+2025-06-20 11:15:58 [DBG] Disposing OcrService and Tesseract engine
+2025-06-20 11:15:58 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract""" - 200 null "application/json; charset=utf-8" 2844.2573ms
+2025-06-20 11:17:03 [DBG] Connection id ""0HNDFSCQRFMJ3"" received FIN.
+2025-06-20 11:17:03 [DBG] Connection id ""0HNDFSCQRFMJ3"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 11:17:03 [DBG] Connection id ""0HNDFSCQRFMJ3"" disconnecting.
+2025-06-20 11:17:03 [DBG] Connection id ""0HNDFSCQRFMJ3"" stopped.
+2025-06-20 11:18:01 [DBG] Connection id ""0HNDFSCQRFMJ5"" accepted.
+2025-06-20 11:18:01 [DBG] Connection id ""0HNDFSCQRFMJ5"" started.
+2025-06-20 11:18:01 [DBG] Connection id ""0HNDFSCQRFMJ5"" paused.
+2025-06-20 11:18:01 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract""" - "multipart/form-data; boundary=----WebKitFormBoundaryPszmtttqXfRUb4xZ" 3650239
+2025-06-20 11:18:01 [DBG] 1 candidate(s) found for the request path '"/api/Metadata/extract"'
+2025-06-20 11:18:01 [DBG] Endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"' with route pattern '"api/Metadata/extract"' is valid for the request path '"/api/Metadata/extract"'
+2025-06-20 11:18:01 [DBG] Request matched endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 11:18:01 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-20 11:18:01 [INF] Executing endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 11:18:01 [INF] Route matched with "{action = \"ExtractMetadataFromFile\", controller = \"Metadata\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ExtractMetadataFromFile(Microsoft.AspNetCore.Http.IFormFile)" on controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API").
+2025-06-20 11:18:01 [DBG] Execution plan of "authorization" filters (in the following order): ["None"]
+2025-06-20 11:18:01 [DBG] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ConsumesAttribute"]
+2025-06-20 11:18:01 [DBG] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-20 11:18:01 [DBG] Execution plan of "exception" filters (in the following order): ["None"]
+2025-06-20 11:18:01 [DBG] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-20 11:18:01 [DBG] Executing controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 11:18:01 [INF] Initializing Tesseract engine with tessdata path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\tessdata" and model: "fra"
+2025-06-20 11:18:01 [INF] Tesseract engine initialized successfully
+2025-06-20 11:18:01 [DBG] Executed controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 11:18:01 [DBG] Connection id ""0HNDFSCQRFMJ5"", Request id ""0HNDFSCQRFMJ5:00000001"": started reading request body.
+2025-06-20 11:18:01 [DBG] Connection id ""0HNDFSCQRFMJ5"" resumed.
+2025-06-20 11:18:01 [DBG] Connection id ""0HNDFSCQRFMJ5"" paused.
+2025-06-20 11:18:01 [DBG] Connection id ""0HNDFSCQRFMJ5"" resumed.
+2025-06-20 11:18:01 [DBG] Connection id ""0HNDFSCQRFMJ5"" paused.
+2025-06-20 11:18:01 [DBG] Connection id ""0HNDFSCQRFMJ5"" resumed.
+2025-06-20 11:18:01 [DBG] Connection id ""0HNDFSCQRFMJ5"", Request id ""0HNDFSCQRFMJ5:00000001"": done reading request body.
+2025-06-20 11:18:01 [DBG] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2025-06-20 11:18:01 [DBG] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' using the name '"file"' in request data ...
+2025-06-20 11:18:01 [DBG] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 11:18:01 [DBG] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 11:18:01 [DBG] Attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2025-06-20 11:18:01 [DBG] Done attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 11:18:01 [INF] Step 1: Starting OCR process for file '"687641056_TCHINDA CHRISTELLE_ALLIANCE INFINIMENT BONABERI 1.pdf"'.
+2025-06-20 11:18:01 [INF] Starting PDF OCR processing for 3649997 bytes
+2025-06-20 11:18:11 [INF] PDF processed successfully. Processing 6 pages
+2025-06-20 11:18:11 [DBG] Processing page 1/6
+2025-06-20 11:18:13 [DBG] Starting OCR processing on image data of 4871940 bytes
+2025-06-20 11:18:14 [INF] OCR completed successfully. Confidence: 0.82%, Text length: 1084 characters
+2025-06-20 11:18:14 [WRN] Low OCR confidence detected: 0.82%. Text quality may be poor
+2025-06-20 11:18:14 [DBG] Processing page 2/6
+2025-06-20 11:18:15 [DBG] Starting OCR processing on image data of 5514733 bytes
+2025-06-20 11:18:19 [INF] OCR completed successfully. Confidence: 0.71%, Text length: 2822 characters
+2025-06-20 11:18:19 [WRN] Low OCR confidence detected: 0.71%. Text quality may be poor
+2025-06-20 11:18:19 [DBG] Processing page 3/6
+2025-06-20 11:18:20 [DBG] Starting OCR processing on image data of 3585188 bytes
+2025-06-20 11:18:22 [INF] OCR completed successfully. Confidence: 0.90%, Text length: 1754 characters
+2025-06-20 11:18:22 [WRN] Low OCR confidence detected: 0.90%. Text quality may be poor
+2025-06-20 11:18:22 [DBG] Processing page 4/6
+2025-06-20 11:18:24 [DBG] Starting OCR processing on image data of 6956401 bytes
+2025-06-20 11:18:26 [INF] OCR completed successfully. Confidence: 0.57%, Text length: 984 characters
+2025-06-20 11:18:26 [WRN] Low OCR confidence detected: 0.57%. Text quality may be poor
+2025-06-20 11:18:26 [DBG] Processing page 5/6
+2025-06-20 11:18:30 [DBG] Starting OCR processing on image data of 8111565 bytes
+2025-06-20 11:18:31 [INF] OCR completed successfully. Confidence: 0.71%, Text length: 40 characters
+2025-06-20 11:18:31 [WRN] Low OCR confidence detected: 0.71%. Text quality may be poor
+2025-06-20 11:18:31 [DBG] Processing page 6/6
+2025-06-20 11:18:32 [DBG] Starting OCR processing on image data of 2165648 bytes
+2025-06-20 11:18:33 [INF] OCR completed successfully. Confidence: 0.37%, Text length: 116 characters
+2025-06-20 11:18:33 [WRN] Low OCR confidence detected: 0.37%. Text quality may be poor
+2025-06-20 11:18:33 [INF] PDF processing completed. Successfully processed 6/6 pages
+2025-06-20 11:18:33 [INF] Step 2: Starting metadata extraction from OCR text for file '"687641056_TCHINDA CHRISTELLE_ALLIANCE INFINIMENT BONABERI 1.pdf"'.
+2025-06-20 11:18:33 [INF] Orchestrating metadata workflow for file: "687641056_TCHINDA CHRISTELLE_ALLIANCE INFINIMENT BONABERI 1.pdf"
+2025-06-20 11:18:33 [DBG] Classifying document based on filename: "687641056_tchinda christelle_alliance infiniment bonaberi 1.pdf"
+2025-06-20 11:18:33 [WRN] Could not classify document '"687641056_TCHINDA CHRISTELLE_ALLIANCE INFINIMENT BONABERI 1.pdf"'. Defaulting to Unknown.
+2025-06-20 11:18:33 [INF] Classification result: Unknown
+2025-06-20 11:18:33 [INF] Performing full data extraction on raw text.
+2025-06-20 11:18:33 [WRN] Unknown document type for "687641056_TCHINDA CHRISTELLE_ALLIANCE INFINIMENT BONABERI 1.pdf". Returning all extracted fields.
+2025-06-20 11:18:33 [INF] Extended information extracted: 0 attestation number(s), 1 tax center(s), 0 tax system(s), 0 ACFE reference(s), 0 location/date(s), 0 quarter(s), 0 phone number(s), 0 email(s), 0 regime(s) for file '"687641056_TCHINDA CHRISTELLE_ALLIANCE INFINIMENT BONABERI 1.pdf"'.
+2025-06-20 11:18:33 [INF] Step 3: Returning structured metadata for file '"687641056_TCHINDA CHRISTELLE_ALLIANCE INFINIMENT BONABERI 1.pdf"'.
+2025-06-20 11:18:33 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-20 11:18:33 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2025-06-20 11:18:33 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2025-06-20 11:18:33 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-06-20 11:18:33 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-06-20 11:18:33 [DBG] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"' and content type '"application/json"' to write the response.
+2025-06-20 11:18:33 [INF] Executing "OkObjectResult", writing value of type '"ImageOcrMicroservice.Models.DocumentMetadata"'.
+2025-06-20 11:18:33 [INF] Executed action "ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)" in 32066.4081ms
+2025-06-20 11:18:33 [INF] Executed endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 11:18:33 [DBG] Connection id ""0HNDFSCQRFMJ5"" completed keep alive response.
+2025-06-20 11:18:33 [DBG] Disposing OcrService and Tesseract engine
+2025-06-20 11:18:33 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract""" - 200 null "application/json; charset=utf-8" 32094.6314ms
+2025-06-20 11:20:45 [DBG] Connection id ""0HNDFSCQRFMJ5"" disconnecting.
+2025-06-20 11:20:45 [DBG] Connection id ""0HNDFSCQRFMJ5"" stopped.
+2025-06-20 11:20:45 [DBG] Connection id ""0HNDFSCQRFMJ5"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 11:21:23 [DBG] Connection id ""0HNDFSCQRFMJ6"" accepted.
+2025-06-20 11:21:23 [DBG] Connection id ""0HNDFSCQRFMJ6"" started.
+2025-06-20 11:21:23 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract-batch""" - "multipart/form-data; boundary=----WebKitFormBoundaryBy3Yludw8CBJr13o" 2169272
+2025-06-20 11:21:23 [DBG] 1 candidate(s) found for the request path '"/api/Metadata/extract-batch"'
+2025-06-20 11:21:23 [DBG] Endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromMultipleFiles (DocumentProcessor.API)"' with route pattern '"api/Metadata/extract-batch"' is valid for the request path '"/api/Metadata/extract-batch"'
+2025-06-20 11:21:23 [DBG] Connection id ""0HNDFSCQRFMJ6"" paused.
+2025-06-20 11:21:23 [DBG] Request matched endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromMultipleFiles (DocumentProcessor.API)"'
+2025-06-20 11:21:23 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-20 11:21:23 [INF] Executing endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromMultipleFiles (DocumentProcessor.API)"'
+2025-06-20 11:21:23 [INF] Route matched with "{action = \"ExtractMetadataFromMultipleFiles\", controller = \"Metadata\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ExtractMetadataFromMultipleFiles(System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile])" on controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API").
+2025-06-20 11:21:23 [DBG] Execution plan of "authorization" filters (in the following order): ["None"]
+2025-06-20 11:21:23 [DBG] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ConsumesAttribute"]
+2025-06-20 11:21:23 [DBG] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-20 11:21:23 [DBG] Execution plan of "exception" filters (in the following order): ["None"]
+2025-06-20 11:21:23 [DBG] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-20 11:21:23 [DBG] Executing controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 11:21:23 [INF] Initializing Tesseract engine with tessdata path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\tessdata" and model: "fra"
+2025-06-20 11:21:23 [INF] Tesseract engine initialized successfully
+2025-06-20 11:21:23 [DBG] Executed controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 11:21:23 [DBG] Connection id ""0HNDFSCQRFMJ6"", Request id ""0HNDFSCQRFMJ6:00000001"": started reading request body.
+2025-06-20 11:21:23 [DBG] Connection id ""0HNDFSCQRFMJ6"" resumed.
+2025-06-20 11:21:23 [DBG] Connection id ""0HNDFSCQRFMJ6"" paused.
+2025-06-20 11:21:23 [DBG] Connection id ""0HNDFSCQRFMJ6"" resumed.
+2025-06-20 11:21:23 [DBG] Connection id ""0HNDFSCQRFMJ6"", Request id ""0HNDFSCQRFMJ6:00000001"": done reading request body.
+2025-06-20 11:21:23 [DBG] Attempting to bind parameter '"files"' of type '"System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]"' ...
+2025-06-20 11:21:23 [DBG] Attempting to bind parameter '"files"' of type '"System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]"' using the name '"files"' in request data ...
+2025-06-20 11:21:23 [DBG] Done attempting to bind parameter '"files"' of type '"System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]"'.
+2025-06-20 11:21:23 [DBG] Done attempting to bind parameter '"files"' of type '"System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]"'.
+2025-06-20 11:21:23 [DBG] Attempting to validate the bound parameter '"files"' of type '"System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]"' ...
+2025-06-20 11:21:23 [DBG] Done attempting to validate the bound parameter '"files"' of type '"System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]"'.
+2025-06-20 11:21:23 [INF] Starting PDF OCR processing for 490959 bytes
+2025-06-20 11:21:23 [INF] Starting PDF OCR processing for 479169 bytes
+2025-06-20 11:21:23 [INF] Starting PDF OCR processing for 1198568 bytes
+2025-06-20 11:21:24 [INF] PDF processed successfully. Processing 1 pages
+2025-06-20 11:21:24 [DBG] Processing page 1/1
+2025-06-20 11:21:25 [INF] PDF processed successfully. Processing 1 pages
+2025-06-20 11:21:25 [DBG] Processing page 1/1
+2025-06-20 11:21:25 [DBG] Starting OCR processing on image data of 2988763 bytes
+2025-06-20 11:21:26 [INF] PDF processed successfully. Processing 2 pages
+2025-06-20 11:21:26 [DBG] Processing page 1/2
+2025-06-20 11:21:26 [DBG] Starting OCR processing on image data of 3496461 bytes
+2025-06-20 11:21:26 [ERR] Error during Tesseract OCR processing
+System.InvalidOperationException: Only one image can be processed at once. Please make sure you dispose of the page once your finished with it.
+   at Tesseract.TesseractEngine.Process(Pix image, String inputName, Rect region, Nullable`1 pageSegMode)
+   at Tesseract.TesseractEngine.Process(Pix image, Nullable`1 pageSegMode)
+   at ImageOcrMicroservice.Services.OcrService.PerformOcrOnImage(Byte[] imageBytes) in C:\Users\czar\Documents\Stage\model\DocumentProcessor\Services\OcrService.cs:line 42
+2025-06-20 11:21:26 [WRN] No text extracted from page 1
+2025-06-20 11:21:26 [INF] PDF processing completed. Successfully processed 0/1 pages
+2025-06-20 11:21:26 [INF] Orchestrating metadata workflow for file: "ATTESTATIONNONREDEVANCE3MOIS_20250529122057.pdf"
+2025-06-20 11:21:26 [DBG] Classifying document based on filename: "attestationnonredevance3mois_20250529122057.pdf"
+2025-06-20 11:21:26 [INF] Classification result: AttestationFiscale
+2025-06-20 11:21:26 [INF] Performing full data extraction on raw text.
+2025-06-20 11:21:26 [INF] Filtering extracted fields for document type AttestationFiscale.
+2025-06-20 11:21:27 [DBG] Starting OCR processing on image data of 3920374 bytes
+2025-06-20 11:21:27 [ERR] Error during Tesseract OCR processing
+System.InvalidOperationException: Only one image can be processed at once. Please make sure you dispose of the page once your finished with it.
+   at Tesseract.TesseractEngine.Process(Pix image, String inputName, Rect region, Nullable`1 pageSegMode)
+   at Tesseract.TesseractEngine.Process(Pix image, Nullable`1 pageSegMode)
+   at ImageOcrMicroservice.Services.OcrService.PerformOcrOnImage(Byte[] imageBytes) in C:\Users\czar\Documents\Stage\model\DocumentProcessor\Services\OcrService.cs:line 42
+2025-06-20 11:21:27 [WRN] No text extracted from page 1
+2025-06-20 11:21:27 [DBG] Processing page 2/2
+2025-06-20 11:21:28 [INF] OCR completed successfully. Confidence: 0.87%, Text length: 1952 characters
+2025-06-20 11:21:28 [WRN] Low OCR confidence detected: 0.87%. Text quality may be poor
+2025-06-20 11:21:28 [INF] PDF processing completed. Successfully processed 1/1 pages
+2025-06-20 11:21:28 [INF] Orchestrating metadata workflow for file: "CARTECONTRIBUABLEVALIDE_20250529122029.pdf"
+2025-06-20 11:21:28 [DBG] Classifying document based on filename: "cartecontribuablevalide_20250529122029.pdf"
+2025-06-20 11:21:28 [INF] Classification result: CarteContribuabledValide
+2025-06-20 11:21:28 [INF] Performing full data extraction on raw text.
+2025-06-20 11:21:28 [INF] Filtering extracted fields for document type CarteContribuabledValide.
+2025-06-20 11:21:28 [DBG] Starting OCR processing on image data of 4085823 bytes
+2025-06-20 11:21:31 [INF] OCR completed successfully. Confidence: 0.61%, Text length: 2093 characters
+2025-06-20 11:21:31 [WRN] Low OCR confidence detected: 0.61%. Text quality may be poor
+2025-06-20 11:21:31 [INF] PDF processing completed. Successfully processed 1/2 pages
+2025-06-20 11:21:31 [INF] Orchestrating metadata workflow for file: "REGISTRECOMMERCE_20250529121955.pdf"
+2025-06-20 11:21:31 [DBG] Classifying document based on filename: "registrecommerce_20250529121955.pdf"
+2025-06-20 11:21:31 [INF] Classification result: RegistreCommerce
+2025-06-20 11:21:31 [INF] Performing full data extraction on raw text.
+2025-06-20 11:21:31 [INF] Filtering extracted fields for document type RegistreCommerce.
+2025-06-20 11:21:31 [INF] Batch processing completed. Processed 3 out of 3 files. Extended info extracted: 0 attestations, 1 tax centers, 0 tax systems, 0 ACFE references, 0 location/dates, 0 quarters, 0 phones, 0 emails, 0 regimes.
+2025-06-20 11:21:31 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-20 11:21:31 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2025-06-20 11:21:31 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2025-06-20 11:21:31 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-06-20 11:21:31 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-06-20 11:21:31 [DBG] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"' and content type '"application/json"' to write the response.
+2025-06-20 11:21:31 [INF] Executing "OkObjectResult", writing value of type '"System.Collections.Generic.List`1[[ImageOcrMicroservice.Models.DocumentMetadata, DocumentProcessor.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2025-06-20 11:21:31 [INF] Executed action "ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromMultipleFiles (DocumentProcessor.API)" in 8283.5317ms
+2025-06-20 11:21:31 [INF] Executed endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromMultipleFiles (DocumentProcessor.API)"'
+2025-06-20 11:21:31 [DBG] Connection id ""0HNDFSCQRFMJ6"" completed keep alive response.
+2025-06-20 11:21:31 [DBG] Disposing OcrService and Tesseract engine
+2025-06-20 11:21:31 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract-batch""" - 200 null "application/json; charset=utf-8" 8313.7134ms
+2025-06-20 11:23:42 [DBG] Connection id ""0HNDFSCQRFMJ6"" disconnecting.
+2025-06-20 11:23:42 [DBG] Connection id ""0HNDFSCQRFMJ6"" stopped.
+2025-06-20 11:23:42 [DBG] Connection id ""0HNDFSCQRFMJ6"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 11:31:33 [INF] Application is shutting down...
+2025-06-20 11:31:33 [DBG] Hosting stopping
+2025-06-20 11:31:33 [DBG] Hosting stopped
+2025-06-20 11:31:38 [INF] Application starting up
+2025-06-20 11:31:38 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-06-20 11:31:38 [DBG] Hosting starting
+2025-06-20 11:31:38 [INF] Now listening on: "http://localhost:5190"
+2025-06-20 11:31:38 [DBG] Loaded hosting startup assembly "DocumentProcessor.API"
+2025-06-20 11:31:38 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 11:31:38 [INF] Hosting environment: "Development"
+2025-06-20 11:31:38 [INF] Content root path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor"
+2025-06-20 11:31:38 [DBG] Hosting started
+2025-06-20 11:31:44 [DBG] Connection id ""0HNDFSMJFV43R"" accepted.
+2025-06-20 11:31:44 [DBG] Connection id ""0HNDFSMJFV43R"" started.
+2025-06-20 11:31:44 [DBG] Connection id ""0HNDFSMJFV43S"" accepted.
+2025-06-20 11:31:44 [DBG] Connection id ""0HNDFSMJFV43S"" started.
+2025-06-20 11:31:44 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/index.html""" - null null
+2025-06-20 11:31:44 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-06-20 11:31:44 [DBG] No candidates found for the request path '"/swagger/index.html"'
+2025-06-20 11:31:44 [DBG] Request did not match any endpoints
+2025-06-20 11:31:44 [DBG] Connection id ""0HNDFSMJFV43R"" completed keep alive response.
+2025-06-20 11:31:44 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 93.7588ms
+2025-06-20 11:31:44 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/v1/swagger.json""" - null null
+2025-06-20 11:31:44 [DBG] No candidates found for the request path '"/swagger/v1/swagger.json"'
+2025-06-20 11:31:44 [DBG] Request did not match any endpoints
+2025-06-20 11:31:44 [DBG] Connection id ""0HNDFSMJFV43R"" completed keep alive response.
+2025-06-20 11:31:44 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 75.4324ms
+2025-06-20 11:31:57 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract""" - "multipart/form-data; boundary=----WebKitFormBoundaryO1HhHP5kI9qKNu1X" 491180
+2025-06-20 11:31:57 [DBG] 1 candidate(s) found for the request path '"/api/Metadata/extract"'
+2025-06-20 11:31:57 [DBG] Endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"' with route pattern '"api/Metadata/extract"' is valid for the request path '"/api/Metadata/extract"'
+2025-06-20 11:31:57 [DBG] Request matched endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 11:31:57 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-20 11:31:57 [WRN] Failed to determine the https port for redirect.
+2025-06-20 11:31:57 [INF] Executing endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 11:31:57 [INF] Route matched with "{action = \"ExtractMetadataFromFile\", controller = \"Metadata\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ExtractMetadataFromFile(Microsoft.AspNetCore.Http.IFormFile)" on controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API").
+2025-06-20 11:31:57 [DBG] Execution plan of "authorization" filters (in the following order): ["None"]
+2025-06-20 11:31:57 [DBG] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ConsumesAttribute"]
+2025-06-20 11:31:57 [DBG] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-20 11:31:57 [DBG] Execution plan of "exception" filters (in the following order): ["None"]
+2025-06-20 11:31:57 [DBG] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-20 11:31:57 [DBG] Executing controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 11:31:57 [INF] Initializing Tesseract engine with tessdata path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\tessdata" and model: "fra"
+2025-06-20 11:31:57 [INF] Tesseract engine initialized successfully
+2025-06-20 11:31:57 [DBG] Executed controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 11:31:57 [DBG] Connection id ""0HNDFSMJFV43R"", Request id ""0HNDFSMJFV43R:00000003"": started reading request body.
+2025-06-20 11:31:57 [DBG] Connection id ""0HNDFSMJFV43R"", Request id ""0HNDFSMJFV43R:00000003"": done reading request body.
+2025-06-20 11:31:57 [DBG] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2025-06-20 11:31:57 [DBG] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' using the name '"file"' in request data ...
+2025-06-20 11:31:57 [DBG] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 11:31:57 [DBG] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 11:31:57 [DBG] Attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2025-06-20 11:31:57 [DBG] Done attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 11:31:57 [INF] Step 1: Starting OCR process for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'.
+2025-06-20 11:31:57 [INF] Starting PDF OCR processing for 490959 bytes
+2025-06-20 11:31:58 [INF] PDF processed successfully. Processing 1 pages
+2025-06-20 11:31:58 [DBG] Processing page 1/1
+2025-06-20 11:31:59 [DBG] Starting OCR processing on image data of 2988763 bytes
+2025-06-20 11:32:02 [INF] OCR completed successfully. Confidence: 0.87%, Text length: 1952 characters
+2025-06-20 11:32:02 [WRN] Low OCR confidence detected: 0.87%. Text quality may be poor
+2025-06-20 11:32:02 [INF] PDF processing completed. Successfully processed 1/1 pages
+2025-06-20 11:32:02 [INF] Step 2: Starting metadata extraction from OCR text for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'.
+2025-06-20 11:32:02 [INF] Orchestrating metadata workflow for file: "CARTECONTRIBUABLEVALIDE_20250529122029.pdf"
+2025-06-20 11:32:02 [DBG] Classifying document based on filename: "cartecontribuablevalide_20250529122029.pdf"
+2025-06-20 11:32:02 [INF] Classification result: CarteContribuabledValide
+2025-06-20 11:32:02 [INF] Performing full data extraction on raw text.
+2025-06-20 11:32:02 [INF] Filtering extracted fields for known document type CarteContribuabledValide.
+2025-06-20 11:32:02 [ERR] An error occurred during the full extraction workflow for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'.
+System.ArgumentNullException: Value cannot be null. (Parameter 'source')
+   at System.Linq.ThrowHelper.ThrowArgumentNullException(ExceptionArgument argument)
+   at System.Linq.Enumerable.TryGetNonEnumeratedCount[TSource](IEnumerable`1 source, Int32& count)
+   at System.Linq.Enumerable.Any[TSource](IEnumerable`1 source)
+   at ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile(IFormFile file) in C:\Users\czar\Documents\Stage\model\DocumentProcessor\Controllers\MetadataController.cs:line 78
+2025-06-20 11:32:02 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-20 11:32:02 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2025-06-20 11:32:02 [DBG] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter"' and content type '"text/plain"' to write the response.
+2025-06-20 11:32:02 [INF] Executing "ObjectResult", writing value of type '"System.String"'.
+2025-06-20 11:32:02 [INF] Executed action "ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)" in 4497.7476ms
+2025-06-20 11:32:02 [INF] Executed endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 11:32:02 [DBG] Connection id ""0HNDFSMJFV43R"" completed keep alive response.
+2025-06-20 11:32:02 [DBG] Disposing OcrService and Tesseract engine
+2025-06-20 11:32:02 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract""" - 500 null "text/plain; charset=utf-8" 4558.9678ms
+2025-06-20 11:32:30 [INF] Application is shutting down...
+2025-06-20 11:32:30 [DBG] Hosting stopping
+2025-06-20 11:32:30 [DBG] Connection id ""0HNDFSMJFV43R"" disconnecting.
+2025-06-20 11:32:30 [DBG] Connection id ""0HNDFSMJFV43S"" disconnecting.
+2025-06-20 11:32:30 [DBG] Connection id ""0HNDFSMJFV43R"" stopped.
+2025-06-20 11:32:30 [DBG] Connection id ""0HNDFSMJFV43S"" stopped.
+2025-06-20 11:32:30 [DBG] Connection id ""0HNDFSMJFV43R"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 11:32:30 [DBG] Connection id ""0HNDFSMJFV43S"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 11:32:30 [DBG] Hosting stopped
+2025-06-20 11:32:35 [INF] Application starting up
+2025-06-20 11:32:35 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-06-20 11:32:35 [DBG] Hosting starting
+2025-06-20 11:32:35 [INF] Now listening on: "http://localhost:5190"
+2025-06-20 11:32:35 [DBG] Loaded hosting startup assembly "DocumentProcessor.API"
+2025-06-20 11:32:35 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 11:32:35 [INF] Hosting environment: "Development"
+2025-06-20 11:32:35 [INF] Content root path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor"
+2025-06-20 11:32:35 [DBG] Hosting started
+2025-06-20 11:32:40 [DBG] Connection id ""0HNDFSN49BF5A"" accepted.
+2025-06-20 11:32:40 [DBG] Connection id ""0HNDFSN49BF5A"" started.
+2025-06-20 11:32:40 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract""" - "multipart/form-data; boundary=----WebKitFormBoundaryWphqpPVtcMlpcyjT" 491180
+2025-06-20 11:32:40 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-06-20 11:32:40 [DBG] 1 candidate(s) found for the request path '"/api/Metadata/extract"'
+2025-06-20 11:32:40 [DBG] Endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"' with route pattern '"api/Metadata/extract"' is valid for the request path '"/api/Metadata/extract"'
+2025-06-20 11:32:40 [DBG] Request matched endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 11:32:40 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-20 11:32:40 [WRN] Failed to determine the https port for redirect.
+2025-06-20 11:32:40 [INF] Executing endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 11:32:40 [INF] Route matched with "{action = \"ExtractMetadataFromFile\", controller = \"Metadata\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ExtractMetadataFromFile(Microsoft.AspNetCore.Http.IFormFile)" on controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API").
+2025-06-20 11:32:40 [DBG] Execution plan of "authorization" filters (in the following order): ["None"]
+2025-06-20 11:32:40 [DBG] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ConsumesAttribute"]
+2025-06-20 11:32:40 [DBG] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-20 11:32:40 [DBG] Execution plan of "exception" filters (in the following order): ["None"]
+2025-06-20 11:32:40 [DBG] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-20 11:32:40 [DBG] Executing controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 11:32:40 [INF] Initializing Tesseract engine with tessdata path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\tessdata" and model: "fra"
+2025-06-20 11:32:40 [INF] Tesseract engine initialized successfully
+2025-06-20 11:32:40 [DBG] Executed controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 11:32:40 [DBG] Connection id ""0HNDFSN49BF5A"", Request id ""0HNDFSN49BF5A:00000001"": started reading request body.
+2025-06-20 11:32:40 [DBG] Connection id ""0HNDFSN49BF5A"", Request id ""0HNDFSN49BF5A:00000001"": done reading request body.
+2025-06-20 11:32:40 [DBG] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2025-06-20 11:32:40 [DBG] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' using the name '"file"' in request data ...
+2025-06-20 11:32:40 [DBG] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 11:32:40 [DBG] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 11:32:40 [DBG] Attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2025-06-20 11:32:40 [DBG] Done attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 11:32:40 [INF] Step 1: Starting OCR process for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'.
+2025-06-20 11:32:40 [INF] Starting PDF OCR processing for 490959 bytes
+2025-06-20 11:32:41 [INF] PDF processed successfully. Processing 1 pages
+2025-06-20 11:32:41 [DBG] Processing page 1/1
+2025-06-20 11:32:42 [DBG] Starting OCR processing on image data of 2988763 bytes
+2025-06-20 11:32:44 [INF] OCR completed successfully. Confidence: 0.87%, Text length: 1952 characters
+2025-06-20 11:32:44 [WRN] Low OCR confidence detected: 0.87%. Text quality may be poor
+2025-06-20 11:32:44 [INF] PDF processing completed. Successfully processed 1/1 pages
+2025-06-20 11:32:44 [INF] Step 2: Starting metadata extraction from OCR text for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'.
+2025-06-20 11:32:44 [INF] Orchestrating metadata workflow for file: "CARTECONTRIBUABLEVALIDE_20250529122029.pdf"
+2025-06-20 11:32:44 [DBG] Classifying document based on filename: "cartecontribuablevalide_20250529122029.pdf"
+2025-06-20 11:32:44 [INF] Classification result: CarteContribuabledValide
+2025-06-20 11:32:44 [INF] Performing full data extraction on raw text.
+2025-06-20 11:32:44 [INF] Filtering extracted fields for document type CarteContribuabledValide.
+2025-06-20 11:32:44 [INF] Extended information extracted: 0 attestation number(s), 1 tax center(s), 0 tax system(s), 0 ACFE reference(s), 0 location/date(s), 0 quarter(s), 0 phone number(s), 0 email(s), 0 regime(s) for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'.
+2025-06-20 11:32:44 [INF] Step 3: Returning structured metadata for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'.
+2025-06-20 11:32:44 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-20 11:32:44 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2025-06-20 11:32:44 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2025-06-20 11:32:44 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-06-20 11:32:44 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-06-20 11:32:44 [DBG] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"' and content type '"application/json"' to write the response.
+2025-06-20 11:32:44 [INF] Executing "OkObjectResult", writing value of type '"ImageOcrMicroservice.Models.DocumentMetadata"'.
+2025-06-20 11:32:44 [INF] Executed action "ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)" in 4322.5307ms
+2025-06-20 11:32:44 [INF] Executed endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 11:32:44 [DBG] Connection id ""0HNDFSN49BF5A"" completed keep alive response.
+2025-06-20 11:32:44 [DBG] Disposing OcrService and Tesseract engine
+2025-06-20 11:32:44 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract""" - 200 null "application/json; charset=utf-8" 4395.5529ms
+2025-06-20 11:34:56 [DBG] Connection id ""0HNDFSN49BF5A"" disconnecting.
+2025-06-20 11:34:56 [DBG] Connection id ""0HNDFSN49BF5A"" stopped.
+2025-06-20 11:34:56 [DBG] Connection id ""0HNDFSN49BF5A"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 11:52:36 [INF] Application is shutting down...
+2025-06-20 11:52:36 [DBG] Hosting stopping
+2025-06-20 11:52:36 [DBG] Hosting stopped
+2025-06-20 11:52:42 [INF] Application starting up
+2025-06-20 11:52:42 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-06-20 11:52:42 [DBG] Hosting starting
+2025-06-20 11:52:42 [INF] Now listening on: "http://localhost:5190"
+2025-06-20 11:52:42 [DBG] Loaded hosting startup assembly "DocumentProcessor.API"
+2025-06-20 11:52:42 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 11:52:42 [INF] Hosting environment: "Development"
+2025-06-20 11:52:42 [INF] Content root path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor"
+2025-06-20 11:52:42 [DBG] Hosting started
+2025-06-20 11:52:56 [DBG] Connection id ""0HNDFT2EOUGTE"" accepted.
+2025-06-20 11:52:56 [DBG] Connection id ""0HNDFT2EOUGTE"" started.
+2025-06-20 11:52:56 [DBG] Connection id ""0HNDFT2EOUGTF"" accepted.
+2025-06-20 11:52:56 [DBG] Connection id ""0HNDFT2EOUGTF"" started.
+2025-06-20 11:52:56 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/index.html""" - null null
+2025-06-20 11:52:56 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-06-20 11:52:56 [DBG] No candidates found for the request path '"/swagger/index.html"'
+2025-06-20 11:52:56 [DBG] Request did not match any endpoints
+2025-06-20 11:52:56 [DBG] Connection id ""0HNDFT2EOUGTE"" completed keep alive response.
+2025-06-20 11:52:56 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 140.1792ms
+2025-06-20 11:52:57 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/v1/swagger.json""" - null null
+2025-06-20 11:52:57 [DBG] No candidates found for the request path '"/swagger/v1/swagger.json"'
+2025-06-20 11:52:57 [DBG] Request did not match any endpoints
+2025-06-20 11:52:57 [DBG] Connection id ""0HNDFT2EOUGTE"" completed keep alive response.
+2025-06-20 11:52:57 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 102.2272ms
+2025-06-20 11:53:16 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract""" - "multipart/form-data; boundary=----WebKitFormBoundaryjBIOylK25VHbemC2" 491180
+2025-06-20 11:53:17 [DBG] 1 candidate(s) found for the request path '"/api/Metadata/extract"'
+2025-06-20 11:53:17 [DBG] Endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"' with route pattern '"api/Metadata/extract"' is valid for the request path '"/api/Metadata/extract"'
+2025-06-20 11:53:17 [DBG] Request matched endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 11:53:17 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-20 11:53:17 [WRN] Failed to determine the https port for redirect.
+2025-06-20 11:53:17 [INF] Executing endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 11:53:17 [INF] Route matched with "{action = \"ExtractMetadataFromFile\", controller = \"Metadata\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ExtractMetadataFromFile(Microsoft.AspNetCore.Http.IFormFile)" on controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API").
+2025-06-20 11:53:17 [DBG] Execution plan of "authorization" filters (in the following order): ["None"]
+2025-06-20 11:53:17 [DBG] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ConsumesAttribute"]
+2025-06-20 11:53:17 [DBG] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-20 11:53:17 [DBG] Execution plan of "exception" filters (in the following order): ["None"]
+2025-06-20 11:53:17 [DBG] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-20 11:53:17 [DBG] Executing controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 11:53:17 [INF] Initializing Tesseract engine with tessdata path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\tessdata" and model: "fra"
+2025-06-20 11:53:17 [INF] Tesseract engine initialized successfully
+2025-06-20 11:53:17 [DBG] Executed controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 11:53:17 [DBG] Connection id ""0HNDFT2EOUGTE"", Request id ""0HNDFT2EOUGTE:00000003"": started reading request body.
+2025-06-20 11:53:17 [DBG] Connection id ""0HNDFT2EOUGTE"", Request id ""0HNDFT2EOUGTE:00000003"": done reading request body.
+2025-06-20 11:53:17 [DBG] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2025-06-20 11:53:17 [DBG] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' using the name '"file"' in request data ...
+2025-06-20 11:53:17 [DBG] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 11:53:17 [DBG] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 11:53:17 [DBG] Attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2025-06-20 11:53:17 [DBG] Done attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 11:53:17 [INF] Step 1: Starting OCR process for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'.
+2025-06-20 11:53:17 [INF] Starting PDF OCR processing for 490959 bytes
+2025-06-20 11:53:18 [INF] PDF processed successfully. Processing 1 pages
+2025-06-20 11:53:18 [DBG] Processing page 1/1
+2025-06-20 11:53:19 [DBG] Starting OCR processing on image data of 2988763 bytes
+2025-06-20 11:53:21 [INF] OCR completed successfully. Confidence: 0.87%, Text length: 1952 characters
+2025-06-20 11:53:21 [WRN] Low OCR confidence detected: 0.87%. Text quality may be poor
+2025-06-20 11:53:21 [INF] PDF processing completed. Successfully processed 1/1 pages
+2025-06-20 11:53:21 [INF] Step 2: Starting metadata extraction from OCR text for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'.
+2025-06-20 11:53:21 [INF] Starting metadata extraction from raw text for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'.
+2025-06-20 11:53:21 [DBG] Normalized file name: '"cartecontribuablevalide20250529122029"' from original: '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'
+2025-06-20 11:53:21 [INF] Detected document type 'CarteContribuabledValide' for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'
+2025-06-20 11:53:21 [INF] Detected document type: CarteContribuabledValide for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'
+2025-06-20 11:53:22 [DBG] Full metadata extraction completed. Found 1 NIU(s), 1 RCCM(s), 1 Date(s), 1 Name(s), 0 Registration(s), 0 Delivered Date(s), 0 Duration(s), 2 Tax Attestation(s), 1 Tax Center(s), 1 Tax System(s), 0 ACFE Reference(s), 1 Location/Date(s), 0 Quarter(s), 0 Phone(s), 0 Email(s), 0 Regime(s).
+2025-06-20 11:53:22 [INF] Filtered metadata for document type 'CarteContribuabledValide'. Allowed fields: ["DocumentName, DocumentType, NiuNumbers, BusinessNames, TaxAttestationNumbers, TaxCenters, TaxSystems, CompanyAddresses, Quarters, PhoneNumbers, EmailAddresses, Regimes, RawText"]
+2025-06-20 11:53:22 [INF] Metadata extraction completed for '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'. Document type: CarteContribuabledValide, Extracted fields: 8, Is filtered: True
+2025-06-20 11:53:22 [INF] Extended information extracted: 2 attestation number(s), 1 tax center(s), 1 tax system(s), 0 ACFE reference(s), 0 location/date(s), 0 quarter(s), 0 phone number(s), 0 email(s), 0 regime(s) for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'.
+2025-06-20 11:53:22 [INF] Step 3: Returning structured metadata for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'.
+2025-06-20 11:53:22 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-20 11:53:22 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2025-06-20 11:53:22 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2025-06-20 11:53:22 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-06-20 11:53:22 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-06-20 11:53:22 [DBG] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"' and content type '"application/json"' to write the response.
+2025-06-20 11:53:22 [INF] Executing "OkObjectResult", writing value of type '"ImageOcrMicroservice.Models.DocumentMetadata"'.
+2025-06-20 11:53:22 [INF] Executed action "ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)" in 5145.7853ms
+2025-06-20 11:53:22 [INF] Executed endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 11:53:22 [DBG] Connection id ""0HNDFT2EOUGTE"" completed keep alive response.
+2025-06-20 11:53:22 [DBG] Disposing OcrService and Tesseract engine
+2025-06-20 11:53:22 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract""" - 200 null "application/json; charset=utf-8" 5207.2095ms
+2025-06-20 11:53:57 [DBG] Connection id ""0HNDFT2EOUGTF"" received FIN.
+2025-06-20 11:53:57 [DBG] Connection id ""0HNDFT2EOUGTF"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 11:53:57 [DBG] Connection id ""0HNDFT2EOUGTF"" disconnecting.
+2025-06-20 11:53:57 [DBG] Connection id ""0HNDFT2EOUGTF"" stopped.
+2025-06-20 11:55:33 [DBG] Connection id ""0HNDFT2EOUGTE"" disconnecting.
+2025-06-20 11:55:33 [DBG] Connection id ""0HNDFT2EOUGTE"" stopped.
+2025-06-20 11:55:33 [DBG] Connection id ""0HNDFT2EOUGTE"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 15:10:26 [INF] Application is shutting down...
+2025-06-20 15:10:26 [DBG] Hosting stopping
+2025-06-20 15:10:26 [DBG] Hosting stopped
+2025-06-20 15:10:32 [INF] Application starting up
+2025-06-20 15:10:32 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-06-20 15:10:32 [DBG] Hosting starting
+2025-06-20 15:10:32 [INF] Now listening on: "http://localhost:5190"
+2025-06-20 15:10:32 [DBG] Loaded hosting startup assembly "DocumentProcessor.API"
+2025-06-20 15:10:32 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 15:10:32 [INF] Hosting environment: "Development"
+2025-06-20 15:10:32 [INF] Content root path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor"
+2025-06-20 15:10:32 [DBG] Hosting started
+2025-06-20 15:10:38 [DBG] Connection id ""0HNDG0GTOLOOP"" accepted.
+2025-06-20 15:10:38 [DBG] Connection id ""0HNDG0GTOLOOP"" started.
+2025-06-20 15:10:38 [DBG] Connection id ""0HNDG0GTOLOOQ"" accepted.
+2025-06-20 15:10:38 [DBG] Connection id ""0HNDG0GTOLOOQ"" started.
+2025-06-20 15:10:38 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/index.html""" - null null
+2025-06-20 15:10:38 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-06-20 15:10:38 [DBG] No candidates found for the request path '"/swagger/index.html"'
+2025-06-20 15:10:38 [DBG] Request did not match any endpoints
+2025-06-20 15:10:38 [DBG] Connection id ""0HNDG0GTOLOOP"" completed keep alive response.
+2025-06-20 15:10:38 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 129.0841ms
+2025-06-20 15:10:39 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/v1/swagger.json""" - null null
+2025-06-20 15:10:39 [DBG] No candidates found for the request path '"/swagger/v1/swagger.json"'
+2025-06-20 15:10:39 [DBG] Request did not match any endpoints
+2025-06-20 15:10:39 [DBG] Connection id ""0HNDG0GTOLOOP"" completed keep alive response.
+2025-06-20 15:10:39 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 157.7782ms
+2025-06-20 15:11:16 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/validate/cni""" - "application/json" 969
+2025-06-20 15:11:16 [DBG] 1 candidate(s) found for the request path '"/api/Metadata/validate/cni"'
+2025-06-20 15:11:16 [DBG] Endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ValidateMetadata (DocumentProcessor.API)"' with route pattern '"api/Metadata/validate/{documentType}"' is valid for the request path '"/api/Metadata/validate/cni"'
+2025-06-20 15:11:16 [DBG] Request matched endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ValidateMetadata (DocumentProcessor.API)"'
+2025-06-20 15:11:16 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-20 15:11:16 [WRN] Failed to determine the https port for redirect.
+2025-06-20 15:11:16 [INF] Executing endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ValidateMetadata (DocumentProcessor.API)"'
+2025-06-20 15:11:16 [INF] Route matched with "{action = \"ValidateMetadata\", controller = \"Metadata\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult ValidateMetadata(System.String, ImageOcrMicroservice.Models.DocumentMetadata)" on controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API").
+2025-06-20 15:11:16 [DBG] Execution plan of "authorization" filters (in the following order): ["None"]
+2025-06-20 15:11:16 [DBG] Execution plan of "resource" filters (in the following order): ["None"]
+2025-06-20 15:11:16 [DBG] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-20 15:11:16 [DBG] Execution plan of "exception" filters (in the following order): ["None"]
+2025-06-20 15:11:16 [DBG] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-20 15:11:16 [DBG] Executing controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 15:11:16 [INF] Initializing Tesseract engine with tessdata path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\tessdata" and model: "fra"
+2025-06-20 15:11:16 [INF] Tesseract engine initialized successfully
+2025-06-20 15:11:16 [DBG] Executed controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 15:11:16 [DBG] Attempting to bind parameter '"documentType"' of type '"System.String"' ...
+2025-06-20 15:11:16 [DBG] Attempting to bind parameter '"documentType"' of type '"System.String"' using the name '"documentType"' in request data ...
+2025-06-20 15:11:16 [DBG] Done attempting to bind parameter '"documentType"' of type '"System.String"'.
+2025-06-20 15:11:16 [DBG] Done attempting to bind parameter '"documentType"' of type '"System.String"'.
+2025-06-20 15:11:16 [DBG] Attempting to validate the bound parameter '"documentType"' of type '"System.String"' ...
+2025-06-20 15:11:16 [DBG] Done attempting to validate the bound parameter '"documentType"' of type '"System.String"'.
+2025-06-20 15:11:16 [DBG] Attempting to bind parameter '"metadata"' of type '"ImageOcrMicroservice.Models.DocumentMetadata"' ...
+2025-06-20 15:11:16 [DBG] Attempting to bind parameter '"metadata"' of type '"ImageOcrMicroservice.Models.DocumentMetadata"' using the name '""' in request data ...
+2025-06-20 15:11:16 [DBG] Selected input formatter '"Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter"' for content type '"application/json"'.
+2025-06-20 15:11:16 [DBG] Connection id ""0HNDG0GTOLOOP"", Request id ""0HNDG0GTOLOOP:00000003"": started reading request body.
+2025-06-20 15:11:16 [DBG] Connection id ""0HNDG0GTOLOOP"", Request id ""0HNDG0GTOLOOP:00000003"": done reading request body.
+2025-06-20 15:11:16 [DBG] JSON input formatter succeeded, deserializing to type '"ImageOcrMicroservice.Models.DocumentMetadata"'
+2025-06-20 15:11:16 [DBG] Done attempting to bind parameter '"metadata"' of type '"ImageOcrMicroservice.Models.DocumentMetadata"'.
+2025-06-20 15:11:16 [DBG] Done attempting to bind parameter '"metadata"' of type '"ImageOcrMicroservice.Models.DocumentMetadata"'.
+2025-06-20 15:11:16 [DBG] Attempting to validate the bound parameter '"metadata"' of type '"ImageOcrMicroservice.Models.DocumentMetadata"' ...
+2025-06-20 15:11:16 [DBG] Done attempting to validate the bound parameter '"metadata"' of type '"ImageOcrMicroservice.Models.DocumentMetadata"'.
+2025-06-20 15:11:16 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-20 15:11:16 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2025-06-20 15:11:16 [DBG] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter"' and content type '"text/plain"' to write the response.
+2025-06-20 15:11:16 [INF] Executing "BadRequestObjectResult", writing value of type '"System.String"'.
+2025-06-20 15:11:16 [INF] Executed action "ImageOcrMicroservice.Controllers.MetadataController.ValidateMetadata (DocumentProcessor.API)" in 205.8988ms
+2025-06-20 15:11:16 [INF] Executed endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ValidateMetadata (DocumentProcessor.API)"'
+2025-06-20 15:11:16 [DBG] Connection id ""0HNDG0GTOLOOP"" completed keep alive response.
+2025-06-20 15:11:16 [DBG] Disposing OcrService and Tesseract engine
+2025-06-20 15:11:16 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/validate/cni""" - 400 null "text/plain; charset=utf-8" 268.5048ms
+2025-06-20 15:11:29 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/validate/cni""" - "application/json" 969
+2025-06-20 15:11:29 [DBG] 1 candidate(s) found for the request path '"/api/Metadata/validate/cni"'
+2025-06-20 15:11:29 [DBG] Endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ValidateMetadata (DocumentProcessor.API)"' with route pattern '"api/Metadata/validate/{documentType}"' is valid for the request path '"/api/Metadata/validate/cni"'
+2025-06-20 15:11:29 [DBG] Request matched endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ValidateMetadata (DocumentProcessor.API)"'
+2025-06-20 15:11:29 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-20 15:11:29 [INF] Executing endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ValidateMetadata (DocumentProcessor.API)"'
+2025-06-20 15:11:29 [INF] Route matched with "{action = \"ValidateMetadata\", controller = \"Metadata\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult ValidateMetadata(System.String, ImageOcrMicroservice.Models.DocumentMetadata)" on controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API").
+2025-06-20 15:11:29 [DBG] Execution plan of "authorization" filters (in the following order): ["None"]
+2025-06-20 15:11:29 [DBG] Execution plan of "resource" filters (in the following order): ["None"]
+2025-06-20 15:11:29 [DBG] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-20 15:11:29 [DBG] Execution plan of "exception" filters (in the following order): ["None"]
+2025-06-20 15:11:29 [DBG] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-20 15:11:29 [DBG] Executing controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 15:11:29 [INF] Initializing Tesseract engine with tessdata path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\tessdata" and model: "fra"
+2025-06-20 15:11:29 [INF] Tesseract engine initialized successfully
+2025-06-20 15:11:29 [DBG] Executed controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 15:11:29 [DBG] Attempting to bind parameter '"documentType"' of type '"System.String"' ...
+2025-06-20 15:11:29 [DBG] Attempting to bind parameter '"documentType"' of type '"System.String"' using the name '"documentType"' in request data ...
+2025-06-20 15:11:29 [DBG] Done attempting to bind parameter '"documentType"' of type '"System.String"'.
+2025-06-20 15:11:29 [DBG] Done attempting to bind parameter '"documentType"' of type '"System.String"'.
+2025-06-20 15:11:29 [DBG] Attempting to validate the bound parameter '"documentType"' of type '"System.String"' ...
+2025-06-20 15:11:29 [DBG] Done attempting to validate the bound parameter '"documentType"' of type '"System.String"'.
+2025-06-20 15:11:29 [DBG] Attempting to bind parameter '"metadata"' of type '"ImageOcrMicroservice.Models.DocumentMetadata"' ...
+2025-06-20 15:11:29 [DBG] Attempting to bind parameter '"metadata"' of type '"ImageOcrMicroservice.Models.DocumentMetadata"' using the name '""' in request data ...
+2025-06-20 15:11:29 [DBG] Selected input formatter '"Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter"' for content type '"application/json"'.
+2025-06-20 15:11:29 [DBG] Connection id ""0HNDG0GTOLOOP"", Request id ""0HNDG0GTOLOOP:00000004"": started reading request body.
+2025-06-20 15:11:29 [DBG] Connection id ""0HNDG0GTOLOOP"", Request id ""0HNDG0GTOLOOP:00000004"": done reading request body.
+2025-06-20 15:11:29 [DBG] JSON input formatter succeeded, deserializing to type '"ImageOcrMicroservice.Models.DocumentMetadata"'
+2025-06-20 15:11:29 [DBG] Done attempting to bind parameter '"metadata"' of type '"ImageOcrMicroservice.Models.DocumentMetadata"'.
+2025-06-20 15:11:29 [DBG] Done attempting to bind parameter '"metadata"' of type '"ImageOcrMicroservice.Models.DocumentMetadata"'.
+2025-06-20 15:11:29 [DBG] Attempting to validate the bound parameter '"metadata"' of type '"ImageOcrMicroservice.Models.DocumentMetadata"' ...
+2025-06-20 15:11:29 [DBG] Done attempting to validate the bound parameter '"metadata"' of type '"ImageOcrMicroservice.Models.DocumentMetadata"'.
+2025-06-20 15:11:29 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-20 15:11:29 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2025-06-20 15:11:29 [DBG] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter"' and content type '"text/plain"' to write the response.
+2025-06-20 15:11:29 [INF] Executing "BadRequestObjectResult", writing value of type '"System.String"'.
+2025-06-20 15:11:29 [INF] Executed action "ImageOcrMicroservice.Controllers.MetadataController.ValidateMetadata (DocumentProcessor.API)" in 61.449ms
+2025-06-20 15:11:29 [INF] Executed endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ValidateMetadata (DocumentProcessor.API)"'
+2025-06-20 15:11:29 [DBG] Connection id ""0HNDG0GTOLOOP"" completed keep alive response.
+2025-06-20 15:11:29 [DBG] Disposing OcrService and Tesseract engine
+2025-06-20 15:11:29 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/validate/cni""" - 400 null "text/plain; charset=utf-8" 86.0369ms
+2025-06-20 15:11:49 [DBG] Connection id ""0HNDG0GTOLOOQ"" received FIN.
+2025-06-20 15:11:49 [DBG] Connection id ""0HNDG0GTOLOOQ"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 15:11:49 [DBG] Connection id ""0HNDG0GTOLOOQ"" disconnecting.
+2025-06-20 15:11:49 [DBG] Connection id ""0HNDG0GTOLOOQ"" stopped.
+2025-06-20 15:12:07 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5190""""/api/Metadata/document-types""" - null null
+2025-06-20 15:12:07 [DBG] 1 candidate(s) found for the request path '"/api/Metadata/document-types"'
+2025-06-20 15:12:07 [DBG] Endpoint '"ImageOcrMicroservice.Controllers.MetadataController.GetSupportedDocumentTypes (DocumentProcessor.API)"' with route pattern '"api/Metadata/document-types"' is valid for the request path '"/api/Metadata/document-types"'
+2025-06-20 15:12:07 [DBG] Request matched endpoint '"ImageOcrMicroservice.Controllers.MetadataController.GetSupportedDocumentTypes (DocumentProcessor.API)"'
+2025-06-20 15:12:07 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-20 15:12:07 [INF] Executing endpoint '"ImageOcrMicroservice.Controllers.MetadataController.GetSupportedDocumentTypes (DocumentProcessor.API)"'
+2025-06-20 15:12:07 [INF] Route matched with "{action = \"GetSupportedDocumentTypes\", controller = \"Metadata\"}". Executing controller action with signature "Microsoft.AspNetCore.Mvc.IActionResult GetSupportedDocumentTypes()" on controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API").
+2025-06-20 15:12:07 [DBG] Execution plan of "authorization" filters (in the following order): ["None"]
+2025-06-20 15:12:07 [DBG] Execution plan of "resource" filters (in the following order): ["None"]
+2025-06-20 15:12:07 [DBG] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-20 15:12:07 [DBG] Execution plan of "exception" filters (in the following order): ["None"]
+2025-06-20 15:12:07 [DBG] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-20 15:12:07 [DBG] Executing controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 15:12:07 [INF] Initializing Tesseract engine with tessdata path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\tessdata" and model: "fra"
+2025-06-20 15:12:07 [INF] Tesseract engine initialized successfully
+2025-06-20 15:12:07 [DBG] Executed controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 15:12:07 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-20 15:12:07 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2025-06-20 15:12:07 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2025-06-20 15:12:07 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-06-20 15:12:07 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-06-20 15:12:07 [DBG] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"' and content type '"application/json"' to write the response.
+2025-06-20 15:12:07 [INF] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType5`2[[System.Collections.Generic.List`1[[<>f__AnonymousType4`3[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DocumentProcessor.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2025-06-20 15:12:07 [INF] Executed action "ImageOcrMicroservice.Controllers.MetadataController.GetSupportedDocumentTypes (DocumentProcessor.API)" in 57.1647ms
+2025-06-20 15:12:07 [INF] Executed endpoint '"ImageOcrMicroservice.Controllers.MetadataController.GetSupportedDocumentTypes (DocumentProcessor.API)"'
+2025-06-20 15:12:07 [DBG] Connection id ""0HNDG0GTOLOOP"" completed keep alive response.
+2025-06-20 15:12:07 [DBG] Disposing OcrService and Tesseract engine
+2025-06-20 15:12:07 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5190""""/api/Metadata/document-types""" - 200 null "application/json; charset=utf-8" 89.3546ms
+2025-06-20 15:14:19 [DBG] Connection id ""0HNDG0GTOLOOP"" disconnecting.
+2025-06-20 15:14:19 [DBG] Connection id ""0HNDG0GTOLOOP"" stopped.
+2025-06-20 15:14:19 [DBG] Connection id ""0HNDG0GTOLOOP"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 15:15:31 [DBG] Connection id ""0HNDG0GTOLOOR"" accepted.
+2025-06-20 15:15:31 [DBG] Connection id ""0HNDG0GTOLOOR"" started.
+2025-06-20 15:15:31 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract""" - "multipart/form-data; boundary=----WebKitFormBoundaryp1X8sCTCS2cJknit" 491180
+2025-06-20 15:15:31 [DBG] 1 candidate(s) found for the request path '"/api/Metadata/extract"'
+2025-06-20 15:15:31 [DBG] Endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"' with route pattern '"api/Metadata/extract"' is valid for the request path '"/api/Metadata/extract"'
+2025-06-20 15:15:31 [DBG] Request matched endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 15:15:31 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-20 15:15:31 [INF] Executing endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 15:15:31 [INF] Route matched with "{action = \"ExtractMetadataFromFile\", controller = \"Metadata\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ExtractMetadataFromFile(Microsoft.AspNetCore.Http.IFormFile, System.String)" on controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API").
+2025-06-20 15:15:31 [DBG] Execution plan of "authorization" filters (in the following order): ["None"]
+2025-06-20 15:15:31 [DBG] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ConsumesAttribute"]
+2025-06-20 15:15:31 [DBG] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-20 15:15:31 [DBG] Execution plan of "exception" filters (in the following order): ["None"]
+2025-06-20 15:15:31 [DBG] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-20 15:15:31 [DBG] Executing controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 15:15:31 [INF] Initializing Tesseract engine with tessdata path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\tessdata" and model: "fra"
+2025-06-20 15:15:31 [INF] Tesseract engine initialized successfully
+2025-06-20 15:15:31 [DBG] Executed controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 15:15:31 [DBG] Connection id ""0HNDG0GTOLOOR"", Request id ""0HNDG0GTOLOOR:00000001"": started reading request body.
+2025-06-20 15:15:31 [DBG] Connection id ""0HNDG0GTOLOOR"", Request id ""0HNDG0GTOLOOR:00000001"": done reading request body.
+2025-06-20 15:15:31 [DBG] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2025-06-20 15:15:31 [DBG] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' using the name '"file"' in request data ...
+2025-06-20 15:15:31 [DBG] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 15:15:31 [DBG] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 15:15:31 [DBG] Attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2025-06-20 15:15:31 [DBG] Done attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 15:15:31 [DBG] Attempting to bind parameter '"documentType"' of type '"System.String"' ...
+2025-06-20 15:15:31 [DBG] Attempting to bind parameter '"documentType"' of type '"System.String"' using the name '""' in request data ...
+2025-06-20 15:15:31 [DBG] Could not find a value in the request with name '""' for binding parameter '"documentType"' of type '"System.String"'.
+2025-06-20 15:15:31 [DBG] Done attempting to bind parameter '"documentType"' of type '"System.String"'.
+2025-06-20 15:15:31 [DBG] Done attempting to bind parameter '"documentType"' of type '"System.String"'.
+2025-06-20 15:15:31 [DBG] Attempting to validate the bound parameter '"documentType"' of type '"System.String"' ...
+2025-06-20 15:15:31 [DBG] Done attempting to validate the bound parameter '"documentType"' of type '"System.String"'.
+2025-06-20 15:15:31 [INF] Step 1: Starting OCR process for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'.
+2025-06-20 15:15:31 [INF] Starting PDF OCR processing for 490959 bytes
+2025-06-20 15:15:33 [INF] PDF processed successfully. Processing 1 pages
+2025-06-20 15:15:33 [DBG] Processing page 1/1
+2025-06-20 15:15:34 [DBG] Starting OCR processing on image data of 2988763 bytes
+2025-06-20 15:15:36 [INF] OCR completed successfully. Confidence: 0.87%, Text length: 1952 characters
+2025-06-20 15:15:36 [WRN] Low OCR confidence detected: 0.87%. Text quality may be poor
+2025-06-20 15:15:36 [INF] PDF processing completed. Successfully processed 1/1 pages
+2025-06-20 15:15:36 [INF] Step 2: Starting metadata extraction from OCR text for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'.
+2025-06-20 15:15:36 [INF] Starting metadata extraction from raw text for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'.
+2025-06-20 15:15:36 [DBG] Normalized file name: '"cartecontribuablevalide20250529122029"' from original: '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'
+2025-06-20 15:15:36 [INF] Detected document type 'CarteContribuabledValide' for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'
+2025-06-20 15:15:36 [INF] Detected document type: CarteContribuabledValide for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'
+2025-06-20 15:15:36 [DBG] Full metadata extraction completed. Found 1 NIU(s), 1 RCCM(s), 1 Date(s), 1 Name(s), 0 Registration(s), 0 Delivered Date(s), 0 Duration(s), 2 Tax Attestation(s), 1 Tax Center(s), 1 Tax System(s), 0 ACFE Reference(s), 1 Location/Date(s), 0 Quarter(s), 0 Phone(s), 0 Email(s), 0 Regime(s).
+2025-06-20 15:15:36 [INF] Filtered metadata for document type 'CarteContribuabledValide'. Allowed fields: ["DocumentName, DocumentType, NiuNumbers, BusinessNames, TaxAttestationNumbers, TaxCenters, TaxSystems, CompanyAddresses, Quarters, PhoneNumbers, EmailAddresses, Regimes, RawText"]
+2025-06-20 15:15:36 [INF] Metadata extraction completed for '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'. Document type: CarteContribuabledValide, Extracted fields: 8, Is filtered: True
+2025-06-20 15:15:36 [INF] Metadata extraction completed for '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'. Document Type: "Carte Contribuable Valide", Total Fields Extracted: 8, NIU Numbers: 1, RCCM Numbers: 0, Business Names: 1, Tax Attestations: 2, Phone Numbers: 0, Email Addresses: 0, Validation Valid: True
+2025-06-20 15:15:36 [INF] Step 4: Returning structured metadata for file '"CARTECONTRIBUABLEVALIDE_20250529122029.pdf"'.
+2025-06-20 15:15:36 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-20 15:15:36 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2025-06-20 15:15:36 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2025-06-20 15:15:36 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-06-20 15:15:36 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-06-20 15:15:36 [DBG] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"' and content type '"application/json"' to write the response.
+2025-06-20 15:15:36 [INF] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType0`3[[ImageOcrMicroservice.Models.DocumentMetadata, DocumentProcessor.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DocumentProcessor.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2025-06-20 15:15:36 [INF] Executed action "ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)" in 4528.4218ms
+2025-06-20 15:15:36 [INF] Executed endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 15:15:36 [DBG] Connection id ""0HNDG0GTOLOOR"" completed keep alive response.
+2025-06-20 15:15:36 [DBG] Disposing OcrService and Tesseract engine
+2025-06-20 15:15:36 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract""" - 200 null "application/json; charset=utf-8" 4561.21ms
+2025-06-20 15:17:48 [DBG] Connection id ""0HNDG0GTOLOOR"" disconnecting.
+2025-06-20 15:17:48 [DBG] Connection id ""0HNDG0GTOLOOR"" stopped.
+2025-06-20 15:17:48 [DBG] Connection id ""0HNDG0GTOLOOR"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-20 15:35:11 [DBG] Connection id ""0HNDG0GTOLOOS"" accepted.
+2025-06-20 15:35:11 [DBG] Connection id ""0HNDG0GTOLOOS"" started.
+2025-06-20 15:35:11 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract""?documentType=Carte%20Contribuable%20Valide" - "multipart/form-data; boundary=----WebKitFormBoundaryvip7PAIOXCqKezfG" 479395
+2025-06-20 15:35:11 [DBG] 1 candidate(s) found for the request path '"/api/Metadata/extract"'
+2025-06-20 15:35:11 [DBG] Endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"' with route pattern '"api/Metadata/extract"' is valid for the request path '"/api/Metadata/extract"'
+2025-06-20 15:35:11 [DBG] Request matched endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 15:35:11 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-20 15:35:11 [INF] Executing endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 15:35:11 [INF] Route matched with "{action = \"ExtractMetadataFromFile\", controller = \"Metadata\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ExtractMetadataFromFile(Microsoft.AspNetCore.Http.IFormFile, System.String)" on controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API").
+2025-06-20 15:35:11 [DBG] Execution plan of "authorization" filters (in the following order): ["None"]
+2025-06-20 15:35:11 [DBG] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ConsumesAttribute"]
+2025-06-20 15:35:11 [DBG] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-20 15:35:11 [DBG] Execution plan of "exception" filters (in the following order): ["None"]
+2025-06-20 15:35:11 [DBG] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-20 15:35:11 [DBG] Executing controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 15:35:11 [INF] Initializing Tesseract engine with tessdata path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\tessdata" and model: "fra"
+2025-06-20 15:35:11 [INF] Tesseract engine initialized successfully
+2025-06-20 15:35:11 [DBG] Executed controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-20 15:35:11 [DBG] Connection id ""0HNDG0GTOLOOS"", Request id ""0HNDG0GTOLOOS:00000001"": started reading request body.
+2025-06-20 15:35:11 [DBG] Connection id ""0HNDG0GTOLOOS"", Request id ""0HNDG0GTOLOOS:00000001"": done reading request body.
+2025-06-20 15:35:11 [DBG] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2025-06-20 15:35:11 [DBG] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' using the name '"file"' in request data ...
+2025-06-20 15:35:11 [DBG] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 15:35:11 [DBG] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 15:35:11 [DBG] Attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2025-06-20 15:35:11 [DBG] Done attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-20 15:35:11 [DBG] Attempting to bind parameter '"documentType"' of type '"System.String"' ...
+2025-06-20 15:35:11 [DBG] Attempting to bind parameter '"documentType"' of type '"System.String"' using the name '"documentType"' in request data ...
+2025-06-20 15:35:11 [DBG] Done attempting to bind parameter '"documentType"' of type '"System.String"'.
+2025-06-20 15:35:11 [DBG] Done attempting to bind parameter '"documentType"' of type '"System.String"'.
+2025-06-20 15:35:11 [DBG] Attempting to validate the bound parameter '"documentType"' of type '"System.String"' ...
+2025-06-20 15:35:11 [DBG] Done attempting to validate the bound parameter '"documentType"' of type '"System.String"'.
+2025-06-20 15:35:11 [INF] Step 1: Starting OCR process for file '"ATTESTATIONNONREDEVANCE3MOIS_20250529122057.pdf"'.
+2025-06-20 15:35:11 [INF] Starting PDF OCR processing for 479169 bytes
+2025-06-20 15:35:12 [INF] PDF processed successfully. Processing 1 pages
+2025-06-20 15:35:12 [DBG] Processing page 1/1
+2025-06-20 15:35:14 [DBG] Starting OCR processing on image data of 3496461 bytes
+2025-06-20 15:35:15 [INF] OCR completed successfully. Confidence: 0.87%, Text length: 1294 characters
+2025-06-20 15:35:15 [WRN] Low OCR confidence detected: 0.87%. Text quality may be poor
+2025-06-20 15:35:15 [INF] PDF processing completed. Successfully processed 1/1 pages
+2025-06-20 15:35:15 [INF] Step 2: Starting metadata extraction from OCR text for file '"ATTESTATIONNONREDEVANCE3MOIS_20250529122057.pdf"'.
+2025-06-20 15:35:15 [INF] Starting metadata extraction from raw text for file '"ATTESTATIONNONREDEVANCE3MOIS_20250529122057.pdf"'.
+2025-06-20 15:35:15 [DBG] Normalized file name: '"attestationnonredevance3mois20250529122057"' from original: '"ATTESTATIONNONREDEVANCE3MOIS_20250529122057.pdf"'
+2025-06-20 15:35:15 [INF] Detected document type 'AttestationFiscale' for file '"ATTESTATIONNONREDEVANCE3MOIS_20250529122057.pdf"'
+2025-06-20 15:35:15 [INF] Detected document type: AttestationFiscale for file '"ATTESTATIONNONREDEVANCE3MOIS_20250529122057.pdf"'
+2025-06-20 15:35:15 [DBG] Full metadata extraction completed. Found 1 NIU(s), 0 RCCM(s), 1 Date(s), 1 Name(s), 0 Registration(s), 0 Delivered Date(s), 0 Duration(s), 0 Tax Attestation(s), 0 Tax Center(s), 0 Tax System(s), 1 ACFE Reference(s), 0 Location/Date(s), 1 Quarter(s), 1 Phone(s), 0 Email(s), 1 Regime(s).
+2025-06-20 15:35:15 [INF] Filtered metadata for document type 'AttestationFiscale'. Allowed fields: ["DocumentName, DocumentType, NiuNumbers, BusinessNames, TaxAttestationNumbers, TaxCenters, TaxSystems, AcfeReferences, CompanyAddresses, Quarters, PhoneNumbers, EmailAddresses, Regimes, DocumentLocationsAndDates, RawText"]
+2025-06-20 15:35:15 [WRN] Validation failed for document type AttestationFiscale: "Critical field 'TaxAttestationNumbers' is missing or empty"
+2025-06-20 15:35:15 [INF] Metadata extraction completed for '"ATTESTATIONNONREDEVANCE3MOIS_20250529122057.pdf"'. Document type: AttestationFiscale, Extracted fields: 9, Is filtered: True
+2025-06-20 15:35:15 [INF] Metadata extraction completed for '"ATTESTATIONNONREDEVANCE3MOIS_20250529122057.pdf"'. Document Type: "Attestation Fiscale", Total Fields Extracted: 9, NIU Numbers: 1, RCCM Numbers: 0, Business Names: 1, Tax Attestations: 0, Phone Numbers: 1, Email Addresses: 0, Validation Valid: False
+2025-06-20 15:35:15 [WRN] Validation issues for '"ATTESTATIONNONREDEVANCE3MOIS_20250529122057.pdf"': "Critical field 'TaxAttestationNumbers' is missing or empty"
+2025-06-20 15:35:15 [INF] Step 4: Returning structured metadata for file '"ATTESTATIONNONREDEVANCE3MOIS_20250529122057.pdf"'.
+2025-06-20 15:35:15 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-20 15:35:15 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2025-06-20 15:35:15 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2025-06-20 15:35:15 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-06-20 15:35:15 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-06-20 15:35:15 [DBG] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"' and content type '"application/json"' to write the response.
+2025-06-20 15:35:15 [INF] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType0`3[[ImageOcrMicroservice.Models.DocumentMetadata, DocumentProcessor.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DocumentProcessor.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2025-06-20 15:35:15 [INF] Executed action "ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)" in 4116.3314ms
+2025-06-20 15:35:15 [INF] Executed endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-20 15:35:15 [DBG] Connection id ""0HNDG0GTOLOOS"" completed keep alive response.
+2025-06-20 15:35:15 [DBG] Disposing OcrService and Tesseract engine
+2025-06-20 15:35:15 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract""?documentType=Carte%20Contribuable%20Valide" - 200 null "application/json; charset=utf-8" 4150.5064ms
+2025-06-20 15:37:26 [DBG] Connection id ""0HNDG0GTOLOOS"" disconnecting.
+2025-06-20 15:37:26 [DBG] Connection id ""0HNDG0GTOLOOS"" stopped.
+2025-06-20 15:37:26 [DBG] Connection id ""0HNDG0GTOLOOS"" sending FIN because: ""The Socket transport's send loop completed gracefully.""

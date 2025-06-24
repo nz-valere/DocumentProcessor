@@ -2,10 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace ImageOcrMicroservice.Models
 {
-    /// <summary>
-    /// Represents the structured data extracted from a document.
-    /// Each property is a list to handle cases where multiple instances of the same data type are found.
-    /// </summary>
+
     public class DocumentMetadata
     {
         [JsonPropertyName("document_name")]
