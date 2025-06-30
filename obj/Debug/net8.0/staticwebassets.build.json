@@ -1,11 +1,12 @@
 {
   "Version": 1,
-  "Hash": "cTsJjLoVygo5pFYzr7EP3FOtc2lvJAW3EhFcUrgy70k=",
+  "Hash": "rLYeZBWbAiV7omUAYgeo1P/DB/SmHjOqyQpvfD5sbCo=",
   "Source": "DocumentProcessor.API",
   "BasePath": "_content/DocumentProcessor.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": []
+  "Assets": [],
+  "Endpoints": []
 }

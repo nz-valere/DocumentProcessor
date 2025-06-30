@@ -169,3 +169,10 @@ C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\Azure.AI.
 C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\System.Memory.Data.dll
+C:\Users\WJKT8718\Documents\OrangeDocumentProcessor\DocumentProcessor.API\bin\Debug\net8.0\Azure.AI.FormRecognizer.dll
+C:\Users\WJKT8718\Documents\OrangeDocumentProcessor\DocumentProcessor.API\bin\Debug\net8.0\Azure.AI.Vision.ImageAnalysis.dll
+C:\Users\WJKT8718\Documents\OrangeDocumentProcessor\DocumentProcessor.API\bin\Debug\net8.0\Azure.Core.dll
+C:\Users\WJKT8718\Documents\OrangeDocumentProcessor\DocumentProcessor.API\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\WJKT8718\Documents\OrangeDocumentProcessor\DocumentProcessor.API\bin\Debug\net8.0\System.ClientModel.dll
+C:\Users\WJKT8718\Documents\OrangeDocumentProcessor\DocumentProcessor.API\bin\Debug\net8.0\System.Memory.Data.dll
+C:\Users\WJKT8718\Documents\OrangeDocumentProcessor\DocumentProcessor.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
