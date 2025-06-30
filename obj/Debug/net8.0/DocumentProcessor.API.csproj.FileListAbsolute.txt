@@ -165,3 +165,7 @@ C:\Users\czar\Documents\Stage\model\DocumentProcessor\obj\Debug\net8.0\refint\Do
 C:\Users\czar\Documents\Stage\model\DocumentProcessor\obj\Debug\net8.0\DocumentProcessor.API.pdb
 C:\Users\czar\Documents\Stage\model\DocumentProcessor\obj\Debug\net8.0\DocumentProcessor.API.genruntimeconfig.cache
 C:\Users\czar\Documents\Stage\model\DocumentProcessor\obj\Debug\net8.0\ref\DocumentProcessor.API.dll
+C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\Azure.AI.FormRecognizer.dll
+C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\Azure.Core.dll
+C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\System.Memory.Data.dll

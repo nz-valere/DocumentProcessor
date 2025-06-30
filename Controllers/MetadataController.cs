@@ -8,20 +8,20 @@ namespace ImageOcrMicroservice.Controllers
     [Route("api/[controller]")]
     public class MetadataController : ControllerBase
     {
-        private readonly OcrService _ocrService;
+        private readonly OcrOrchestrationService _ocrOrchestrationService;
         private readonly MetadataService _metadataService;
         private readonly DocumentSpecificMetadataService _documentSpecificMetadataService;
         private readonly DocumentTypeDetectionService _documentTypeDetectionService;
         private readonly ILogger<MetadataController> _logger;
 
         public MetadataController(
-            OcrService ocrService,
+            OcrOrchestrationService ocrOrchestrationService,
             MetadataService metadataService,
             DocumentSpecificMetadataService documentSpecificMetadataService,
             DocumentTypeDetectionService documentTypeDetectionService,
             ILogger<MetadataController> logger)
         {
-            _ocrService = ocrService;
+            _ocrOrchestrationService = ocrOrchestrationService;
             _metadataService = metadataService;
             _documentSpecificMetadataService = documentSpecificMetadataService;
             _documentTypeDetectionService = documentTypeDetectionService;
@@ -54,16 +54,24 @@ namespace ImageOcrMicroservice.Controllers
                 using var memoryStream = new MemoryStream();
                 await file.CopyToAsync(memoryStream);
                 var fileBytes = memoryStream.ToArray();
+                
+                _logger.LogInformation("Step 1: Starting intelligent OCR process for file '{FileName}'.", file.FileName);
+                
                 string extractedText;
-
-                // Perform OCR to get the raw text (offloaded to a background thread)
-                extractedText = await Task.Run(() =>
+                
+                if (!string.IsNullOrWhiteSpace(documentType) && Enum.TryParse<DocumentType>(documentType, true, out var specifiedDocType))
                 {
-                    _logger.LogInformation("Step 1: Starting OCR process for file '{FileName}'.", file.FileName);
-                    return isPdf
-                        ? _ocrService.ProcessPdfAndExtractText(fileBytes)
-                        : _ocrService.ProcessImageAndExtractText(fileBytes);
-                });
+                    // Use specified document type for OCR selection
+                    extractedText = await _ocrOrchestrationService.ProcessDocumentWithSpecificTypeAsync(
+                        fileBytes, file.FileName, isPdf, specifiedDocType);
+                    _logger.LogInformation("Used specified document type '{DocumentType}' for OCR selection.", specifiedDocType);
+                }
+                else
+                {
+                    // Use automatic document type detection for OCR selection
+                    extractedText = await _ocrOrchestrationService.ProcessDocumentAndExtractTextAsync(
+                        fileBytes, file.FileName, isPdf);
+                }
 
                 if (string.IsNullOrWhiteSpace(extractedText))
                 {
@@ -79,11 +87,11 @@ namespace ImageOcrMicroservice.Controllers
                 _logger.LogInformation("Step 2: Starting metadata extraction from OCR text for file '{FileName}'.", file.FileName);
                 DocumentMetadata metadata;
 
-                if (!string.IsNullOrWhiteSpace(documentType) && Enum.TryParse<DocumentType>(documentType, true, out var specifiedDocType))
+                if (!string.IsNullOrWhiteSpace(documentType) && Enum.TryParse<DocumentType>(documentType, true, out var specifiedDocType2))
                 {
                     // Use specified document type for targeted extraction
-                    metadata = _metadataService.ExtractMetadataForDocumentType(extractedText, specifiedDocType, file.FileName);
-                    _logger.LogInformation("Used specified document type '{DocumentType}' for extraction.", specifiedDocType);
+                    metadata = _metadataService.ExtractMetadataForDocumentType(extractedText, specifiedDocType2, file.FileName);
+                    _logger.LogInformation("Used specified document type '{DocumentType}' for extraction.", specifiedDocType2);
                 }
                 else
                 {
@@ -99,7 +107,7 @@ namespace ImageOcrMicroservice.Controllers
 
                 var validationResult = _documentSpecificMetadataService.ValidateDocumentMetadata(metadata, detectedTypeEnum);
 
-                LogExtractionResults(metadata, extractionStats, validationResult, file.FileName);
+                LogExtractionResults(metadata, extractionStats, validationResult, file.FileName, detectedTypeEnum);
 
                 // Create filtered metadata object - this is the key fix
                 var filteredMetadata = CreateFilteredMetadataObject(metadata, detectedTypeEnum);
@@ -115,7 +123,8 @@ namespace ImageOcrMicroservice.Controllers
                     {
                         validationResult.IsValid,
                         validationResult.Messages
-                    }
+                    },
+                    OcrServiceUsed = _ocrOrchestrationService.GetRecommendedOcrService(detectedTypeEnum)
                 });
             }
             catch (Exception ex)
@@ -196,7 +205,9 @@ namespace ImageOcrMicroservice.Controllers
                     {
                         Type = type.ToString(),
                         DisplayName = _documentTypeDetectionService.GetDocumentTypeDisplayName(type),
-                        Patterns = DocumentTypeDetectionService.GetPatternsForDocumentType(type)
+                        Patterns = DocumentTypeDetectionService.GetPatternsForDocumentType(type),
+                        RecommendedOcrService = _ocrOrchestrationService.GetRecommendedOcrService(type),
+                        IsHandwritten = OcrOrchestrationService.IsHandwrittenDocumentType(type)
                     })
                     .ToList();
 
@@ -210,39 +221,6 @@ namespace ImageOcrMicroservice.Controllers
             {
                 _logger.LogError(ex, "Error retrieving supported document types.");
                 return StatusCode(StatusCodes.Status500InternalServerError, "Error retrieving document types.");
-            }
-        }
-
-        [HttpPost("validate/{documentType}")]
-        [ProducesResponseType(typeof(object), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult ValidateMetadata([FromRoute] string documentType, [FromBody] DocumentMetadata metadata)
-        {
-            if (!Enum.TryParse<DocumentType>(documentType, true, out var docType))
-            {
-                return BadRequest($"Invalid document type: {documentType}");
-            }
-
-            try
-            {
-                var validationResult = _documentSpecificMetadataService.ValidateDocumentMetadata(metadata, docType);
-                var metadataSummary = _documentSpecificMetadataService.GetMetadataSummary(metadata, docType);
-
-                return Ok(new
-                {
-                    DocumentType = docType.ToString(),
-                    ValidationResult = new
-                    {
-                        validationResult.IsValid,
-                        validationResult.Messages
-                    },
-                    MetadataSummary = metadataSummary
-                });
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error validating metadata for document type {DocumentType}.", documentType);
-                return StatusCode(StatusCodes.Status500InternalServerError, "Error validating metadata.");
             }
         }
 
@@ -264,12 +242,18 @@ namespace ImageOcrMicroservice.Controllers
                 await file.CopyToAsync(memoryStream);
                 var fileBytes = memoryStream.ToArray();
 
-                var extractedText = await Task.Run(() =>
+                string extractedText;
+                
+                if (specifiedDocumentType.HasValue)
                 {
-                    return isPdf
-                        ? _ocrService.ProcessPdfAndExtractText(fileBytes)
-                        : _ocrService.ProcessImageAndExtractText(fileBytes);
-                });
+                    extractedText = await _ocrOrchestrationService.ProcessDocumentWithSpecificTypeAsync(
+                        fileBytes, file.FileName, isPdf, specifiedDocumentType.Value);
+                }
+                else
+                {
+                    extractedText = await _ocrOrchestrationService.ProcessDocumentAndExtractTextAsync(
+                        fileBytes, file.FileName, isPdf);
+                }
 
                 if (string.IsNullOrWhiteSpace(extractedText))
                 {
@@ -302,6 +286,7 @@ namespace ImageOcrMicroservice.Controllers
                         validationResult.IsValid,
                         validationResult.Messages
                     },
+                    OcrServiceUsed = _ocrOrchestrationService.GetRecommendedOcrService(detectedTypeEnum),
                     ProcessedAt = DateTime.UtcNow
                 };
             }
@@ -333,15 +318,17 @@ namespace ImageOcrMicroservice.Controllers
                     IsValid = false,
                     Messages = new List<string> { errorMessage }
                 },
+                OcrServiceUsed = "None",
                 ProcessedAt = DateTime.UtcNow
             };
         }
 
-        private void LogExtractionResults(DocumentMetadata metadata, Dictionary<string, object> stats, ValidationResult validation, string fileName)
+        private void LogExtractionResults(DocumentMetadata metadata, Dictionary<string, object> stats, ValidationResult validation, string fileName, DocumentType docType)
         {
             _logger.LogInformation(
                 "Metadata extraction completed for '{FileName}'. " +
                 "Document Type: {DocumentType}, " +
+                "OCR Service Used: {OcrService}, " +
                 "Total Fields Extracted: {TotalFields}, " +
                 "NIU Numbers: {NiuCount}, " +
                 "RCCM Numbers: {RccmCount}, " +
@@ -352,6 +339,7 @@ namespace ImageOcrMicroservice.Controllers
                 "Validation Valid: {IsValid}",
                 fileName,
                 metadata.DocumentType,
+                _ocrOrchestrationService.GetRecommendedOcrService(docType),
                 stats["TotalFieldsExtracted"],
                 stats["NiuNumbersCount"],
                 stats["RccmNumbersCount"],
@@ -425,6 +413,5 @@ namespace ImageOcrMicroservice.Controllers
                 ? docType 
                 : DocumentType.Unknown;
         }
-
     }
 }

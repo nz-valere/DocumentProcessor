@@ -1,0 +1,130 @@
+2025-06-30 10:41:41 [INF] Application starting up
+2025-06-30 10:41:41 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2025-06-30 10:41:41 [DBG] Hosting starting
+2025-06-30 10:41:41 [INF] Now listening on: "http://localhost:5190"
+2025-06-30 10:41:41 [DBG] Loaded hosting startup assembly "DocumentProcessor.API"
+2025-06-30 10:41:41 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-30 10:41:41 [INF] Hosting environment: "Development"
+2025-06-30 10:41:41 [INF] Content root path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor"
+2025-06-30 10:41:41 [DBG] Hosting started
+2025-06-30 10:43:06 [DBG] Connection id ""0HNDNNA21RKH1"" accepted.
+2025-06-30 10:43:06 [DBG] Connection id ""0HNDNNA21RKH1"" started.
+2025-06-30 10:43:06 [DBG] Connection id ""0HNDNNA21RKH2"" accepted.
+2025-06-30 10:43:06 [DBG] Connection id ""0HNDNNA21RKH2"" started.
+2025-06-30 10:43:06 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/index.html""" - null null
+2025-06-30 10:43:06 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2025-06-30 10:43:06 [DBG] No candidates found for the request path '"/swagger/index.html"'
+2025-06-30 10:43:06 [DBG] Request did not match any endpoints
+2025-06-30 10:43:06 [DBG] Connection id ""0HNDNNA21RKH1"" completed keep alive response.
+2025-06-30 10:43:06 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/index.html""" - 200 null "text/html;charset=utf-8" 125.106ms
+2025-06-30 10:43:07 [INF] Request starting "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/v1/swagger.json""" - null null
+2025-06-30 10:43:07 [DBG] No candidates found for the request path '"/swagger/v1/swagger.json"'
+2025-06-30 10:43:07 [DBG] Request did not match any endpoints
+2025-06-30 10:43:07 [DBG] Connection id ""0HNDNNA21RKH1"" completed keep alive response.
+2025-06-30 10:43:07 [INF] Request finished "HTTP/1.1" "GET" "http"://"localhost:5190""""/swagger/v1/swagger.json""" - 200 null "application/json;charset=utf-8" 85.8103ms
+2025-06-30 10:43:25 [INF] Request starting "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract""" - "multipart/form-data; boundary=----WebKitFormBoundaryKFmai8hlSiZsY7RV" 942756
+2025-06-30 10:43:25 [DBG] 1 candidate(s) found for the request path '"/api/Metadata/extract"'
+2025-06-30 10:43:25 [DBG] Endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"' with route pattern '"api/Metadata/extract"' is valid for the request path '"/api/Metadata/extract"'
+2025-06-30 10:43:25 [DBG] Request matched endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-30 10:43:25 [DBG] Static files was skipped as the request already matched an endpoint.
+2025-06-30 10:43:25 [WRN] Failed to determine the https port for redirect.
+2025-06-30 10:43:25 [INF] Executing endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-30 10:43:25 [INF] Route matched with "{action = \"ExtractMetadataFromFile\", controller = \"Metadata\"}". Executing controller action with signature "System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ExtractMetadataFromFile(Microsoft.AspNetCore.Http.IFormFile, System.String)" on controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API").
+2025-06-30 10:43:25 [DBG] Execution plan of "authorization" filters (in the following order): ["None"]
+2025-06-30 10:43:25 [DBG] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ConsumesAttribute"]
+2025-06-30 10:43:25 [DBG] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)", "Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2025-06-30 10:43:25 [DBG] Execution plan of "exception" filters (in the following order): ["None"]
+2025-06-30 10:43:25 [DBG] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2025-06-30 10:43:25 [DBG] Executing controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-30 10:43:26 [INF] Initializing Tesseract engine with tessdata path: "C:\Users\czar\Documents\Stage\model\DocumentProcessor\bin\Debug\net8.0\tessdata" and model: "fra"
+2025-06-30 10:43:26 [INF] Tesseract engine initialized successfully
+2025-06-30 10:43:26 [INF] AzureOcrService initialized successfully.
+2025-06-30 10:43:26 [DBG] Executed controller factory for controller "ImageOcrMicroservice.Controllers.MetadataController" ("DocumentProcessor.API")
+2025-06-30 10:43:26 [DBG] Connection id ""0HNDNNA21RKH1"", Request id ""0HNDNNA21RKH1:00000003"": started reading request body.
+2025-06-30 10:43:26 [DBG] Connection id ""0HNDNNA21RKH1"", Request id ""0HNDNNA21RKH1:00000003"": done reading request body.
+2025-06-30 10:43:26 [DBG] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2025-06-30 10:43:26 [DBG] Attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' using the name '"file"' in request data ...
+2025-06-30 10:43:26 [DBG] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-30 10:43:26 [DBG] Done attempting to bind parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-30 10:43:26 [DBG] Attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"' ...
+2025-06-30 10:43:26 [DBG] Done attempting to validate the bound parameter '"file"' of type '"Microsoft.AspNetCore.Http.IFormFile"'.
+2025-06-30 10:43:26 [DBG] Attempting to bind parameter '"documentType"' of type '"System.String"' ...
+2025-06-30 10:43:26 [DBG] Attempting to bind parameter '"documentType"' of type '"System.String"' using the name '""' in request data ...
+2025-06-30 10:43:26 [DBG] Could not find a value in the request with name '""' for binding parameter '"documentType"' of type '"System.String"'.
+2025-06-30 10:43:26 [DBG] Done attempting to bind parameter '"documentType"' of type '"System.String"'.
+2025-06-30 10:43:26 [DBG] Done attempting to bind parameter '"documentType"' of type '"System.String"'.
+2025-06-30 10:43:26 [DBG] Attempting to validate the bound parameter '"documentType"' of type '"System.String"' ...
+2025-06-30 10:43:26 [DBG] Done attempting to validate the bound parameter '"documentType"' of type '"System.String"'.
+2025-06-30 10:43:26 [INF] Step 1: Starting intelligent OCR process for file '"FORMULAIREAGREGEOM_20250529122131.pdf"'.
+2025-06-30 10:43:26 [DBG] Normalized file name: '"formulaireagregeom20250529122131"' from original: '"FORMULAIREAGREGEOM_20250529122131.pdf"'
+2025-06-30 10:43:26 [INF] Detected document type 'FormulaireAgregeOM' for file '"FORMULAIREAGREGEOM_20250529122131.pdf"'
+2025-06-30 10:43:26 [INF] Detected document type: FormulaireAgregeOM for file: "FORMULAIREAGREGEOM_20250529122131.pdf"
+2025-06-30 10:43:26 [DBG] Document type FormulaireAgregeOM requires Azure OCR: True
+2025-06-30 10:43:26 [INF] Using "Azure OCR" for document type: FormulaireAgregeOM
+2025-06-30 10:43:26 [INF] Starting Azure OCR processing for file: "FORMULAIREAGREGEOM_20250529122131.pdf" (942540 bytes)
+2025-06-30 10:43:30 [ERR] An error occurred during Azure Document Analysis.
+Azure.RequestFailedException: Access denied due to invalid subscription key or wrong API endpoint. Make sure to provide a valid key for an active subscription and use a correct regional API endpoint for your resource.
+Status: 401 (PermissionDenied)
+ErrorCode: 401
+
+Content:
+{"error":{"code":"401","message":"Access denied due to invalid subscription key or wrong API endpoint. Make sure to provide a valid key for an active subscription and use a correct regional API endpoint for your resource."}}
+
+Headers:
+apim-request-id: ce61f503-7ddb-4c48-8614-31b7c7e89325
+Date: Mon, 30 Jun 2025 09:43:28 GMT
+Content-Length: 224
+Content-Type: application/json
+
+   at Azure.AI.FormRecognizer.DocumentAnalysis.DocumentAnalysisRestClient.DocumentModelsAnalyzeDocumentAsync(String modelId, InternalContentType contentType, String pages, String locale, Nullable`1 stringIndexType, IEnumerable`1 features, Stream analyzeRequest, CancellationToken cancellationToken)
+   at Azure.AI.FormRecognizer.DocumentAnalysis.DocumentAnalysisClient.AnalyzeDocumentAsync(WaitUntil waitUntil, String modelId, Stream document, AnalyzeDocumentOptions options, CancellationToken cancellationToken)
+   at ImageOcrMicroservice.Services.AzureOcrService.ExtractTextAsync(Stream fileStream) in C:\Users\czar\Documents\Stage\model\DocumentProcessor\Services\AzureOcrService.cs:line 33
+2025-06-30 10:43:30 [WRN] Azure OCR failed or returned no text for "FORMULAIREAGREGEOM_20250529122131.pdf". Falling back to Tesseract.
+2025-06-30 10:43:30 [INF] Starting Tesseract OCR processing (942540 bytes)
+2025-06-30 10:43:30 [INF] Starting PDF OCR processing for 942540 bytes
+2025-06-30 10:43:33 [INF] PDF processed successfully. Processing 2 pages
+2025-06-30 10:43:33 [DBG] Processing page 1/2
+2025-06-30 10:43:34 [DBG] Starting OCR processing on image data of 3961667 bytes
+2025-06-30 10:43:36 [INF] OCR completed successfully. Confidence: 0.66%, Text length: 1029 characters
+2025-06-30 10:43:36 [WRN] Low OCR confidence detected: 0.66%. Text quality may be poor
+2025-06-30 10:43:36 [DBG] Processing page 2/2
+2025-06-30 10:43:37 [DBG] Starting OCR processing on image data of 2338997 bytes
+2025-06-30 10:43:39 [INF] OCR completed successfully. Confidence: 0.79%, Text length: 2749 characters
+2025-06-30 10:43:39 [WRN] Low OCR confidence detected: 0.79%. Text quality may be poor
+2025-06-30 10:43:39 [INF] PDF processing completed. Successfully processed 2/2 pages
+2025-06-30 10:43:39 [INF] Step 2: Starting metadata extraction from OCR text for file '"FORMULAIREAGREGEOM_20250529122131.pdf"'.
+2025-06-30 10:43:39 [INF] Starting metadata extraction from raw text for file '"FORMULAIREAGREGEOM_20250529122131.pdf"'.
+2025-06-30 10:43:39 [DBG] Normalized file name: '"formulaireagregeom20250529122131"' from original: '"FORMULAIREAGREGEOM_20250529122131.pdf"'
+2025-06-30 10:43:39 [INF] Detected document type 'FormulaireAgregeOM' for file '"FORMULAIREAGREGEOM_20250529122131.pdf"'
+2025-06-30 10:43:39 [INF] Detected document type: FormulaireAgregeOM for file '"FORMULAIREAGREGEOM_20250529122131.pdf"'
+2025-06-30 10:43:39 [DBG] Full metadata extraction completed. Found 0 NIU(s), 0 RCCM(s), 0 Date(s), 0 Name(s), 0 Registration(s), 0 Delivered Date(s), 0 Duration(s), 0 Tax Attestation(s), 0 Tax Center(s), 0 Tax System(s), 0 ACFE Reference(s), 0 Location/Date(s), 0 Quarter(s), 0 Phone(s), 0 Email(s), 0 Regime(s).
+2025-06-30 10:43:39 [INF] Filtered metadata for document type 'FormulaireAgregeOM'. Allowed fields: ["DocumentName, DocumentType, BusinessNames, RegistrationNumbers, CompanyAddresses, LegalForms, CapitalAmounts, ActivityCodes, PhoneNumbers, EmailAddresses, RawText"]
+2025-06-30 10:43:39 [WRN] Validation failed for document type FormulaireAgregeOM: "Critical field 'BusinessNames' is missing or empty, Critical field 'RegistrationNumbers' is missing or empty"
+2025-06-30 10:43:39 [INF] Metadata extraction completed for '"FORMULAIREAGREGEOM_20250529122131.pdf"'. Document type: FormulaireAgregeOM, Extracted fields: 4, Is filtered: True
+2025-06-30 10:43:39 [DBG] Document type FormulaireAgregeOM requires Azure OCR: True
+2025-06-30 10:43:39 [INF] Metadata extraction completed for '"FORMULAIREAGREGEOM_20250529122131.pdf"'. Document Type: "Formulaire Agrégé OM", OCR Service Used: "Azure Document Analysis", Total Fields Extracted: 4, NIU Numbers: 0, RCCM Numbers: 0, Business Names: 0, Tax Attestations: 0, Phone Numbers: 0, Email Addresses: 0, Validation Valid: False
+2025-06-30 10:43:39 [WRN] Validation issues for '"FORMULAIREAGREGEOM_20250529122131.pdf"': "Critical field 'BusinessNames' is missing or empty, Critical field 'RegistrationNumbers' is missing or empty"
+2025-06-30 10:43:39 [INF] Step 4: Returning structured metadata for file '"FORMULAIREAGREGEOM_20250529122131.pdf"'.
+2025-06-30 10:43:39 [DBG] Document type FormulaireAgregeOM requires Azure OCR: True
+2025-06-30 10:43:39 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2025-06-30 10:43:39 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2025-06-30 10:43:39 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2025-06-30 10:43:39 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2025-06-30 10:43:39 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2025-06-30 10:43:39 [DBG] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"' and content type '"application/json"' to write the response.
+2025-06-30 10:43:39 [INF] Executing "OkObjectResult", writing value of type '"<>f__AnonymousType0`4[[System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[<>f__AnonymousType1`2[[System.Boolean, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Collections.Generic.List`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], DocumentProcessor.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2025-06-30 10:43:39 [INF] Executed action "ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)" in 13734.4333ms
+2025-06-30 10:43:39 [INF] Executed endpoint '"ImageOcrMicroservice.Controllers.MetadataController.ExtractMetadataFromFile (DocumentProcessor.API)"'
+2025-06-30 10:43:39 [DBG] Connection id ""0HNDNNA21RKH1"" completed keep alive response.
+2025-06-30 10:43:39 [DBG] Disposing OcrService and Tesseract engine
+2025-06-30 10:43:39 [INF] Request finished "HTTP/1.1" "POST" "http"://"localhost:5190""""/api/Metadata/extract""" - 200 null "application/json; charset=utf-8" 13873.7954ms
+2025-06-30 10:44:14 [DBG] Connection id ""0HNDNNA21RKH2"" received FIN.
+2025-06-30 10:44:14 [DBG] Connection id ""0HNDNNA21RKH2"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-30 10:44:14 [DBG] Connection id ""0HNDNNA21RKH2"" disconnecting.
+2025-06-30 10:44:14 [DBG] Connection id ""0HNDNNA21RKH2"" stopped.
+2025-06-30 10:45:49 [DBG] Connection id ""0HNDNNA21RKH1"" disconnecting.
+2025-06-30 10:45:49 [DBG] Connection id ""0HNDNNA21RKH1"" stopped.
+2025-06-30 10:45:49 [DBG] Connection id ""0HNDNNA21RKH1"" sending FIN because: ""The Socket transport's send loop completed gracefully.""
+2025-06-30 11:03:55 [INF] Application is shutting down...
+2025-06-30 11:03:55 [DBG] Hosting stopping
+2025-06-30 11:03:55 [DBG] Hosting stopped

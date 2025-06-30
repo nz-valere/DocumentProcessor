@@ -20,7 +20,7 @@ namespace ImageOcrMicroservice.Models
                     "ActivityCodes",
                     "PhoneNumbers",
                     "EmailAddresses",
-                    // "RawText"
+                    "RawText"
                 }
             },
             {
@@ -69,11 +69,11 @@ namespace ImageOcrMicroservice.Models
                     "TaxAttestationNumbers",
                     "TaxCenters",
                     "TaxSystems",
-                    "CompanyAddresses",
-                    "Quarters",
-                    "PhoneNumbers",
-                    "EmailAddresses",
-                    "Regimes",
+                    // "CompanyAddresses",
+                    // "Quarters",
+                    // "PhoneNumbers",
+                    // "EmailAddresses",
+                    // "Regimes",
                     // "RawText"
                 }
             },
@@ -85,9 +85,9 @@ namespace ImageOcrMicroservice.Models
                     "DocumentType",
                     "NiuNumbers",
                     "BusinessNames",
-                    "TaxAttestationNumbers",
-                    "TaxCenters",
-                    "TaxSystems",
+                    // "TaxAttestationNumbers",
+                    // "TaxCenters",
+                    "Dates",
                     "AcfeReferences",
                     "CompanyAddresses",
                     "Quarters",
