@@ -100,11 +100,12 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="flex items-center space-x-4">
             <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center">
-              <FileText className="w-6 h-6 text-white" />
+              {/* <FileText className="w-6 h-6 text-white" /> */}
+              <img src="/logo.svg" alt="My Icon" width={41} height={41} />
             </div>
             <div>
-              <h1 className="text-2xl font-bold">DocuPipe</h1>
-              <p className="text-gray-300">Intelligent Document Processor</p>
+              <h1 className="text-2xl font-bold">OrangeOcr</h1>
+              <p className="text-gray-300"> Document Processor</p>
             </div>
           </div>
         </div>
@@ -118,7 +119,7 @@ export default function HomePage() {
             <h2 className="text-4xl font-bold text-black mb-4">Process Your Documents Intelligently</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Upload scanned documents or PDFs for automatic OCR processing, metadata extraction, and seamless
-              integration with your GED system.
+              integration to the GED system.
             </p>
           </div>
 
@@ -131,7 +132,7 @@ export default function HomePage() {
                   <Upload className="w-8 h-8 text-orange-500" />
                 </div>
                 <CardTitle className="text-xl text-black">Single Document</CardTitle>
-                <CardDescription>Upload and process one document at a time for quick processing</CardDescription>
+                <CardDescription>Upload one document at a time for quick processing</CardDescription>
               </CardHeader>
               <CardContent>
                 <Button
