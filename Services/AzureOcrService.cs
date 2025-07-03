@@ -1,74 +1,84 @@
 using Azure;
 using Azure.AI.Vision.ImageAnalysis;
 using System.Text;
-
+using ImageMagick;
 namespace ImageOcrMicroservice.Services
 {
     /// <summary>
-    /// Service to interact with Azure's new AI Vision Image Analysis service for advanced OCR,
-    /// especially for handwritten text.
+    /// Service to interact with Azure's new AI Vision Image Analysis service for advanced OCR.
+    /// This version is updated to correctly handle PDF files by converting them to images first.
     /// </summary>
     public class AzureOcrService
     {
-        // --- CHANGED: The client is now an ImageAnalysisClient ---
         private readonly ImageAnalysisClient _client;
         private readonly ILogger<AzureOcrService> _logger;
 
         public AzureOcrService(IConfiguration configuration, ILogger<AzureOcrService> logger)
         {
             _logger = logger;
-
-            // This part remains the same. It securely loads your credentials from appsettings.json
             string endpoint = configuration["AzureOcr:Endpoint"] ?? throw new ArgumentNullException("AzureOcr:Endpoint is not configured in appsettings.json.");
             string key = configuration["AzureOcr:Key"] ?? throw new ArgumentNullException("AzureOcr:Key is not configured in appsettings.json.");
-
             var credential = new AzureKeyCredential(key);
-
-            // --- CHANGED: Instantiating the new ImageAnalysisClient ---
             _client = new ImageAnalysisClient(new Uri(endpoint), credential);
-
             _logger.LogInformation("AzureOcrService (Image Analysis SDK) initialized successfully.");
         }
 
-        /// <summary>
-        /// Extracts text from a document stream using the Azure AI Vision "Read" feature.
-        /// The method signature remains the same, so the orchestrator does not need to change.
-        /// </summary>
-        /// <param name="fileStream">The stream of the document (PDF or image).</param>
-        /// <returns>The extracted text as a single string.</returns>
         public async Task<string> ExtractTextAsync(Stream fileStream)
         {
             var allPagesText = new StringBuilder();
             try
             {
-                // The new SDK works with BinaryData, which can be created directly from a stream.
-                // This is efficient as it avoids loading the entire file into a byte array in memory first.
-                fileStream.Position = 0; // Ensure the stream is at the beginning before reading.
-                var binaryData = await BinaryData.FromStreamAsync(fileStream);
+                // --- REVISED LOGIC: Use ImageMagick to handle PDF and image files uniformly ---
+                _logger.LogInformation("Processing file with ImageMagick to handle PDF conversion if necessary.");
+                
+                // Reset stream position just in case
+                fileStream.Position = 0;
 
-                // --- CHANGED: Calling the new AnalyzeAsync method ---
-                // We specifically request the "Read" feature (VisualFeatures.Read) to perform OCR.
-                ImageAnalysisResult result = await _client.AnalyzeAsync(
-                    binaryData,
-                    VisualFeatures.Read);
-
-                _logger.LogInformation("Azure Image Analysis completed. Found {BlockCount} text blocks.", result.Read.Blocks.Count);
-
-                // --- CHANGED: Loop through the new result structure (Blocks and Lines) ---
-                // The new SDK provides text in blocks, which is slightly different from the old 'pages' structure.
-                // We will just concatenate all lines from all blocks to get the full text.
-                foreach (DetectedTextBlock block in result.Read.Blocks)
+                using (var magickImages = new MagickImageCollection())
                 {
-                    foreach (DetectedTextLine line in block.Lines)
+                    var settings = new MagickReadSettings
                     {
-                        allPagesText.AppendLine(line.Text);
+                        Density = new Density(300, 300) // 300 DPI is good for OCR
+                    };
+
+                    await magickImages.ReadAsync(fileStream, settings);
+                    
+                    if (!magickImages.Any())
+                    {
+                        _logger.LogWarning("ImageMagick could not read any pages or images from the provided stream.");
+                        return "Error: Could not process the file. It may be empty or corrupted.";
+                    }
+
+                    _logger.LogInformation("File processed by ImageMagick. Found {PageCount} page(s) to analyze with Azure.", magickImages.Count);
+
+                    int pageNum = 1;
+                    foreach (var imagePage in magickImages)
+                    {
+                        _logger.LogDebug("Analyzing page {PageNum} with Azure AI Vision.", pageNum);
+                        allPagesText.AppendLine($"--Page {pageNum}--");
+                        //PNG is a lossless format, ideal for OCR.
+                        imagePage.Format = MagickFormat.Png;
+                        byte[] pageAsPngBytes = imagePage.ToByteArray();
+                        
+                        var binaryData = BinaryData.FromBytes(pageAsPngBytes);
+
+                        ImageAnalysisResult result = await _client.AnalyzeAsync(binaryData, VisualFeatures.Read);
+
+                        foreach (DetectedTextBlock block in result.Read.Blocks)
+                        {
+                            foreach (DetectedTextLine line in block.Lines)
+                            {
+                                allPagesText.AppendLine(line.Text);
+                            }
+                        }
+                        allPagesText.AppendLine(); 
+                        pageNum++;
                     }
                 }
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An error occurred during Azure Image Analysis.");
-                // Return an error message that the orchestrator can handle.
+                _logger.LogError(ex, "An error occurred during Azure Image Analysis or PDF processing.");
                 return $"Error during Azure OCR: {ex.Message}";
             }
 
