@@ -38,8 +38,7 @@
               "RelativeToolTip": "Services\\AzureOcrService.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAAAowAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-30T10:38:52.192Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-30T10:38:52.192Z"
             },
             {
               "$type": "Document",
@@ -51,8 +50,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-30T10:34:01.396Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-30T10:34:01.396Z"
             },
             {
               "$type": "Document",
@@ -62,7 +60,7 @@
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
               "ToolTip": "C:\\Users\\WJKT8718\\Documents\\OrangeDocumentProcessor\\DocumentProcessor.API\\Properties\\launchSettings.json",
               "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABCAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-06-30T10:30:34.42Z",
               "EditorCaption": ""
@@ -70,15 +68,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "DocumentProcessor.API",
+              "Title": "DocumentProcessor.API.csproj",
               "DocumentMoniker": "C:\\Users\\WJKT8718\\Documents\\OrangeDocumentProcessor\\DocumentProcessor.API\\DocumentProcessor.API.csproj",
               "RelativeDocumentMoniker": "DocumentProcessor.API.csproj",
               "ToolTip": "C:\\Users\\WJKT8718\\Documents\\OrangeDocumentProcessor\\DocumentProcessor.API\\DocumentProcessor.API.csproj",
               "RelativeToolTip": "DocumentProcessor.API.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-06-30T10:29:40.617Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-30T10:29:40.617Z"
             }
           ]
         }
