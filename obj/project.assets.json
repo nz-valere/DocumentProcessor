@@ -2447,31 +2447,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\WJKT8718\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\czar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\WJKT8718\\Documents\\OrangeDocumentProcessor\\DocumentProcessor.API\\DocumentProcessor.API.csproj",
+      "projectUniqueName": "C:\\Users\\czar\\Documents\\Stage\\model\\DocumentProcessor\\DocumentProcessor.API.csproj",
       "projectName": "DocumentProcessor.API",
-      "projectPath": "C:\\Users\\WJKT8718\\Documents\\OrangeDocumentProcessor\\DocumentProcessor.API\\DocumentProcessor.API.csproj",
-      "packagesPath": "C:\\Users\\WJKT8718\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\WJKT8718\\Documents\\OrangeDocumentProcessor\\DocumentProcessor.API\\obj\\",
+      "projectPath": "C:\\Users\\czar\\Documents\\Stage\\model\\DocumentProcessor\\DocumentProcessor.API.csproj",
+      "packagesPath": "C:\\Users\\czar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\czar\\Documents\\Stage\\model\\DocumentProcessor\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\WJKT8718\\Application Data\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\czar\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2489,8 +2482,7 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.200"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -2564,7 +2556,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.411/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
