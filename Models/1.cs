@@ -13,13 +13,14 @@ namespace ImageOcrMicroservice.Models
                     "DocumentName",
                     "DocumentType",
                     "BusinessNames",
+                    "PromoterNames",
                     "RegistrationNumbers",
                     "CompanyAddresses",
                     "LegalForms",
-                    "CapitalAmounts",
                     "ActivityCodes",
                     "PhoneNumbers",
-                    "EmailAddresses",
+                    "MinDailyRevenue",
+                    "MaxDailyRevenue",
                     "RawText"
                 }
             },
@@ -29,10 +30,13 @@ namespace ImageOcrMicroservice.Models
                 {
                     "DocumentName",
                     "DocumentType",
+                    "Name",
+                    "Surname",
                     "RegistrationNumbers",
-                    "Dates",
+                    "BirthDate",
+                    "Profession",
                     "DocumentLocationsAndDates",
-                    // "RawText"
+                    "RawText"
                 }
             },
             {
@@ -43,7 +47,6 @@ namespace ImageOcrMicroservice.Models
                     "DocumentType",
                     "RccmNumbers",
                     "BusinessNames",
-                    "RegistrationNumbers",
                     "CompanyAddresses",
                     "LegalForms",
                     "CapitalAmounts",
@@ -53,9 +56,7 @@ namespace ImageOcrMicroservice.Models
                     "TribunalNames",
                     "ActivityCodes",
                     "Quarters",
-                    "PhoneNumbers",
-                    "EmailAddresses",
-                    // "RawText"
+                    "RawText"
                 }
             },
             {
@@ -69,12 +70,8 @@ namespace ImageOcrMicroservice.Models
                     "TaxAttestationNumbers",
                     "TaxCenters",
                     "TaxSystems",
-                    // "CompanyAddresses",
-                    // "Quarters",
-                    // "PhoneNumbers",
-                    // "EmailAddresses",
-                    // "Regimes",
-                    // "RawText"
+                    "Regimes",
+                    "RawText"
                 }
             },
             {
@@ -85,8 +82,6 @@ namespace ImageOcrMicroservice.Models
                     "DocumentType",
                     "NiuNumbers",
                     "BusinessNames",
-                    // "TaxAttestationNumbers",
-                    // "TaxCenters",
                     "Dates",
                     "AcfeReferences",
                     "CompanyAddresses",
@@ -95,7 +90,7 @@ namespace ImageOcrMicroservice.Models
                     "EmailAddresses",
                     "Regimes",
                     "DocumentLocationsAndDates",
-                    // "RawText"
+                    "RawText"
                 }
             }
         };
@@ -113,6 +108,11 @@ namespace ImageOcrMicroservice.Models
             {
                 "DocumentName",
                 "DocumentType",
+                "PromoterNames",
+                "Name",
+                "Surname",
+                "BirthDate",
+                "Profession",
                 "NiuNumbers",
                 "RccmNumbers",
                 "BusinessNames",
@@ -135,6 +135,8 @@ namespace ImageOcrMicroservice.Models
                 "PhoneNumbers",
                 "EmailAddresses",
                 "Regimes",
+                "MinDailyRevenue",
+                "MaxDailyRevenue",
                 "RawText"
             };
         }

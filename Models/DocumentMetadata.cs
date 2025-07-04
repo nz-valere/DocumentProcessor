@@ -5,6 +5,21 @@ namespace ImageOcrMicroservice.Models
 
     public class DocumentMetadata
     {
+        [JsonPropertyName("promoter_names")]
+        public List<string> PromoterNames { get; set; } = new List<string>();
+
+        [JsonPropertyName("Name")]
+        public List<string> Name { get; set; } = new List<string>();
+
+        [JsonPropertyName("surname")]
+        public List<string> Surname { get; set; } = new List<string>();
+
+        [JsonPropertyName("birth_date")]
+        public List<string> BirthDate { get; set; } = new List<string>();
+
+        [JsonPropertyName("profession")]
+        public List<string> Profession { get; set; } = new List<string>();
+
         [JsonPropertyName("document_name")]
         public string DocumentName { get; set; } = string.Empty;
 
@@ -78,6 +93,12 @@ namespace ImageOcrMicroservice.Models
 
         [JsonPropertyName("regimes")]
         public List<string> Regimes { get; set; } = new List<string>();
+
+        [JsonPropertyName("max_daily_revenue")]
+        public List<string> MaxDailyRevenue { get; set; } = new List<string>();
+
+        [JsonPropertyName("min_daily_revenue")]
+        public List<string> MinDailyRevenue { get; set; } = new List<string>();
 
         [JsonPropertyName("raw_text")]
         public string RawText { get; set; } = string.Empty;

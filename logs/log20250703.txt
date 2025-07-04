@@ -848,3 +848,6 @@ Content-Type: application/json; charset=utf-8
 2025-07-03 14:40:27 [DBG] Connection id ""0HNDQ6SASM0L2"" completed keep alive response.
 2025-07-03 14:40:27 [DBG] Disposing OcrService and Tesseract engine
 2025-07-03 14:40:27 [INF] Request finished "HTTP/1.1" "POST" "http"://"172.16.16.86:5190""""/api/Ocr/extractText""" - 200 7615 "text/plain" 36894.0791ms
+2025-07-03 14:42:38 [DBG] Connection id ""0HNDQ6SASM0L2"" disconnecting.
+2025-07-03 14:42:38 [DBG] Connection id ""0HNDQ6SASM0L2"" stopped.
+2025-07-03 14:42:38 [DBG] Connection id ""0HNDQ6SASM0L2"" sending FIN because: ""The Socket transport's send loop completed gracefully.""

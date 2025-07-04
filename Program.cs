@@ -21,6 +21,7 @@ try
     builder.Services.AddScoped<OcrService>();
     builder.Services.AddScoped<DocumentTypeDetectionService>();
     builder.Services.AddScoped<DocumentSpecificMetadataService>();
+    builder.Services.AddScoped<RegexService>();
     builder.Services.AddScoped<MetadataService>();
     builder.Services.AddScoped<AzureOcrService>();
     builder.Services.AddScoped<OcrOrchestrationService>();
