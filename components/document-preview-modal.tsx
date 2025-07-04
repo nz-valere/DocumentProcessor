@@ -103,7 +103,7 @@ export function DocumentPreviewModal({ documents, isOpen, onClose }: DocumentPre
 
   const getDocumentStats = () => {
     const text = editedMetadata.extractedText || ""
-    const words = text.split(/\s+/).filter((word) => word.length > 0)
+    const words = text.split(/\s+/).filter((word: string) => word.length > 0)
     const characters = text.length
     const lines = text.split("\n").length
 
@@ -124,7 +124,7 @@ export function DocumentPreviewModal({ documents, isOpen, onClose }: DocumentPre
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-7xl max-h-[90vh] overflow-hidden">
+      <DialogContent className="w-[95vw] max-w-[95vw] md:w-full md:max-w-5xl max-h-[90vh] overflow-hidden">
         <DialogHeader className="flex flex-row items-center justify-between">
           <DialogTitle className="text-xl font-bold text-black">
             Document Preview - {currentDocument.filename}
@@ -165,12 +165,19 @@ export function DocumentPreviewModal({ documents, isOpen, onClose }: DocumentPre
               <h3 className="font-semibold text-black">Document Preview</h3>
             </div>
             <div className="p-4 h-full overflow-auto">
-              <img
-                src={currentDocument.imageUrl || "/placeholder.svg"}
-                alt={currentDocument.filename}
-                className="w-full h-auto border rounded shadow-sm"
-                style={{ maxHeight: "600px", objectFit: "contain" }}
-              />
+              {currentDocument.filename?.endsWith(".pdf") ? (
+                <iframe
+                  src={currentDocument.imageUrl}
+                  className="w-full h-96 border rounded shadow-sm"
+                  title={currentDocument.filename}
+                />
+              ) : (
+                <img
+                  src={currentDocument.imageUrl || "/placeholder.svg"}
+                  alt={`${currentDocument.filename} - Page 1`}
+                  className="max-w-full max-h-96 border rounded shadow-sm mx-auto"
+                />
+              )}
             </div>
           </div>
 
@@ -202,7 +209,7 @@ export function DocumentPreviewModal({ documents, isOpen, onClose }: DocumentPre
                 <TabsContent value="metadata" className="h-full p-4 overflow-auto">
                   <div className="h-full">
                     <h4 className="font-semibold text-black mb-3">Extracted Metadata</h4>
-                    <JsonViewer data={editedMetadata} />
+                    <JsonViewer data={{...editedMetadata, RawText: undefined}} />
                   </div>
                 </TabsContent>
 
@@ -227,7 +234,7 @@ export function DocumentPreviewModal({ documents, isOpen, onClose }: DocumentPre
                     <h4 className="font-semibold text-black mb-3">Raw Extracted Text</h4>
                     <div className="bg-gray-50 rounded-lg p-4 h-full overflow-auto">
                       <pre className="text-sm text-gray-800 whitespace-pre-wrap font-mono">
-                        {editedMetadata.extractedText || "No text extracted"}
+                        {editedMetadata.RawText || "No text extracted"}
                       </pre>
                     </div>
                   </div>

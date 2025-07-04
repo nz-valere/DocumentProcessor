@@ -49,9 +49,16 @@ export default function HomePage() {
 
       const result = await response.json()
 
+
       // Transform the response to match our expected format
       const documents = isBatch ? result.documents : [result.document]
-      setProcessedDocuments(documents)
+      // Add imageUrl using URL.createObjectURL for each document
+      const filesArray = isBatch ? Array.from(files) : [files[0]]
+      const documentsWithImageUrl = documents.map((doc: any, idx: number) => ({
+        ...doc,
+        imageUrl: URL.createObjectURL(filesArray[idx]),
+      }))
+      setProcessedDocuments(documentsWithImageUrl)
       setShowPreview(true)
 
       toast({
