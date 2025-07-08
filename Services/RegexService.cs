@@ -43,23 +43,37 @@ namespace ImageOcrMicroservice.Services
 
 
         #region CniOrRecipice Specific Patterns
-        private static readonly Regex CniNameRegex = new Regex(@"(?:Nom|Surname|NOM)\s*:\s*(.*?)(?=\n|$)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        private static readonly Regex CniSurnameRegex = new Regex(@"(?:Prénom|Prénoms|Given Name|PRENOMS?)\s*:\s*(.*?)(?=\n|$)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        private static readonly Regex CniBirthDateRegex = new Regex(@"(?:Né le|Date de naissance|Born on|Birth Date)\s*:\s*(\d{1,2}[/.-]\d{1,2}[/.-]\d{4})", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        private static readonly Regex CniProfessionRegex = new Regex(@"(?:Profession|Métier|Occupation)\s*:\s*(.*?)(?=\n|$)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        private static readonly Regex CniRegistrationNumberRegex = new Regex(@"(?:N°|Numéro|Number)\s*:\s*(\d+[A-Z]?\d*)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        private static readonly Regex CniNameRegex = new Regex(
+        @"(?:\bNom\b|Name|NONV/SURNAME|Surname)\s*\n+([A-Z\s'-]+)",
+        RegexOptions.IgnoreCase | RegexOptions.Compiled);
+
+        private static readonly Regex CniSurnameRegex = new Regex(
+        @"(?:Pr[ée]noms?|Sumames|Given Name|PRENOMS?/GIVEN NAMES?)\s*\n+([A-Z\s'.-]+)",
+        RegexOptions.IgnoreCase | RegexOptions.Compiled);
+
+        private static readonly Regex CniBirthDateRegex = new Regex(
+        @"(?:l[ẻe]\(e\) le|N[eé] le|Date de naissance|Born on|Birth Date)\s*\n?([0-9]{1,2}[./-][0-9]{1,2}[./-][0-9]{4})",
+        RegexOptions.IgnoreCase | RegexOptions.Compiled);
+
+        private static readonly Regex CniProfessionRegex = new Regex(@"(?:Profession|Métier|Occupation)\s*\n([^\n]+)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        private static readonly Regex CniRegistrationNumberRegex = new Regex(
+        @"(?:Identifiant demande\s*/\s*Request identifiant|Identifiant demande|Request identifiant|Num[eé]ro Kit|Kit id|N[°o]|Number)\s*\n*([A-Z0-9]{5,})",
+        RegexOptions.IgnoreCase | RegexOptions.Compiled);
+
         #endregion
 
 
 
         #region RegistreCommerce Specific Patterns
         private static readonly Regex CommerceRccmRegex = new Regex(@"\b(RC[/\s]*[A-Z]{3,}[/\s]*\d{4}[/\s]*[A-Z][/\s]*\d{4})\b", RegexOptions.Compiled);
-        private static readonly Regex CommerceBusinessNameRegex = new Regex(@"\b(SUKA SARL|ALLIANCE INFINIMENT|[A-Z][A-Z\s&-]+(?:SARL|SAS|SA|EURL|SNC|SCS|GIE))\b", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        private static readonly Regex CommerceBusinessNameRegex = new Regex(@"(?:NOM|N0M)\s+(?:COMMERCIAL|C0MMERCIAL|COMMERCI[AE]L)\s*:\s*([A-Z][A-Z0-9\s&.-]+?)(?=\n|$|\s{2,})", RegexOptions.IgnoreCase | RegexOptions.Compiled);
         private static readonly Regex CommerceCapitalAmountRegex = new Regex(@"CAPITAL SOCIAL\s*:\s*(\d+(?:\.\d{3})*)\s*(FCFA|F CFA|€|EUR)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        private static readonly Regex CommerceRegistrationDateRegex = new Regex(@"(?:Date d'immatriculation|Immatriculé le|Date d'inscription)[\s:]*(\d{1,2}[/.-]\d{1,2}[/.-]\d{4})", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        private static readonly Regex CommerceExecutiveSurname = new Regex(@"(?:(?:RENSEIGNEMENTS\s+RELATIFS\s+AUX\s+DIRIGEANTS|DIRIGEANTS?|GÉRANTS?).*?\n+|NAISSANCE\s*\n+)([A-Z]+(?:\s+[A-Z]+){1,5})", RegexOptions.IgnoreCase | RegexOptions.Compiled);
         private static readonly Regex CommerceDeliveredDateRegex = new Regex(@"Déposée le\s*(\d{1,2}/\d{1,2}/\d{4})", RegexOptions.IgnoreCase | RegexOptions.Compiled);
         private static readonly Regex CommerceDurationRegex = new Regex(@"Durée\s*:\s*(\d+\s*ANS?)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        private static readonly Regex CommerceTribunalRegex = new Regex(@"(?:Tribunal|Greffe)[\s:]*([A-Z][A-Z\s-]+)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        private static readonly Regex CommerceExecutiveName = new Regex(
+            @"(?:(?:RENSEIGNEMENTS\s+RELATIFS\s+AUX\s+DIRIGEANTS|DIRIGEANTS?|GÉRANTS?).*?\n+|NAISSANCE\s*\n+)([A-Z]+(?:\s+[A-Z]+){1,5})",
+            RegexOptions.IgnoreCase | RegexOptions.Compiled);                
         #endregion
 
 
@@ -67,10 +81,10 @@ namespace ImageOcrMicroservice.Services
         #region CarteContribuabledValide Specific Patterns
         private static readonly Regex ContribuableNiuRegex = new Regex(@"\b([MP]\d{12}[A-Z])\b", RegexOptions.Compiled);
         private static readonly Regex ContribuableBusinessNameRegex = new Regex(@"(?:Dénomination|Raison sociale|Nom commercial)\s*:\s*(.*?)(?=\n|$)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        private static readonly Regex ContribuableTaxAttestationRegex = new Regex(@"(?:N° Carte|Numéro Carte|Card Number)\s*:\s*(\d+)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        private static readonly Regex ContribuableTaxAttestationRegex = new Regex(@"", RegexOptions.IgnoreCase | RegexOptions.Compiled);
         private static readonly Regex ContribuableTaxCenterRegex = new Regex(@"Centre des impôts de rattachement\s*:\s*(.*?)(?=\n|Tax center)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        private static readonly Regex ContribuableTaxSystemRegex = new Regex(@"Régime fiscal\s*:\s*(.*?)(?=\n|Tax system)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        private static readonly Regex ContribuableRegimeRegex = new Regex(@"REGIME\s*:\s*(.*?)(?=\n|$)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        private static readonly Regex ContribuableTaxSystemRegex = new Regex(@"Régime\s*fiscal\s*:\s*(.*?)(?=\n|Tax system|$)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        private static readonly Regex ContribuableRegimeRegex = new Regex(@"\b(RC[/\s]*[A-Z]{3,}[/\s]*\d{4}[/\s]*[A-Z][/\s]*\d{4})\b", RegexOptions.Compiled);
         #endregion
 
 
@@ -163,10 +177,10 @@ namespace ImageOcrMicroservice.Services
             fields["CompanyAddresses"] = ExtractMatches(rawText, CommonAddressRegex);
             fields["LegalForms"] = ExtractMatches(rawText, CommonLegalFormRegex);
             fields["CapitalAmounts"] = ExtractCapitalAmounts(rawText, CommerceCapitalAmountRegex);
-            fields["RegistrationDates"] = ExtractMatches(rawText, CommerceRegistrationDateRegex);
+            fields["Name"] = ExtractMatches(rawText, CommerceExecutiveSurname);
             fields["DeliveredDates"] = ExtractMatches(rawText, CommerceDeliveredDateRegex);
             fields["CompanyDuration"] = ExtractMatches(rawText, CommerceDurationRegex);
-            fields["TribunalNames"] = ExtractMatches(rawText, CommerceTribunalRegex);
+            fields["Surname"] = ExtractMatches(rawText, CommerceExecutiveName);
             fields["ActivityCodes"] = ExtractMatches(rawText, CommonActivityCodeRegex);
             fields["Quarters"] = ExtractMatches(rawText, CommonQuarterRegex);
 
@@ -183,7 +197,7 @@ namespace ImageOcrMicroservice.Services
             fields["TaxAttestationNumbers"] = ExtractMatches(rawText, ContribuableTaxAttestationRegex);
             fields["TaxCenters"] = ExtractMatches(rawText, ContribuableTaxCenterRegex);
             fields["TaxSystems"] = ExtractMatches(rawText, ContribuableTaxSystemRegex);
-            fields["Regimes"] = ExtractMatches(rawText, ContribuableRegimeRegex);
+            fields["RccmNumbers"] = ExtractMatches(rawText, ContribuableRegimeRegex);
 
             return fields;
         }

@@ -50,10 +50,10 @@ namespace ImageOcrMicroservice.Models
                     "CompanyAddresses",
                     "LegalForms",
                     "CapitalAmounts",
-                    "RegistrationDates",
+                    "Name",
+                    "Surname",
                     "DeliveredDates",
                     "CompanyDuration",
-                    "TribunalNames",
                     "ActivityCodes",
                     "Quarters",
                     "RawText"
@@ -70,7 +70,7 @@ namespace ImageOcrMicroservice.Models
                     "TaxAttestationNumbers",
                     "TaxCenters",
                     "TaxSystems",
-                    "Regimes",
+                    "RccmNumbers",
                     "RawText"
                 }
             },
@@ -124,7 +124,7 @@ namespace ImageOcrMicroservice.Models
                 "RegistrationDates",
                 "DeliveredDates",
                 "CompanyDuration",
-                "TribunalNames",
+                // "TribunalNames",
                 "ActivityCodes",
                 "TaxAttestationNumbers",
                 "TaxCenters",
