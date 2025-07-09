@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\czar\\Documents\\Stage\\model\\DocumentProcessor\\DocumentProcessor.API.csproj": {}
+    "C:\\Users\\czar\\Documents\\Stage\\OCR\\backend\\DocumentProcessor.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\czar\\Documents\\Stage\\model\\DocumentProcessor\\DocumentProcessor.API.csproj": {
+    "C:\\Users\\czar\\Documents\\Stage\\OCR\\backend\\DocumentProcessor.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\czar\\Documents\\Stage\\model\\DocumentProcessor\\DocumentProcessor.API.csproj",
+        "projectUniqueName": "C:\\Users\\czar\\Documents\\Stage\\OCR\\backend\\DocumentProcessor.API.csproj",
         "projectName": "DocumentProcessor.API",
-        "projectPath": "C:\\Users\\czar\\Documents\\Stage\\model\\DocumentProcessor\\DocumentProcessor.API.csproj",
+        "projectPath": "C:\\Users\\czar\\Documents\\Stage\\OCR\\backend\\DocumentProcessor.API.csproj",
         "packagesPath": "C:\\Users\\czar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\czar\\Documents\\Stage\\model\\DocumentProcessor\\obj\\",
+        "outputPath": "C:\\Users\\czar\\Documents\\Stage\\OCR\\backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\czar\\AppData\\Roaming\\NuGet\\NuGet.Config"

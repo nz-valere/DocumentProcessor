@@ -1,4 +1,30 @@
-node_modules
-.next
+# Build outputs from your project
+bin/
+obj/
 
-next-env.d.ts
+# Visual Studio files
+.vs/
+
+# User-specific files found in your project
+*.user
+
+# HTTP request files (your DocumentProcessor.API.http)
+*.http
+
+# Log files from your logs directory
+logs/
+log*.txt
+
+# Diagnostic images generated in bin
+diagnostic_*.png
+
+# NuGet restore files
+project.lock.json
+project.fragment.lock.json
+*.nuget.props
+*.nuget.targets
+*.nuget.dgspec.json
+project.assets.json
+project.nuget.cache
+
+# Keep your OCR data files (hunspelldata and tessdata are important)

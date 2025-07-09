@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Uw5y0WoPw3s=",
+  "dgSpecHash": "h+iY0L+n6fA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\czar\\Documents\\Stage\\model\\DocumentProcessor\\DocumentProcessor.API.csproj",
+  "projectFilePath": "C:\\Users\\czar\\Documents\\Stage\\OCR\\backend\\DocumentProcessor.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\czar\\.nuget\\packages\\magick.net-q16-anycpu\\14.6.0\\magick.net-q16-anycpu.14.6.0.nupkg.sha512",
     "C:\\Users\\czar\\.nuget\\packages\\magick.net.core\\14.6.0\\magick.net.core.14.6.0.nupkg.sha512",
