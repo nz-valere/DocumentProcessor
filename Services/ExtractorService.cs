@@ -134,7 +134,6 @@ namespace ImageOcrMicroservice.Services
         {
             return documentType switch
             {
-                DocumentType.FormulaireAgregeOM => "Formulaire Agrégé OM",
                 DocumentType.CniOrRecipice => "CNI ou Récépissé",
                 DocumentType.RegistreCommerce => "Registre du Commerce",
                 DocumentType.CarteContribuabledValide => "Carte Contribuable Valide",
@@ -174,7 +173,6 @@ namespace ImageOcrMicroservice.Services
         {
             return documentType switch
             {
-                DocumentType.FormulaireAgregeOM => new HashSet<string> { "BusinessNames", "RegistrationNumbers" },
                 DocumentType.CniOrRecipice => new HashSet<string> { "RegistrationNumbers" },
                 DocumentType.RegistreCommerce => new HashSet<string> { "RccmNumbers", "BusinessNames" },
                 DocumentType.CarteContribuabledValide => new HashSet<string> { "NiuNumbers", "BusinessNames" },

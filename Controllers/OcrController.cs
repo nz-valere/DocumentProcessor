@@ -45,8 +45,15 @@ namespace ImageOcrMicroservice.Controllers
                 _logger.LogInformation("Processing file '{FileName}' using intelligent OCR selection.", file.FileName);
 
                 // Use the orchestration service to intelligently choose OCR method
-                string extractedText = await _ocrOrchestrationService.ProcessDocumentAndExtractTextAsync(
+                string extractedText = _ocrOrchestrationService.ProcessDocumentAndExtractText(
                     fileBytes, file.FileName, isPdf);
+                
+                // Check if the orchestration service returned an error for unknown document type
+                if (extractedText.StartsWith("Error: Document type could not be determined"))
+                {
+                    _logger.LogWarning("Document type could not be determined for file '{FileName}'.", file.FileName);
+                    return BadRequest(extractedText.Replace("Error: ", ""));
+                }
                 
                 _logger.LogInformation("Successfully extracted text from file '{FileName}'.", file.FileName);
                 var textBytes = Encoding.UTF8.GetBytes(extractedText);
@@ -75,6 +82,12 @@ namespace ImageOcrMicroservice.Controllers
                 return BadRequest("Invalid document type specified.");
             }
 
+            // Check if the document type is Unknown
+            if (docType == ImageOcrMicroservice.Models.DocumentType.Unknown)
+            {
+                return BadRequest("Unknown document type is not supported. Supported document types are: CNI/Récépissé, Registre du Commerce, Carte Contribuable Valide, and Attestation Fiscale.");
+            }
+
             var extension = Path.GetExtension(file.FileName).ToLowerInvariant();
             var allowedImageExtensions = new[] { ".png", ".jpg", ".jpeg", ".bmp", ".tiff" };
             var isImage = allowedImageExtensions.Contains(extension);
@@ -95,8 +108,15 @@ namespace ImageOcrMicroservice.Controllers
                     file.FileName, docType);
 
                 // Use the orchestration service with specific document type
-                string extractedText = await _ocrOrchestrationService.ProcessDocumentWithSpecificTypeAsync(
+                string extractedText = _ocrOrchestrationService.ProcessDocumentWithSpecificType(
                     fileBytes, file.FileName, isPdf, docType);
+                
+                // Check if the orchestration service returned an error for unknown document type
+                if (extractedText.StartsWith("Error: Cannot process document with Unknown type"))
+                {
+                    _logger.LogWarning("Cannot process document with Unknown type for file '{FileName}'.", file.FileName);
+                    return BadRequest(extractedText.Replace("Error: ", ""));
+                }
                 
                 _logger.LogInformation("Successfully extracted text from file '{FileName}' using {OCRService}.", 
                     file.FileName, _ocrOrchestrationService.GetRecommendedOcrService(docType));

@@ -6,7 +6,6 @@ namespace ImageOcrMicroservice.Models
         Unknown,
         
         // Specific, known document types.
-        FormulaireAgregeOM,
         CniOrRecipice,
         RegistreCommerce,
         CarteContribuabledValide,

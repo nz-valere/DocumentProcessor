@@ -6,13 +6,8 @@ namespace ImageOcrMicroservice.Services
     {
         private readonly ILogger<DocumentTypeDetectionService> _logger;
 
-        // Document type detection patterns
         private static readonly Dictionary<DocumentType, List<string>> FileNamePatterns = new()
         {
-            {
-                DocumentType.FormulaireAgregeOM,
-                new List<string> { "formulaireagregeom", "formulaire_agrege_om", "agrege_om" }
-            },
             {
                 DocumentType.CniOrRecipice,
                 new List<string> { "cni", "recipice", "carte_identite", "identite" }
@@ -72,7 +67,6 @@ namespace ImageOcrMicroservice.Services
         {
             return documentType switch
             {
-                DocumentType.FormulaireAgregeOM => "Formulaire Agrégé OM",
                 DocumentType.CniOrRecipice => "CNI ou Récépissé",
                 DocumentType.RegistreCommerce => "Registre du Commerce",
                 DocumentType.CarteContribuabledValide => "Carte Contribuable Valide",

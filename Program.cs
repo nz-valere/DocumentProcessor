@@ -23,7 +23,6 @@ try
     builder.Services.AddScoped<DocumentSpecificMetadataService>();
     builder.Services.AddScoped<RegexService>();
     builder.Services.AddScoped<MetadataService>();
-    builder.Services.AddScoped<AzureOcrService>();
     builder.Services.AddScoped<OcrOrchestrationService>();
 
     var app = builder.Build();

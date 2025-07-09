@@ -133,7 +133,6 @@ namespace ImageOcrMicroservice.Services
                 { "EXTRAIT", "Extrait du Registre du Commerce" },
                 { "KBIS", "Extrait K-bis" },
                 { "ATTESTATION", "Attestation d'Immatriculation" },
-                { "FORMULAIREAGREGEOM", "Formulaire Agrégé OM" },
                 { "CNI", "CNI ou Récépissé" },
                 { "RECIPICE", "CNI ou Récépissé" }
             };

@@ -43,14 +43,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Azure.AI.FormRecognizer": {
-              "target": "Package",
-              "version": "[4.1.0, )"
-            },
-            "Azure.AI.Vision.ImageAnalysis": {
-              "target": "Package",
-              "version": "[1.0.0, )"
-            },
             "Magick.NET-Q16-AnyCPU": {
               "target": "Package",
               "version": "[14.6.0, )"

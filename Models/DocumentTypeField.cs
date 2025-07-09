@@ -7,24 +7,6 @@ namespace ImageOcrMicroservice.Models
         public static readonly Dictionary<DocumentType, HashSet<string>> FieldMappings = new()
         {
             {
-                DocumentType.FormulaireAgregeOM,
-                new HashSet<string>
-                {
-                    "DocumentName",
-                    "DocumentType",
-                    "BusinessNames",
-                    "PromoterNames",
-                    "RegistrationNumbers",
-                    "CompanyAddresses",
-                    "LegalForms",
-                    "ActivityCodes",
-                    "PhoneNumbers",
-                    "MinDailyRevenue",
-                    "MaxDailyRevenue",
-                    "RawText"
-                }
-            },
-            {
                 DocumentType.CniOrRecipice,
                 new HashSet<string>
                 {

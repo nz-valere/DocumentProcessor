@@ -61,16 +61,30 @@ namespace ImageOcrMicroservice.Controllers
                 
                 if (!string.IsNullOrWhiteSpace(documentType) && Enum.TryParse<DocumentType>(documentType, true, out var specifiedDocType))
                 {
+                    // Check if the specified document type is Unknown
+                    if (specifiedDocType == DocumentType.Unknown)
+                    {
+                        return BadRequest("Unknown document type is not supported. Supported document types are: CNI/Récépissé, Registre du Commerce, Carte Contribuable Valide, and Attestation Fiscale.");
+                    }
+
                     // Use specified document type for OCR selection
-                    extractedText = await _ocrOrchestrationService.ProcessDocumentWithSpecificTypeAsync(
+                    extractedText = _ocrOrchestrationService.ProcessDocumentWithSpecificType(
                         fileBytes, file.FileName, isPdf, specifiedDocType);
                     _logger.LogInformation("Used specified document type '{DocumentType}' for OCR selection.", specifiedDocType);
                 }
                 else
                 {
                     // Use automatic document type detection for OCR selection
-                    extractedText = await _ocrOrchestrationService.ProcessDocumentAndExtractTextAsync(
+                    extractedText = _ocrOrchestrationService.ProcessDocumentAndExtractText(
                         fileBytes, file.FileName, isPdf);
+                }
+
+                // Check if the orchestration service returned an error for unknown document type
+                if (extractedText.StartsWith("Error: Document type could not be determined") || 
+                    extractedText.StartsWith("Error: Cannot process document with Unknown type"))
+                {
+                    _logger.LogWarning("Document type issue for file '{FileName}': {Error}", file.FileName, extractedText);
+                    return BadRequest(extractedText.Replace("Error: ", ""));
                 }
 
                 if (string.IsNullOrWhiteSpace(extractedText))
@@ -152,6 +166,12 @@ namespace ImageOcrMicroservice.Controllers
             DocumentType? specifiedDocType = null;
             if (!string.IsNullOrWhiteSpace(documentType) && Enum.TryParse<DocumentType>(documentType, true, out var parsedDocType))
             {
+                // Check if the specified document type is Unknown
+                if (parsedDocType == DocumentType.Unknown)
+                {
+                    return BadRequest("Unknown document type is not supported. Supported document types are: CNI/Récépissé, Registre du Commerce, Carte Contribuable Valide, and Attestation Fiscale.");
+                }
+
                 specifiedDocType = parsedDocType;
                 _logger.LogInformation("Using specified document type '{DocumentType}' for batch processing.", specifiedDocType);
             }
@@ -207,7 +227,7 @@ namespace ImageOcrMicroservice.Controllers
                         DisplayName = _documentTypeDetectionService.GetDocumentTypeDisplayName(type),
                         Patterns = DocumentTypeDetectionService.GetPatternsForDocumentType(type),
                         RecommendedOcrService = _ocrOrchestrationService.GetRecommendedOcrService(type),
-                        IsHandwritten = OcrOrchestrationService.IsHandwrittenDocumentType(type)
+                        IsHandwritten = false // No handwritten document types since Azure OCR was removed
                     })
                     .ToList();
 
@@ -246,13 +266,20 @@ namespace ImageOcrMicroservice.Controllers
                 
                 if (specifiedDocumentType.HasValue)
                 {
-                    extractedText = await _ocrOrchestrationService.ProcessDocumentWithSpecificTypeAsync(
+                    extractedText = _ocrOrchestrationService.ProcessDocumentWithSpecificType(
                         fileBytes, file.FileName, isPdf, specifiedDocumentType.Value);
                 }
                 else
                 {
-                    extractedText = await _ocrOrchestrationService.ProcessDocumentAndExtractTextAsync(
+                    extractedText = _ocrOrchestrationService.ProcessDocumentAndExtractText(
                         fileBytes, file.FileName, isPdf);
+                }
+
+                // Check if the orchestration service returned an error for unknown document type
+                if (extractedText.StartsWith("Error: Document type could not be determined") || 
+                    extractedText.StartsWith("Error: Cannot process document with Unknown type"))
+                {
+                    return CreateErrorResult(file.FileName, extractedText.Replace("Error: ", ""), "Unknown Document Type");
                 }
 
                 if (string.IsNullOrWhiteSpace(extractedText))
@@ -388,7 +415,7 @@ namespace ImageOcrMicroservice.Controllers
             {
                 if (allowedFields.Contains(property.Name))
                 {
-                    filteredMetadata[property.Name] = property.GetValue(metadata);
+                    filteredMetadata[property.Name] = property.GetValue(metadata) ?? string.Empty;
                 }
             }
 
@@ -402,7 +429,6 @@ namespace ImageOcrMicroservice.Controllers
 
             var displayNameToEnum = new Dictionary<string, DocumentType>(StringComparer.OrdinalIgnoreCase)
             {
-                { "Formulaire Agrégé OM", DocumentType.FormulaireAgregeOM },
                 { "CNI ou Récépissé", DocumentType.CniOrRecipice },
                 { "Registre du Commerce", DocumentType.RegistreCommerce },
                 { "Carte Contribuable Valide", DocumentType.CarteContribuabledValide },

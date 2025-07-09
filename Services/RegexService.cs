@@ -29,19 +29,6 @@ namespace ImageOcrMicroservice.Services
 
 
 
-        #region FormulaireAgregeOM Specific Patterns
-        private static readonly Regex AgregeBusinessNameRegex = new Regex(@"Nom commercial / Raison sociale du Point Agrégé\s*\n(.*?)(?=\n)", RegexOptions.Compiled);
-        private static readonly Regex AgregeNiuRegex = new Regex(@"Numéro\s+Identifiant\s+Unique\s+\(NIU\)[^\n]*\n([A-Z0-9\sW]+\.)", RegexOptions.Compiled);
-        private static readonly Regex AgregeAddressRegex = new Regex(@"Localisation de l'activité\*\s*\n(.*?)(?=\n)", RegexOptions.Compiled);
-        private static readonly Regex AgregeActivityRegex = new Regex(@"Activité principale du Point accepteur agrégé'\s*\n(.*?)(?=\n)", RegexOptions.Compiled);
-        private static readonly Regex AgregePhoneNumberRegex = new Regex(@"Numéro de téléphone personnel[^\n]*\n([0-9\s]+)", RegexOptions.Compiled);
-        private static readonly Regex AgregePromoterNamesRegex = new Regex(@"(?:Nom et prénom|Promoteur|Gérant)\s*:\s*(.*?)(?=\n|$)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        private static readonly Regex AgregeMinDailyRevenueRegex = new Regex(@"(?:Chiffre d'affaires minimum|CA minimum|Min CA)\s*:\s*(\d+(?:\.\d{3})*)\s*(FCFA|F CFA)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        private static readonly Regex AgregeMaxDailyRevenueRegex = new Regex(@"(?:Chiffre d'affaires maximum|CA maximum|Max CA)\s*:\s*(\d+(?:\.\d{3})*)\s*(FCFA|F CFA)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        #endregion
-
-
-
         #region CniOrRecipice Specific Patterns
         private static readonly Regex CniNameRegex = new Regex(
         @"(?:\bNom\b|Name|NONV/SURNAME|Surname)\s*\n+([A-Z\s'-]+)",
@@ -81,7 +68,7 @@ namespace ImageOcrMicroservice.Services
         #region CarteContribuabledValide Specific Patterns
         private static readonly Regex ContribuableNiuRegex = new Regex(@"\b([MP]\d{12}[A-Z])\b", RegexOptions.Compiled);
         private static readonly Regex ContribuableBusinessNameRegex = new Regex(@"(?:Dénomination|Raison sociale|Nom commercial)\s*:\s*(.*?)(?=\n|$)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        private static readonly Regex ContribuableTaxAttestationRegex = new Regex(@"", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        private static readonly Regex ContribuableTaxAttestationRegex = new Regex(@"(?:ATTESTATION\s+D['']IMMATRICULATION|ATTESTATION\s+OF\s+TAXPAYERS\s+REGISTRATION)(?:.*?\n){0,5}?\s*(\d{5,15})\b", RegexOptions.IgnoreCase | RegexOptions.Compiled);
         private static readonly Regex ContribuableTaxCenterRegex = new Regex(@"Centre des impôts de rattachement\s*:\s*(.*?)(?=\n|Tax center)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
         private static readonly Regex ContribuableTaxSystemRegex = new Regex(@"Régime\s*fiscal\s*:\s*(.*?)(?=\n|Tax system|$)", RegexOptions.IgnoreCase | RegexOptions.Compiled);
         private static readonly Regex ContribuableRegimeRegex = new Regex(@"\b(RC[/\s]*[A-Z]{3,}[/\s]*\d{4}[/\s]*[A-Z][/\s]*\d{4})\b", RegexOptions.Compiled);
@@ -105,9 +92,6 @@ namespace ImageOcrMicroservice.Services
             {
                 switch (documentType)
                 {
-                    case DocumentType.FormulaireAgregeOM:
-                        extractedFields = ExtractFormulaireAgregeOMFields(rawText);
-                        break;
                     case DocumentType.CniOrRecipice:
                         extractedFields = ExtractCniOrRecipiceFields(rawText);
                         break;
@@ -132,24 +116,6 @@ namespace ImageOcrMicroservice.Services
             }
 
             return extractedFields;
-        }
-
-        private Dictionary<string, List<string>> ExtractFormulaireAgregeOMFields(string rawText)
-        {
-            var fields = new Dictionary<string, List<string>>();
-
-            // Extract specific fields for FormulaireAgregeOM
-            fields["BusinessNames"] = ExtractMatches(rawText, AgregeBusinessNameRegex);
-            fields["PromoterNames"] = ExtractMatches(rawText, AgregePromoterNamesRegex);
-            fields["RegistrationNumbers"] = ExtractMatches(rawText, CommonRegistrationNumberRegex);
-            fields["CompanyAddresses"] = ExtractMatches(rawText, AgregeAddressRegex);
-            fields["LegalForms"] = ExtractMatches(rawText, CommonLegalFormRegex);
-            fields["ActivityCodes"] = ExtractMatches(rawText, AgregeActivityRegex);
-            fields["PhoneNumbers"] = ExtractMatches(rawText, AgregePhoneNumberRegex);
-            fields["MinDailyRevenue"] = ExtractCapitalAmounts(rawText, AgregeMinDailyRevenueRegex);
-            fields["MaxDailyRevenue"] = ExtractCapitalAmounts(rawText, AgregeMaxDailyRevenueRegex);
-
-            return fields;
         }
 
         private Dictionary<string, List<string>> ExtractCniOrRecipiceFields(string rawText)
