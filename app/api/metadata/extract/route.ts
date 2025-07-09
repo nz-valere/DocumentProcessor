@@ -14,59 +14,63 @@ export async function POST(request: NextRequest) {
   try {
     const requestFormData = await request.formData();
     const file = requestFormData.get("file") as File;
-
-    // You can also get the optional documentType if your frontend sends it
     const documentType = requestFormData.get("documentType") as string | null;
 
     if (!file) {
       return NextResponse.json({ error: "No file provided." }, { status: 400 });
     }
 
-    // --- Backend Integration ---
     const backendFormData = new FormData();
     backendFormData.append("file", file);
 
-    // Construct backend URL. If a documentType is provided, add it as a query parameter.
     const apiUrl = new URL(`${BACKEND_URL}/api/Metadata/extract`);
+    // CORRECTED: The .NET model binder looks for the parameter from the form, not query string.
     if (documentType) {
-      apiUrl.searchParams.append("documentType", documentType);
+       backendFormData.append("documentType", documentType);
     }
     
     console.log(`Forwarding request to backend: ${apiUrl.toString()}`);
 
-    // Call the C# backend endpoint.
     const backendResponse = await fetch(apiUrl.toString(), {
       method: "POST",
       body: backendFormData,
-      // Headers are not explicitly set to 'multipart/form-data'; 
-      // fetch does this automatically when the body is a FormData instance.
     });
 
+    // --- START OF FIX ---
     // Handle non-successful responses from the backend
     if (!backendResponse.ok) {
-      const errorBody = await backendResponse.json();
-      console.error("Backend returned an error:", errorBody);
+      let errorDetails = "Unknown backend error.";
+      const contentType = backendResponse.headers.get("content-type");
+
+      // Check if the response is JSON or plain text and parse accordingly
+      if (contentType && contentType.includes("application/json")) {
+        const errorBody = await backendResponse.json();
+        errorDetails = errorBody.title || errorBody.error || errorBody.message || JSON.stringify(errorBody);
+      } else {
+        errorDetails = await backendResponse.text();
+      }
+      
+      console.error("Backend returned an error:", errorDetails);
+
+      // Forward the actual error and status from the backend
       return NextResponse.json(
         {
           error: "Failed to process document via backend.",
-          details: errorBody.title || errorBody.error || "Unknown backend error.",
+          details: errorDetails,
         },
         { status: backendResponse.status }
       );
     }
+    // --- END OF FIX ---
 
-    // Get the successful JSON response from the backend
     const backendData = await backendResponse.json();
 
-    // --- Re-format the response to match the original mock's structure ---
     const finalResponse = {
       success: true,
       document: {
         id: `doc_${Date.now()}`,
         filename: file.name,
-        // The backend response is the metadata itself
         metadata: backendData.metadata, 
-        // You can add other fields from the backend response as needed
         validation: backendData.validationResult,
         statistics: backendData.extractionStatistics,
         ocrService: backendData.ocrServiceUsed,
@@ -85,6 +89,57 @@ export async function POST(request: NextRequest) {
         error: "Failed to process document.",
         details: error instanceof Error ? error.message : "An unknown error occurred.",
       },
+      { status: 500 }
+    );
+  }
+}
+
+// I've also applied the same robust error handling to your GET function.
+export async function GET() {
+  if (!BACKEND_URL) {
+    console.error("BACKEND_API_URL environment variable is not set.");
+    return NextResponse.json(
+      { error: "Server configuration error." },
+      { status: 500 }
+    );
+  }
+  
+  try{
+    const apiUrl = new URL(`${BACKEND_URL}/api/Metadata/document-types`);
+    console.log(`Fetching document types from backend: ${apiUrl.toString()}`);
+    
+    const backendResponse = await fetch(apiUrl.toString(), {
+      method: "GET",
+    });
+
+    if (!backendResponse.ok) {
+        let errorDetails = "Unknown backend error.";
+        const contentType = backendResponse.headers.get("content-type");
+
+        if (contentType && contentType.includes("application/json")) {
+            const errorBody = await backendResponse.json();
+            errorDetails = errorBody.title || errorBody.error || "Unknown backend error.";
+        } else {
+            errorDetails = await backendResponse.text();
+        }
+
+        console.error("Backend returned an error:", errorDetails);
+        return NextResponse.json(
+            {
+                error: "Failed to fetch document types from backend.",
+                details: errorDetails,
+            },
+            { status: backendResponse.status }
+        );
+    }
+    
+    const documentTypes = await backendResponse.json();
+    return NextResponse.json({ documentTypes });
+
+  } catch (error) {
+    console.error("Error fetching document types:", error);
+    return NextResponse.json(
+      { error: "An internal error occurred while fetching document types." },
       { status: 500 }
     );
   }

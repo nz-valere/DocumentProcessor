@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Upload, FileText, BoxIcon as Batch, Loader2 } from "lucide-react"
 import { DocumentPreviewModal } from "@/components/document-preview-modal"
+import { ErrorModal } from "@/components/error-modal" // --- MODIFICATION: Import ErrorModal ---
 import { useToast } from "@/hooks/use-toast"
 
 interface ProcessedDocument {
@@ -20,6 +21,11 @@ export default function HomePage() {
   const [showPreview, setShowPreview] = useState(false)
   const { toast } = useToast()
 
+  // --- MODIFICATION START: Add state for the error modal ---
+  const [showErrorModal, setShowErrorModal] = useState(false)
+  const [errorDetails, setErrorDetails] = useState({ title: "", message: "" })
+  // --- MODIFICATION END ---
+
   const handleFileUpload = async (files: FileList | null, isBatch: boolean) => {
     if (!files || files.length === 0) return
 
@@ -27,12 +33,10 @@ export default function HomePage() {
     const formData = new FormData()
 
     if (isBatch) {
-      // For batch processing, add all files
-      Array.from(files).forEach((file, index) => {
+      Array.from(files).forEach((file) => {
         formData.append(`files`, file)
       })
     } else {
-      // For single processing, add just one file
       formData.append("file", files[0])
     }
 
@@ -43,16 +47,29 @@ export default function HomePage() {
         body: formData,
       })
 
+      // --- MODIFICATION START: Check for 400 status to show modal ---
       if (!response.ok) {
-        throw new Error("Failed to process documents")
+        const errorData = await response.json()
+        const errorMessage = errorData.details || errorData.error || "An unknown error occurred."
+
+        if (response.status === 400) {
+          // If it's a 400 error, show the modal popup
+          setErrorDetails({
+            title: "Upload Error",
+            message: errorMessage,
+          })
+          setShowErrorModal(true)
+        } else {
+          // For all other errors (500, etc.), throw to use the toast notification
+          throw new Error(errorMessage)
+        }
+        // End the function here since we handled the error
+        return
       }
+      // --- MODIFICATION END ---
 
       const result = await response.json()
-
-
-      // Transform the response to match our expected format
       const documents = isBatch ? result.documents : [result.document]
-      // Add imageUrl using URL.createObjectURL for each document
       const filesArray = isBatch ? Array.from(files) : [files[0]]
       const documentsWithImageUrl = documents.map((doc: any, idx: number) => ({
         ...doc,
@@ -65,11 +82,13 @@ export default function HomePage() {
         title: "Documents processed successfully",
         description: `${documents.length} document(s) processed and ready for review.`,
       })
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
+      console.error("Error processing documents:", error)
+
+      // This catch block will now mostly handle non-400 errors
       toast({
-        title: "Error processing documents",
-        description: "Please try again or contact support.",
+        title: "An Error Occurred",
+        description: error instanceof Error ? error.message : "Please try again later.",
         variant: "destructive",
       })
     } finally {
@@ -107,7 +126,6 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="flex items-center space-x-4">
             <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center">
-              {/* <FileText className="w-6 h-6 text-white" /> */}
               <img src="/logo.svg" alt="My Icon" width={41} height={41} />
             </div>
             <div>
@@ -237,6 +255,15 @@ export default function HomePage() {
           onClose={() => setShowPreview(false)}
         />
       )}
+
+      {/* --- MODIFICATION START: Add the ErrorModal to the page --- */}
+      <ErrorModal
+        isOpen={showErrorModal}
+        onClose={() => setShowErrorModal(false)}
+        title={errorDetails.title}
+        message={errorDetails.message}
+      />
+      {/* --- MODIFICATION END --- */}
     </div>
   )
 }

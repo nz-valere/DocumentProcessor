@@ -15,6 +15,7 @@ interface ProcessedDocument {
   filename: string
   imageUrl: string
   metadata: Record<string, any>
+  ocrService?: string 
 }
 
 interface DocumentPreviewModalProps {
@@ -102,7 +103,7 @@ export function DocumentPreviewModal({ documents, isOpen, onClose }: DocumentPre
   }
 
   const getDocumentStats = () => {
-    const text = editedMetadata.extractedText || ""
+    const text = editedMetadata.RawText || ""
     const words = text.split(/\s+/).filter((word: string) => word.length > 0)
     const characters = text.length
     const lines = text.split("\n").length
@@ -113,7 +114,7 @@ export function DocumentPreviewModal({ documents, isOpen, onClose }: DocumentPre
       lines,
       confidence: editedMetadata.confidence || 0,
       documentType: editedMetadata.documentType || "unknown",
-      language: editedMetadata.language || "unknown",
+      ocrUsed: editedMetadata.language || "unknown",
       processedDate: editedMetadata.processedDate || new Date().toISOString(),
     }
   }
@@ -168,8 +169,9 @@ export function DocumentPreviewModal({ documents, isOpen, onClose }: DocumentPre
               {currentDocument.filename?.endsWith(".pdf") ? (
                 <iframe
                   src={currentDocument.imageUrl}
-                  className="w-full h-96 border rounded shadow-sm"
+                  className="w-full h-[600px] rounded-xl shadow-md outline-none border-0 overflow-hidden scrollbar-hide"
                   title={currentDocument.filename}
+                  style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                 />
               ) : (
                 <img
@@ -190,10 +192,10 @@ export function DocumentPreviewModal({ documents, isOpen, onClose }: DocumentPre
                     <FileText className="w-3 h-3" />
                     <span className="text-xs">Metadata</span>
                   </TabsTrigger>
-                  <TabsTrigger value="fileview" className="flex items-center space-x-1">
+                  {/* <TabsTrigger value="fileview" className="flex items-center space-x-1">
                     <Eye className="w-3 h-3" />
                     <span className="text-xs">File View</span>
-                  </TabsTrigger>
+                  </TabsTrigger> */}
                   <TabsTrigger value="rawtext" className="flex items-center space-x-1">
                     <Type className="w-3 h-3" />
                     <span className="text-xs">Raw Text</span>
@@ -268,11 +270,11 @@ export function DocumentPreviewModal({ documents, isOpen, onClose }: DocumentPre
                       <div className="space-y-3">
                         <div className="flex justify-between items-center py-2 border-b">
                           <span className="text-sm font-medium text-gray-700">Document Type</span>
-                          <span className="text-sm text-gray-900 capitalize">{stats.documentType}</span>
+                          <span className="text-sm text-gray-900 capitalize">{editedMetadata.documentType}</span>
                         </div>
                         <div className="flex justify-between items-center py-2 border-b">
-                          <span className="text-sm font-medium text-gray-700">Language</span>
-                          <span className="text-sm text-gray-900 uppercase">{stats.language}</span>
+                          <span className="text-sm font-medium text-gray-700">OCR used</span>
+                          <span className="text-sm text-gray-900 uppercase">{currentDocument.ocrService}</span>
                         </div>
                         <div className="flex justify-between items-center py-2 border-b">
                           <span className="text-sm font-medium text-gray-700">Processed Date</span>
